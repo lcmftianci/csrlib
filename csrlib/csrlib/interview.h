@@ -47,9 +47,11 @@ bool judgeInt(T t)
 //int to string
 string IntToStr(int num)
 {
-	char* tempStr = "";
-	tempStr = (char*)malloc(sizeof(num));
-	memset(tempStr, 0, sizeof(num));
+	//char* tempStr = "";
+	//tempStr = (char*)malloc(sizeof(num));
+	//memset(tempStr, 0, sizeof(num));
+	
+	char tempStr[240];
 	sprintf(tempStr, "%d", num);
 	return (string)tempStr;
 }
@@ -106,4 +108,10 @@ void addressBin()
 	unsigned char a = 0XA5;
 	unsigned char b = ~a >> 4 + 1;
 	printf("%d\n", b);
+}
+
+//求平均数,必须同奇同偶
+int meanNum(int x, int y)
+{
+	return (x&y) + ((x^y) >> 1);
 }

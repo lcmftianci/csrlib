@@ -27,6 +27,18 @@
     <ClInclude Include="csrshape.h">
       <Filter>csrlib</Filter>
     </ClInclude>
+    <ClInclude Include="csrlist.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
+    <ClInclude Include="csrtree.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
+    <ClInclude Include="csrstack.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
+    <ClInclude Include="csrdoublelist.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="csrorder.cpp">
@@ -36,6 +48,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="csrshape.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrlist.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrtree.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrstack.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrdoublelist.cpp">
       <Filter>csrlib</Filter>
     </ClCompile>
   </ItemGroup>

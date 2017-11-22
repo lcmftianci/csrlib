@@ -146,14 +146,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="csrdoublelist.h" />
+    <ClInclude Include="csrlist.h" />
     <ClInclude Include="csrorder.h" />
     <ClInclude Include="csrshape.h" />
+    <ClInclude Include="csrstack.h" />
+    <ClInclude Include="csrtree.h" />
     <ClInclude Include="interview.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="csrdoublelist.cpp" />
     <ClCompile Include="csrlibTest.cpp" />
+    <ClCompile Include="csrlist.cpp" />
     <ClCompile Include="csrorder.cpp" />
     <ClCompile Include="csrshape.cpp" />
+    <ClCompile Include="csrstack.cpp" />
+    <ClCompile Include="csrtree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

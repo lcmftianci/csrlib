@@ -1,9 +1,13 @@
 #include <iostream>
-#include "csrorder.h"
-#include "interview.h"
-using namespace std;
 #include <stdio.h>
 #include <stdlib.h>
+#include "csrorder.h"
+#include "interview.h"
+#include "csrlist.h"
+
+
+using namespace std;
+
 
 int main()
 {
@@ -39,6 +43,26 @@ int main()
 	cout << thranslateScale("10", 10, 2).c_str() << endl;
 
 	cout << thranslateScale("0000000011111010", 2, 10).c_str() << endl;
+
+	//list²âÊÔ´úÂë
+	linuxlist tlist;
+	listCreate(&tlist);
+
+	for (int i = 0; i < 10; ++i)
+		listHeadInsert(&tlist, i);
+
+	for (int i = 35; i > 20; --i)
+		listHeadInsert(&tlist, i);
+
+	listDisplay(&tlist);
+
+	listReverse(&tlist);
+
+	listDisplay(&tlist);
+
+	listBubbleSort(&tlist);
+
+	listDisplay(&tlist);
 
 	system("pause");
 	return 0;
