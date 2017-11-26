@@ -39,6 +39,21 @@
     <ClInclude Include="csrdoublelist.h">
       <Filter>csrlib</Filter>
     </ClInclude>
+    <ClInclude Include="csrstring.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
+    <ClInclude Include="csrlog.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
+    <ClInclude Include="csrhashcode.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
+    <ClInclude Include="csrthread.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
+    <ClInclude Include="csrnetutil.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="csrorder.cpp">
@@ -60,6 +75,21 @@
       <Filter>csrlib</Filter>
     </ClCompile>
     <ClCompile Include="csrdoublelist.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrstring.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrlog.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrhashcode.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrthread.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrnetutil.cpp">
       <Filter>csrlib</Filter>
     </ClCompile>
   </ItemGroup>

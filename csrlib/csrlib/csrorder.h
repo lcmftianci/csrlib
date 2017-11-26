@@ -52,8 +52,9 @@ void DisplayData(T tinfo[], int arrNum)
 {
 	for (auto varData = 0; varData < arrNum; ++varData)
 	{
-		cout << tinfo[varData] << endl;
+		cout << tinfo[varData] << " ";
 	}
+	cout << endl;
 }
 
 /*
@@ -109,11 +110,21 @@ void DisplayData(T tinfo[], int arrNum)
 	臭皮匠排序（stooge sort）算法简单，但需要约n^2.7的时间
 */
 
+//交换数据
+int csrswapdata(int *a, int *b);
+
+void csrswapdata(int &a, int &b);
+
+//打印数据
+void csrdisplay(int arr[], int num);
+
+void csrdisplay(int arr[], long maxlen, int nbegin, int nend);
+
 //冒泡
 void BubbleSort(int arrNum[], int nLen, bool bLToS);
 
 //快排
-void QuickSort(int arrNum[], bool bToS);
+void QuickSort(int arrNum[], int maxLen, int nbegin, int nend, bool bToS);
 
 //插入法排序
 void InsertSort(int arrNum[], bool bToS);

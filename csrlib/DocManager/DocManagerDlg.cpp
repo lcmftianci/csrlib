@@ -58,6 +58,7 @@ CDocManagerDlg::CDocManagerDlg(CWnd* pParent /*=NULL*/)
 void CDocManagerDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_LIST_RECENT, m_RecentList);
 }
 
 BEGIN_MESSAGE_MAP(CDocManagerDlg, CDialogEx)
@@ -99,6 +100,95 @@ BOOL CDocManagerDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
+	//if (m_RecentImageList.GetSafeHandle() == NULL)
+	//{
+	//	m_RecentImageList.Create(80, 80, ILC_MASK | ILC_COLOR32, 0, 0);
+	//	m_RecentImageList.Add(AfxGetApp()->LoadIcon(IDR_MAINFRAME));
+	//	m_RecentList.SetImageList(&m_RecentImageList, LVSIL_NORMAL);
+	//}
+
+	//加载BMP图片
+	//if (m_RecentImageList.GetSafeHandle() == NULL)
+	//{
+	//	CBitmap Image;
+	//	BITMAP ImageInfo;
+	//	Image.LoadBitmap(L"E:\\书籍\\视频\\文件\\2015task\\arm\\图片文件\\water.bmp");
+	//	Image.GetBitmap(&ImageInfo);
+	//	m_RecentImageList.Create(18, ImageInfo.bmHeight, ILC_COLOR16 | ILC_MASK, 0, 0);
+	//	m_RecentImageList.Add(&Image, RGB(255, 0, 255));
+	//}
+
+	//m_RecentList.SetImageList(&m_RecentImageList, LVSIL_SMALL);
+
+	//m_RecentList.SetExtendedStyle(m_RecentList.GetExtendedStyle() | LVS_EX_SUBITEMIMAGES | LVS_EX_GRIDLINES);
+	//m_RecentList.InsertColumn(0, L"#", LVCFMT_CENTER, 0);
+	//m_RecentList.InsertColumn(1, _T("T1"), LVCFMT_LEFT, 100);
+	//m_RecentList.InsertColumn(2, _T("A1"), LVCFMT_LEFT, 190);
+	//m_RecentList.InsertColumn(3, _T("A2"), LVCFMT_LEFT, 190);
+
+	//m_RecentImageList.Create(150, 200, ILC_COLOR32 | ILC_MASK, 8, 1);   //----- 实例图象框；
+	//HBITMAP hBitmap;
+	//CBitmap *pBitmap;
+	//CString FilePathName = L"E:\\书籍\\视频\\文件\\2015task\\arm\\图片文件\\water.bmp";   //在资源的IDB_BITMAP1文件就是face.bmp导入的
+	//pBitmap = new  CBitmap;
+	//hBitmap = (HBITMAP)LoadImage(NULL, FilePathName, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+	//pBitmap->Attach(hBitmap);
+	//m_RecentImageList.Add(pBitmap, RGB(0, 0, 0));
+
+	//m_RecentList.SetImageList(&m_RecentImageList, LVSIL_SMALL);
+
+	//DWORD dw = m_RecentImageList.GetImageCount();
+	//CString str;
+	//for (int j = 0;j < 3;j++) {
+	//	m_RecentList.InsertItem(j, L"123", 0);
+	//	LVITEM item = { 0 };
+	//	item.iItem = j;
+	//	item.iSubItem = 2;
+	//	item.mask = LVIF_TEXT | LVIF_IMAGE;
+	//	item.iImage = 0;                  //图片索引值
+	//	item.pszText = _T("Virqin");
+	//	item.lParam = (LPARAM)m_hWnd;
+	//	m_RecentList.SetItem(&item);
+	//}
+	//m_RecentImageList.Detach();
+
+	//使用ICON
+	/*CImageList m_ImageList;*/
+	//m_RecentList.SetExtendedStyle(m_RecentList.GetExtendedStyle() | LVS_EX_FULLROWSELECT | LVS_EX_SUBITEMIMAGES);
+	//m_RecentImageList.Create(32, 16, ILC_COLOR, 8, 4);
+
+	//int m_nIdxIco1 = m_RecentImageList.Add(AfxGetApp()->LoadIcon(IDR_MAINFRAME));  //使用索引  
+	//int m_nIdxIco2 = m_RecentImageList.Add(AfxGetApp()->LoadIcon(IDR_MAINFRAME));
+	//int m_nIdxIco3 = m_RecentImageList.Add(AfxGetApp()->LoadIcon(IDR_MAINFRAME));
+	//int m_nIdxIco4 = m_RecentImageList.Add(AfxGetApp()->LoadIcon(IDR_MAINFRAME));
+	//m_RecentList.SetImageList(&m_RecentImageList, LVSIL_SMALL);
+	//m_RecentList.InsertColumn(0, L"ColName1", LVCFMT_CENTER, 40);
+	//m_RecentList.InsertColumn(1, L"ColName2", LVCFMT_LEFT, 50);
+	//m_RecentList.InsertItem(0, L"", m_nIdxIco1);
+	//m_RecentList.InsertItem(1, L"", m_nIdxIco2);
+	//m_RecentList.InsertItem(2, L"", m_nIdxIco3);
+	//m_RecentList.InsertItem(3, L"", m_nIdxIco4);
+
+	//m_RecentImageList.Add(AfxGetApp()->LoadIcon(IDR_MAINFRAME));  //不使用索引  
+	//m_RecentImageList.Add(AfxGetApp()->LoadIcon(IDR_MAINFRAME));
+	//m_RecentImageList.Add(AfxGetApp()->LoadIcon(IDR_MAINFRAME));
+	//m_RecentImageList.Add(AfxGetApp()->LoadIcon(IDR_MAINFRAME));
+	//m_RecentList.SetImageList(&m_RecentImageList, LVSIL_SMALL);
+	//m_RecentList.InsertColumn(0, L"ColName1", LVCFMT_CENTER, 40);
+	//m_RecentList.InsertColumn(1, L"ColName2", LVCFMT_LEFT, 50);
+	//m_RecentList.InsertItem(0, L"", 0);
+	//m_RecentList.InsertItem(1, L"", 1);
+	//m_RecentList.InsertItem(2, L"", 2);
+	//m_RecentList.InsertItem(3, L"", 3);
+	//m_RecentList.SetItem(0, 1, LVIF_TEXT, L"111", 0, 0, 0, 0);
+	//m_RecentList.SetItem(1, 1, LVIF_IMAGE, L"222", 1, 0, 0, 0);
+	//m_RecentList.SetItem(2, 1, LVIF_TEXT, L"333", 2, 0, 0, 0);
+	//m_RecentList.SetItem(3, 1, LVIF_IMAGE, L"444", 3, 0, 0, 0);
+
+	m_RecentList.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
+	m_RecentList.SetIconSpacing(CSize(140, 130));
+
+
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }

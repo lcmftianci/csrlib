@@ -64,6 +64,9 @@ int main()
 
 	listDisplay(&tlist);
 
+	int arrNum[] = { 1, 4, 6, 8, 3, 0, 32, 45, 2, 7, 6 };
+	QuickSort(arrNum, sizeof(arrNum) / sizeof(int), 0, sizeof(arrNum) / sizeof(int), false);
+	DisplayData(arrNum, sizeof(arrNum) / sizeof(int));
 	system("pause");
 	return 0;
 }
