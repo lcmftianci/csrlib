@@ -6,6 +6,7 @@
 #include "csrlist.h"
 #include "csrplot.h"
 #include "csrlog.h"
+#include "csrcopy.h"
 //#include "plot/koolplot.h"
 
 
@@ -87,6 +88,9 @@ int main(int argc, char** argv)
 
 	InitLogSys();
 	LogWrite("hellos");
+
+	CopyFileToDest("E:\\’’∆¨\\picture", "D:\\bak\\dss", true, true);
+
 	EndLogSys();
 
 	glutMainLoop();

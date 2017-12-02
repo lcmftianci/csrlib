@@ -52,8 +52,7 @@ void LogWrite(std::string strLog)
 	//WriteConsole(hOutputHandle, strLog.c_str(), lstrlen(cstrLog), &nRet, NULL);
 	//std::cout << cstrLog << std::endl;
 	printf("%s", strLog.c_str());
-	//printf("%s", "ÎÒ¶¼¿¼");
-	//std::cout << "wodema " << std::endl;
+	std::cout << "---csrlog.end" << std::endl;
 }
 
 void EndLogSys()

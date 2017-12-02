@@ -1,6 +1,9 @@
 #include "csrcopy.h"
+#include "csrlog.h"
 
-bool CopyFileToDest(std::string lpSrc, std::string lpDes, bool bIsExit = false, bool bmkDir = false)
+#include <corecrt_io.h>
+
+bool CopyFileToDest(std::string lpSrc, std::string lpDes, bool bIsExit, bool bmkDir)
 {
 	WIN32_FIND_DATA FileData;
 	HANDLE          hSearch;
@@ -10,20 +13,29 @@ bool CopyFileToDest(std::string lpSrc, std::string lpDes, bool bIsExit = false, 
 	BOOL            fFinished = FALSE;
 
 	// Create a new directory. 
-
 	CString strDes = lpDes.c_str();
 	if (bmkDir)
 	{
+		if (_access(lpDes.c_str(), 0) == 0)
+			RemoveDirectory(strDes);
 		if (!CreateDirectory(strDes, NULL))
+		{
+			LogWrite(lpDes);
 			return false;
+		}
 	}
 
 	// Start searching for text files in the current directory. 
 	CString strSrc = lpSrc.c_str();
-	strSrc += "*.*";
+	strSrc += "\\*.*";
 	hSearch = FindFirstFile(strSrc, &FileData);
 	if (hSearch == INVALID_HANDLE_VALUE)
+	{
+		std::string strErr = "";
+		sprintf(const_cast<char*>(strErr.c_str()), "©унд╪Ч╪п%d", GetLastError());
+		LogWrite(strErr);
 		return false;
+	}
 
 	// Copy each .TXT file to the new directory 
 	// and change it to read only, if not already. 
@@ -31,21 +43,25 @@ bool CopyFileToDest(std::string lpSrc, std::string lpDes, bool bIsExit = false, 
 	{
 		StringCchPrintf(szNewPath, sizeof(szNewPath) / sizeof(szNewPath[0]), TEXT("%s\\%s"), strDes, FileData.cFileName);
 
-		if (CopyFile(FileData.cFileName, szNewPath, FALSE))
+		CString strOldPath = lpSrc.c_str();
+		strOldPath += "\\";
+		strOldPath += FileData.cFileName;
+		if (CopyFile(strOldPath, szNewPath, FALSE))
 		{
 			dwAttrs = GetFileAttributes(FileData.cFileName);
-			if (dwAttrs == INVALID_FILE_ATTRIBUTES) return false;
+			if (dwAttrs == INVALID_FILE_ATTRIBUTES)
+				LogWrite("invalid file attri");
 
 			if (!(dwAttrs & FILE_ATTRIBUTE_READONLY))
 			{
-				SetFileAttributes(szNewPath,
-					dwAttrs | FILE_ATTRIBUTE_READONLY);
+				SetFileAttributes(szNewPath, dwAttrs | FILE_ATTRIBUTE_READONLY);
 			}
 		}
 		else
 		{
+			int b = GetLastError();
 			printf("Could not copy file.\n");
-			return false;
+			//return false;
 		}
 
 		if (!FindNextFile(hSearch, &FileData))

@@ -8,6 +8,6 @@
 
 
 //void CopyFile(LPCTSTR lpExistingFileName, LPCTSTR lpNewFileName, BOOL bFailIfExists);
-bool CopyFileToDest(std::string lpSrc, std::string lpDes, bool bIsExit);
+bool CopyFileToDest(std::string lpSrc, std::string lpDes, bool bIsExit = true, bool bmkDir = false);
 
 #endif
