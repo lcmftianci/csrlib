@@ -1,4 +1,6 @@
 #include "csrstring.h"
+#include <stdio.h>
+#include <string.h>
 
 csrstring::csrstring(void)
 {
@@ -8,7 +10,10 @@ csrstring::csrstring(void)
 
 csrstring::csrstring(char* cstr) :m_str(cstr)
 {
-
+	int nLen = strlen(cstr);
+	m_str = new char[nLen + 1];
+	strcpy(m_str, cstr);
+	m_str[nLen] = '\0';
 }
 
 csrstring::csrstring(const csrstring& cstr)

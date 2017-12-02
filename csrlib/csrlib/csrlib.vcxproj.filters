@@ -54,6 +54,18 @@
     <ClInclude Include="csrnetutil.h">
       <Filter>csrlib</Filter>
     </ClInclude>
+    <ClInclude Include="csrplot.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
+    <ClInclude Include="csrcopy.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
+    <ClInclude Include="csrfilesystem.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
+    <ClInclude Include="csrtw.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="csrorder.cpp">
@@ -90,6 +102,18 @@
       <Filter>csrlib</Filter>
     </ClCompile>
     <ClCompile Include="csrnetutil.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrplot.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrcopy.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrfilesystem.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrtw.cpp">
       <Filter>csrlib</Filter>
     </ClCompile>
   </ItemGroup>

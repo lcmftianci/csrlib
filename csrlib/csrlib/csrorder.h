@@ -124,7 +124,7 @@ void csrdisplay(int arr[], long maxlen, int nbegin, int nend);
 void BubbleSort(int arrNum[], int nLen, bool bLToS);
 
 //øÏ≈≈
-void QuickSort(int arrNum[], int maxLen, int nbegin, int nend, bool bToS);
+void QuickSort(int arrNum[], int maxLen, int nbegin, int nend, bool bToS = false);
 
 //≤Â»Î∑®≈≈–Ú
 void InsertSort(int arrNum[], bool bToS);

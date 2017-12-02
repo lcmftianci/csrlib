@@ -73,26 +73,53 @@ void QuickSort(int arrNum[], int maxLen, int nbegin, int nend, bool bToS)
 		/*
 			以arrNum[nbegin]为基准，对arrNum[begin + 1] 和arrNum[nend]之间的数进行分组
 		*/
-		while (i != j)
-		{
-			if (arrNum[i] > arrNum[nbegin])
+	
+			if (bToS)
 			{
-				if (csrswapdata(&arrNum[i], &arrNum[j]) == 1)
+				while (i != j)
+				{
+					if (arrNum[i] < arrNum[nbegin])
+					{
+						if (csrswapdata(&arrNum[i], &arrNum[j]) == 1)
+							;//csrdisplay(arrNum, maxLen, nbegin, nend);
+						j--;
+					}
+					else
+						++i;
+				}
+
+				if (arrNum[i] <= arrNum[nbegin])
+					--i;
+
+				if (csrswapdata(&arrNum[nbegin], &arrNum[i]) == 1)
 					;//csrdisplay(arrNum, maxLen, nbegin, nend);
-				j--;
+
+				QuickSort(arrNum, maxLen, nbegin, i - 1, bToS);
+				QuickSort(arrNum, maxLen, j, nend, bToS);
 			}
 			else
-				++i;
-		}
+			{
+				while (i != j)
+				{
+					if (arrNum[i] > arrNum[nbegin])
+					{
+						if (csrswapdata(&arrNum[i], &arrNum[j]) == 1)
+							;//csrdisplay(arrNum, maxLen, nbegin, nend);
+						j--;
+					}
+					else
+						++i;
+				}
 
-		if (arrNum[i] >= arrNum[nbegin])
-			--i;
+				if (arrNum[i] >= arrNum[nbegin])
+					--i;
 
-		if (csrswapdata(&arrNum[nbegin], &arrNum[i]) == 1)
-			;//csrdisplay(arrNum, maxLen, nbegin, nend);
+				if (csrswapdata(&arrNum[nbegin], &arrNum[i]) == 1)
+					;//csrdisplay(arrNum, maxLen, nbegin, nend);
 
-		QuickSort(arrNum, maxLen, nbegin, i - 1, false);
-		QuickSort(arrNum, maxLen, j, nend, false);
+				QuickSort(arrNum, maxLen, nbegin, i - 1, bToS);
+				QuickSort(arrNum, maxLen, j, nend, bToS);
+			}
 	}
 }
 
