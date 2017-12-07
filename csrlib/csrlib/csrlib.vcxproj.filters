@@ -66,6 +66,12 @@
     <ClInclude Include="csrtw.h">
       <Filter>csrlib</Filter>
     </ClInclude>
+    <ClInclude Include="csrftp.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
+    <ClInclude Include="csrdoulist.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="csrorder.cpp">
@@ -114,6 +120,12 @@
       <Filter>csrlib</Filter>
     </ClCompile>
     <ClCompile Include="csrtw.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrftp.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrdoulist.cpp">
       <Filter>csrlib</Filter>
     </ClCompile>
   </ItemGroup>

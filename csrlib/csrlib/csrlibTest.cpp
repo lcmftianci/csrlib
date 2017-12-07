@@ -7,6 +7,7 @@
 #include "csrplot.h"
 #include "csrlog.h"
 #include "csrcopy.h"
+#include "csrdoublelist.h"
 //#include "plot/koolplot.h"
 
 
@@ -72,6 +73,65 @@ int main(int argc, char** argv)
 	QuickSort(arrNum, sizeof(arrNum) / sizeof(int), 0, sizeof(arrNum) / sizeof(int), true);
 	DisplayData(arrNum, sizeof(arrNum) / sizeof(int));
 
+	list * t_list = (list *)malloc(sizeof(list));
+
+	csrdoulistCreate(t_list);
+
+	for (int i = 0;i < 10;i++)
+	{
+		csrdoulistHeadInsert(t_list, i);
+	}
+
+	node t_node = csrdoulistFind(t_list, 7);
+
+	printf("%d\n", t_node->m_data);
+
+	csrdoulistModify(t_list, 1, 99);
+
+	csrdoulistDelete(t_list, 3);
+
+	csrdoulistDisplayAsc(t_list);
+
+	csrdoulistDisplayDesc(t_list);
+
+	csrdoulistDestroy(t_list);
+
+	free(t_list);
+
+	t_list = NULL;
+
+	printf("你好，明天\n");
+
+
+
+#if 0
+	while (1)
+	{
+		system("cls");
+		int funIndex = 0;
+		cout << "1:关机" << endl;
+		cout << "2:取消关机" << endl;
+		cin >> funIndex;
+		switch (funIndex)
+		{
+		case 1:
+			system("COLOR 24");
+			system("shutdown -s -t 10");
+			system("COLOR 35");
+			break;
+		case 2:
+			system("COLOR 38");
+			system("shutdown -a");
+			system("COLOR 94");
+		default:
+			break;
+		}
+	}
+
+#endif
+
+#if 0
+
 	//绘制曲线
 	//srand((unsigned int)time(0));
 	glutInit(&argc, argv);
@@ -88,13 +148,11 @@ int main(int argc, char** argv)
 
 	InitLogSys();
 	LogWrite("hellos");
-
 	CopyFileToDest("E:\\照片\\picture", "D:\\bak\\dss", true, true);
-
 	EndLogSys();
 
 	glutMainLoop();
-
+#endif
 	//glutInit(&argc, argv);
 	////初始化GLUT库OpenGL窗口的显示模式
 	//glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
