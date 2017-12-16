@@ -11,6 +11,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NetFileShare", "NetFileShar
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VirtualDesk", "VirtualDesk\VirtualDesk.vcxproj", "{55ACB123-F85F-430D-A974-2EDD52579DA9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScreenScannerServer", "ScreenScannerServer\ScreenScannerServer.vcxproj", "{3EB6A484-FBD0-4818-9930-F812A93595B3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScreenScannerClient", "ScreenScannerClient\ScreenScannerClient.vcxproj", "{E80F270B-7F4A-4153-8570-BCE8BAAD9DFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +55,22 @@ Global
 		{55ACB123-F85F-430D-A974-2EDD52579DA9}.Release|x64.Build.0 = Release|x64
 		{55ACB123-F85F-430D-A974-2EDD52579DA9}.Release|x86.ActiveCfg = Release|Win32
 		{55ACB123-F85F-430D-A974-2EDD52579DA9}.Release|x86.Build.0 = Release|Win32
+		{3EB6A484-FBD0-4818-9930-F812A93595B3}.Debug|x64.ActiveCfg = Debug|x64
+		{3EB6A484-FBD0-4818-9930-F812A93595B3}.Debug|x64.Build.0 = Debug|x64
+		{3EB6A484-FBD0-4818-9930-F812A93595B3}.Debug|x86.ActiveCfg = Debug|Win32
+		{3EB6A484-FBD0-4818-9930-F812A93595B3}.Debug|x86.Build.0 = Debug|Win32
+		{3EB6A484-FBD0-4818-9930-F812A93595B3}.Release|x64.ActiveCfg = Release|x64
+		{3EB6A484-FBD0-4818-9930-F812A93595B3}.Release|x64.Build.0 = Release|x64
+		{3EB6A484-FBD0-4818-9930-F812A93595B3}.Release|x86.ActiveCfg = Release|Win32
+		{3EB6A484-FBD0-4818-9930-F812A93595B3}.Release|x86.Build.0 = Release|Win32
+		{E80F270B-7F4A-4153-8570-BCE8BAAD9DFA}.Debug|x64.ActiveCfg = Debug|x64
+		{E80F270B-7F4A-4153-8570-BCE8BAAD9DFA}.Debug|x64.Build.0 = Debug|x64
+		{E80F270B-7F4A-4153-8570-BCE8BAAD9DFA}.Debug|x86.ActiveCfg = Debug|Win32
+		{E80F270B-7F4A-4153-8570-BCE8BAAD9DFA}.Debug|x86.Build.0 = Debug|Win32
+		{E80F270B-7F4A-4153-8570-BCE8BAAD9DFA}.Release|x64.ActiveCfg = Release|x64
+		{E80F270B-7F4A-4153-8570-BCE8BAAD9DFA}.Release|x64.Build.0 = Release|x64
+		{E80F270B-7F4A-4153-8570-BCE8BAAD9DFA}.Release|x86.ActiveCfg = Release|Win32
+		{E80F270B-7F4A-4153-8570-BCE8BAAD9DFA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
