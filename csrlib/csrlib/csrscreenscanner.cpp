@@ -2,6 +2,7 @@
 #include "csrscreencututils.h"
 #include <iostream>
 
+#define BUFFER_SIZE 1024
 
 //视屏接受端
 DWORD WINAPI udpscreenserver(LPWORD lpParam)
@@ -33,27 +34,45 @@ DWORD WINAPI udpscreenserver(LPWORD lpParam)
 	char recvBuf[100];
 	char sendBuf[100];
 	char tempBuf[200];
+	char buffer[BUFFER_SIZE];
 	while (1)
 	{
+		//先接受文件名称
 		recvfrom(sockSrv, recvBuf, 100, 0, (SOCKADDR*)&addrClient, &len);
-		if ('q' == recvBuf[0])
+		//再接受文件内容
+		//sendto(sockSrv, sendBuf, strlen(sendBuf) + 1, 0, (SOCKADDR*)&addrClient, len);
+		//打开文件，准备写入  
+		FILE * fp = fopen(recvBuf, "wb");
+		if (NULL == fp)
 		{
-			sendto(sockSrv, "q", strlen("q") + 1, 0, (SOCKADDR*)&addrClient, len);
-			printf("udp chat end\n");
-			break;
+			printf("File: %s Can Not Open To Write\n", recvBuf);
+			system("pause");
+			exit(1);
 		}
-		sprintf(tempBuf, "UDP客户端%s say: %s", inet_ntoa(addrClient.sin_addr), recvBuf);
-		printf("%s\n", tempBuf);
-		printf("Udp Server please input data:\n");
-		gets_s(sendBuf);
-		sendto(sockSrv, sendBuf, strlen(sendBuf) + 1, 0, (SOCKADDR*)&addrClient, len);
+		else
+		{
+			memset(buffer, 0, BUFFER_SIZE);
+			int length = 0;
+			while ((length = recv(sockSrv, buffer, BUFFER_SIZE, 0)) > 0)
+			{
+				if (fwrite(buffer, sizeof(char), length, fp) < length)
+				{
+					printf("File: %s Write Failed\n", recvBuf);
+					break;
+				}
+				memset(buffer, 0, BUFFER_SIZE);
+			}
+
+			printf("Receive File: %s From Server Successful!\n", recvBuf);
+		}
+		fclose(fp);
+
 	}
 	closesocket(sockSrv);
 	WSACleanup();
 	return NULL;
 }
 
-#define BUFFER_SIZE 1024
 
 //视屏输出端
 DWORD WINAPI udpscreenclient(LPWORD lpParam)
@@ -77,7 +96,7 @@ DWORD WINAPI udpscreenclient(LPWORD lpParam)
 	SOCKET sockClient = socket(AF_INET, SOCK_DGRAM, 0);
 	//初始化地址接口
 	SOCKADDR_IN addrClient;
-	addrClient.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
+	addrClient.sin_addr.S_un.S_addr = inet_addr("192.168.100.19");
 	addrClient.sin_family = AF_INET;
 	addrClient.sin_port = htons(6000);
 	char recvBuf[100];
@@ -90,7 +109,12 @@ DWORD WINAPI udpscreenclient(LPWORD lpParam)
 		std::string strFilePath = lpData->szCapturePath;
 		strFilePath += "\\";
 		strFilePath += lpData->szCaptureFilename;
-		FILE * fp = fopen(strFilePath.c_str(), "wb");
+
+		//先发送文件名称
+		sendto(sockClient, sendBuf, strlen(sendBuf) + 1, 0, (SOCKADDR*)&addrClient, len);
+
+		//再发送文件内容
+		FILE * fp = fopen(strFilePath.c_str(), "rb");
 		if (NULL == fp)
 		{
 			printf("File: %s Can Not Open To Write\n", strFilePath.c_str());
@@ -99,20 +123,6 @@ DWORD WINAPI udpscreenclient(LPWORD lpParam)
 		}
 		else
 		{
-			/*memset(buffer, 0, BUFFER_SIZE);
-			int length = 0;
-			while ((length = recv(sockClient, buffer, BUFFER_SIZE, 0)) > 0)
-			{
-				if (fwrite(buffer, sizeof(char), length, fp) < length)
-				{
-					printf("File: %s Write Failed\n", lpData->szCaptureFilename);
-					break;
-				}
-				memset(buffer, 0, BUFFER_SIZE);
-			}
-
-			printf("Receive File: %s From Server Successful!\n", lpData->szCaptureFilename);*/
-
 			memset(buffer, 0, BUFFER_SIZE);
 			int length = 0;
 
@@ -131,7 +141,6 @@ DWORD WINAPI udpscreenclient(LPWORD lpParam)
 		}
 		
 	    fclose(fp);
-		//sendto(sockClient, sendBuf, strlen(sendBuf) + 1, 0, (SOCKADDR*)&addrClient, len);
 	}
 	closesocket(sockClient);
 	WSACleanup();
