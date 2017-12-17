@@ -151,6 +151,7 @@
     <ClInclude Include="csrdoublelist.h" />
     <ClInclude Include="csrdoulist.h" />
     <ClInclude Include="csrfilesystem.h" />
+    <ClInclude Include="csrfileutils.h" />
     <ClInclude Include="csrftp.h" />
     <ClInclude Include="csrhashcode.h" />
     <ClInclude Include="csrlist.h" />
@@ -171,6 +172,7 @@
     <ClCompile Include="csrdoublelist.cpp" />
     <ClCompile Include="csrdoulist.cpp" />
     <ClCompile Include="csrfilesystem.cpp" />
+    <ClCompile Include="csrfileutils.cpp" />
     <ClCompile Include="csrftp.cpp" />
     <ClCompile Include="csrhashcode.cpp" />
     <ClCompile Include="csrlibTest.cpp" />
@@ -185,6 +187,9 @@
     <ClCompile Include="csrthread.cpp" />
     <ClCompile Include="csrtree.cpp" />
     <ClCompile Include="csrtw.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

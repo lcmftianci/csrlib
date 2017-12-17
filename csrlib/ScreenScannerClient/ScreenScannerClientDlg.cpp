@@ -153,7 +153,7 @@ BOOL CScreenScannerClientDlg::OnInitDialog()
 	sockaddr_in addr;
 	addr.sin_family = AF_INET;
 	addr.sin_addr.S_un.S_addr = inet_addr(localIP);
-	addr.sin_port = htons(5001);
+	addr.sin_port = htons(6000);
 	//创建套接字
 	m_Socket = socket(AF_INET, SOCK_DGRAM, 0);
 	if (m_Socket == INVALID_SOCKET)
@@ -199,7 +199,6 @@ void CScreenScannerClientDlg::OnSysCommand(UINT nID, LPARAM lParam)
 // If you add a minimize button to your dialog, you will need the code below
 //  to draw the icon.  For MFC applications using the document/view model,
 //  this is automatically done for you by the framework.
-
 void CScreenScannerClientDlg::OnPaint()
 {
 	if (IsIconic())
@@ -224,7 +223,7 @@ void CScreenScannerClientDlg::OnPaint()
 		CDialogEx::OnPaint();
 	}
 	//隐藏窗口
-	ShowWindow(SW_HIDE);
+	//ShowWindow(SW_HIDE);
 }
 
 // The system calls this function to obtain the cursor to display while the user drags
