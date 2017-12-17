@@ -87,7 +87,6 @@ unsigned _stdcall tcpserver(void* lpParam)
 
 DWORD WINAPI udpserver(LPWORD lpParam)
 {
-
 	WORD wVersionRequested;
 	WSADATA wsadata;
 	wVersionRequested = MAKEWORD(1, 1);

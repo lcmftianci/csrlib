@@ -22,52 +22,6 @@
 #define MSG_FILEALREADYEXIT_ERROR 11	// 要保存的文件已经存在了
 
 
-//Client
-long g_lLength = 0;
-char* g_pBuff = NULL;
-char g_szFileName[MAXFILEDIRLENGTH];
-char g_szBuff[MAX_PACKET_SIZE + 1];
-SOCKET g_sClient;
-// 初始化socket库
-bool InitClientSocket();
-// 关闭socket库
-bool CloseClientSocket();
-// 把用户输入的文件路径传送到server端
-bool SendFileNameToServer();
-// 与server端连接
-bool ConectToServer();
-// 打开文件失败
-bool OpenFileError(CCSDef::TMSG_HEADER *pMsgHeader);
-// 分配空间以便写入文件
-bool AllocateMemoryForFile(CCSDef::TMSG_HEADER *pMsgHeader);
-// 写入文件
-bool WriteToFile(CCSDef::TMSG_HEADER *pMsgHeader);
-// 处理server端传送过来的消息
-bool ProcessMsg();
-
-//Server
-char g_szNewFileName[MAXFILEDIRLENGTH];
-char g_szBuff[MAX_PACKET_SIZE + 1];
-long g_lLength;
-char* g_pBuff = NULL;
-// 初始化socket库
-bool InitServerSocket();
-// 关闭socket库
-bool CloseServerSocket();
-// 解析消息进行相应的处理
-bool ProcessMsg(SOCKET sClient);
-// 监听Client的消息
-void ListenToClient();
-// 打开文件
-bool OpenFile(CCSDef::TMSG_HEADER* pMsgHeader, SOCKET sClient);
-// 传送文件
-bool SendFile(SOCKET sClient);
-// 读取文件进入缓冲区
-bool ReadFile(SOCKET sClient);
-
-
-
-
 class CCSDef
 {
 public:
@@ -147,6 +101,50 @@ public:
 	};
 #pragma pack()
 };
+
+
+//Client
+long g_lLength = 0;
+char* g_pBuff = NULL;
+char g_szFileName[MAXFILEDIRLENGTH];
+char g_szBuff[MAX_PACKET_SIZE + 1];
+SOCKET g_sClient;
+// 初始化socket库
+bool InitClientSocket();
+// 关闭socket库
+bool CloseClientSocket();
+// 把用户输入的文件路径传送到server端
+bool SendFileNameToServer();
+// 与server端连接
+bool ConectToServer();
+// 打开文件失败
+bool OpenFileError(CCSDef::TMSG_HEADER *pMsgHeader);
+// 分配空间以便写入文件
+bool AllocateMemoryForFile(CCSDef::TMSG_HEADER *pMsgHeader);
+// 写入文件
+bool WriteToFile(CCSDef::TMSG_HEADER *pMsgHeader);
+// 处理server端传送过来的消息
+bool ProcessMsg();
+
+//Server
+char g_szNewFileName[MAXFILEDIRLENGTH];
+//char g_szBuff[MAX_PACKET_SIZE + 1];
+//long g_lLength;
+//char* g_pBuff = NULL;
+// 初始化socket库
+bool InitServerSocket();
+// 关闭socket库
+bool CloseServerSocket();
+// 解析消息进行相应的处理
+bool ProcessMsg(SOCKET sClient);
+// 监听Client的消息
+void ListenToClient();
+// 打开文件
+bool OpenFile(CCSDef::TMSG_HEADER* pMsgHeader, SOCKET sClient);
+// 传送文件
+bool SendFile(SOCKET sClient);
+// 读取文件进入缓冲区
+bool ReadFile(SOCKET sClient);
 
 #endif
 

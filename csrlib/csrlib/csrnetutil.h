@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <iostream>
 #include <WinSock2.h>
 
 #pragma comment(lib, "ws2_32.lib")
@@ -50,8 +51,9 @@ int fileserver()
 		printf("Create Socket Error!");
 		exit(1);
 	}
-	int opt = 1;
-	setsockopt(m_Socket, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
+	//int opt = 1;
+	std::string opt = "1";
+	setsockopt(m_Socket, SOL_SOCKET, SO_REUSEADDR, /*&opt*/ opt.c_str(), sizeof(opt));
 	//绑定socket和服务端(本地)地址  
 	if (SOCKET_ERROR == bind(m_Socket, (LPSOCKADDR)&server_addr, sizeof(server_addr)))
 	{
@@ -163,8 +165,9 @@ int fileclient()
 	server_addr.sin_family = AF_INET;
 	server_addr.sin_addr.S_un.S_addr = inet_addr(SERVER_IP);
 	server_addr.sin_port = htons(PORT);
-	int opt = 1;
-	setsockopt(c_Socket, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
+	//int opt = 1;
+	std::string opt = "1";
+	setsockopt(c_Socket, SOL_SOCKET, SO_REUSEADDR, /*&opt*/ opt.c_str(), sizeof(opt));
 	if (SOCKET_ERROR == connect(c_Socket, (LPSOCKADDR)&server_addr, sizeof(server_addr)))
 	{
 		printf("Can Not Connect To Server IP!\n");

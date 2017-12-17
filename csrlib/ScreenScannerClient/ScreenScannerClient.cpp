@@ -31,7 +31,6 @@ CScreenScannerClientApp::CScreenScannerClientApp()
 
 
 // The one and only CScreenScannerClientApp object
-
 CScreenScannerClientApp theApp;
 
 

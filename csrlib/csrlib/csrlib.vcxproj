@@ -159,6 +159,8 @@
     <ClInclude Include="csrnetutil.h" />
     <ClInclude Include="csrorder.h" />
     <ClInclude Include="csrplot.h" />
+    <ClInclude Include="csrscreencututils.h" />
+    <ClInclude Include="csrscreenscanner.h" />
     <ClInclude Include="csrshape.h" />
     <ClInclude Include="csrstack.h" />
     <ClInclude Include="csrstring.h" />
@@ -181,6 +183,8 @@
     <ClCompile Include="csrnetutil.cpp" />
     <ClCompile Include="csrorder.cpp" />
     <ClCompile Include="csrplot.cpp" />
+    <ClCompile Include="csrscreencututils.cpp" />
+    <ClCompile Include="csrscreenscanner.cpp" />
     <ClCompile Include="csrshape.cpp" />
     <ClCompile Include="csrstack.cpp" />
     <ClCompile Include="csrstring.cpp" />

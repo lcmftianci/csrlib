@@ -75,6 +75,12 @@
     <ClInclude Include="csrfileutils.h">
       <Filter>csrlib</Filter>
     </ClInclude>
+    <ClInclude Include="csrscreenscanner.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
+    <ClInclude Include="csrscreencututils.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="csrorder.cpp">
@@ -132,6 +138,12 @@
       <Filter>csrlib</Filter>
     </ClCompile>
     <ClCompile Include="csrfileutils.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrscreenscanner.cpp">
+      <Filter>csrlib</Filter>
+    </ClCompile>
+    <ClCompile Include="csrscreencututils.cpp">
       <Filter>csrlib</Filter>
     </ClCompile>
   </ItemGroup>

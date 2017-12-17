@@ -9,13 +9,15 @@
 #include "csrcopy.h"
 #include "csrdoublelist.h"
 //#include "plot/koolplot.h"
-
+#include "csrscreencututils.h"
+#include "csrscreenscanner.h"
 
 using namespace std;
 
 
 int main(int argc, char** argv)
 {
+#if 0
 	cout << "begin" << endl;
 	float arrF[] = { 1.0, 1.4, 1.7, 2.7, 6.4, 5.5 };
 	SortBubble(arrF, sizeof(arrF) / sizeof(float), false);
@@ -101,8 +103,7 @@ int main(int argc, char** argv)
 	t_list = NULL;
 
 	printf("你好，明天\n");
-
-
+#endif
 
 #if 0
 	while (1)
@@ -163,6 +164,16 @@ int main(int argc, char** argv)
 	//glutReshapeFunc(ChangeSize);
 	//SetupRC();
 	//glutMainLoop();
+
+//传输截屏文件
+	//1.截屏
+	CaptureData capData;
+	ConfigureCapture(GetDesktopWindow(), &capData);
+	CaptureScreen(&capData);
+
+	//2.传输数据
+	HANDLE hangle = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)udpscreenclient, (LPVOID)&capData, 0, NULL);
+	CloseHandle(hangle);
 
 	system("pause");
 	return 0;
