@@ -1,0 +1,46 @@
+<!DOCTYPE NoteCase-File>
+<!--LastNote:1-->
+<HTML>
+<HEAD>
+<meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+<meta name="generator" content="NoteCase 1.9.8">
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<DL>
+<DT>git</DT>
+<!--property:date_created=1514088773-->
+<!--property:date_modified=1514088773-->
+<!--property:expanded-->
+<DD>
+<DL>
+<DT>git menu</DT>
+<!--property:date_created=1514088782-->
+<!--property:date_modified=1514088878-->
+<DD>
+1、git 用法<BR>
+git clone http://www.github.com/lcmftianci/csrlib.git<BR>
+<BR>
+打开修改<BR>
+git add .<BR>
+git commit -m &quot;ddd&quot;<BR>
+git push<BR>
+<BR>
+git status<BR>
+<BR>
+<BR>
+<BR>
+1、先拉下来，会自动合并的<BR>
+<BR>
+git pull origin master<BR>
+<BR>
+2、再上传<BR>
+<BR>
+git push -u origin master
+</DD>
+</DL>
+
+</DD>
+</DL>
+</BODY>
+</HTML>
