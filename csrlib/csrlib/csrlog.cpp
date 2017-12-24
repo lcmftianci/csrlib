@@ -1,9 +1,3 @@
-#include <consoleapi.h>
-#include <windows.h>
-#include <tchar.h>
-#include <string.h>
-#include <iostream>
-#include <atlstr.h>
 #include "csrlog.h"
 #include "csrfilesystem.h"
 

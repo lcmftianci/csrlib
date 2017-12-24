@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="comheader.h" />
     <ClInclude Include="csrcopy.h" />
     <ClInclude Include="csrdoublelist.h" />
     <ClInclude Include="csrdoulist.h" />

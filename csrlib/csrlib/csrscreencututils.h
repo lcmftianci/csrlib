@@ -1,7 +1,7 @@
 #ifndef _CSR_SCREEN_CUT_UTILS_H_
 #define _CSR_SCREEN_CUT_UTILS_H_
 
-#include <windows.h>
+#include "comheader.h"
 
 struct CaptureData
 {

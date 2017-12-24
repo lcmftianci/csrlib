@@ -151,7 +151,7 @@ DWORD WINAPI udpclient(LPWORD lpParam)
 	SOCKET sockClient = socket(AF_INET, SOCK_DGRAM, 0);
 	//初始化地址接口
 	SOCKADDR_IN addrClient;
-	addrClient.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
+	addrClient.sin_addr.S_un.S_addr = inet_addr("192.168.174.130");
 	addrClient.sin_family = AF_INET;
 	addrClient.sin_port = htons(6000);
 	char recvBuf[100];

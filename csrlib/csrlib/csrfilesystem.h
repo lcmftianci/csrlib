@@ -1,10 +1,7 @@
 #ifndef _CSR_FILE_SYSTEM_H_
 #define _CSR_FILE_SYSTEM_H_
 
-#include <iostream>
-#include <atlstr.h>
-
-#include <WinBase.h>
+#include "comheader.h"
 
 
 std::string GetModlePath();

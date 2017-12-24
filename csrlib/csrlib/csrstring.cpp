@@ -1,6 +1,5 @@
 #include "csrstring.h"
-#include <stdio.h>
-#include <string.h>
+
 
 csrstring::csrstring(void)
 {

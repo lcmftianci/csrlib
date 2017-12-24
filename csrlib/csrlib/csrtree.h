@@ -1,6 +1,7 @@
 #pragma once
 
-#include<iostream>
+#include "comheader.h"
+
 using namespace std;
 
 typedef int ElementType;

@@ -66,6 +66,7 @@ BEGIN_MESSAGE_MAP(CNetFileShareDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BTN_SEND, &CNetFileShareDlg::OnBnClickedBtnSend)
 	ON_MESSAGE(WM_RECVDATA, &CNetFileShareDlg::OnRecvData)
+	ON_BN_CLICKED(IDC_BTN_SENDFILE, &CNetFileShareDlg::OnBnClickedBtnSendfile)
 END_MESSAGE_MAP()
 
 
@@ -180,4 +181,12 @@ void CNetFileShareDlg::OnBnClickedBtnSend()
 	GetDlgItemText(IDC_BTN_SEND, strSend);
 	m_csrnet.csrudpsendmessage(dwIP, strSend, 6000);
 	SetDlgItemText(IDC_BTN_SEND, "");
+}
+
+
+void CNetFileShareDlg::OnBnClickedBtnSendfile()
+{
+	// TODO: Add your control notification handler code here
+	CFileDialog dlg(TRUE, NULL/*"*.*"*/, /*""*/NULL, OFN_HIDEREADONLY/*|OFN_OVERWRITEPROMPT*/, "文本文档(*.txt)|*.txt|PDF文档(*.pdf)|*.pdf|所有文件(*.*)|*.*||"/*"图片文件(*.jpg)|(*.jpg)|所有文件(*.*)|(*.*)||"*/);
+	dlg.DoModal();
 }

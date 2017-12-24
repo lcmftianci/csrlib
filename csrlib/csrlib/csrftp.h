@@ -1,7 +1,7 @@
-#pragma once
+#ifndef _CSR_FTP_H_
+#define _CSR_FTP_H_
 
-#include <iostream>
-#include <winsock2.h>
+#include "comheader.h"
 
 using namespace std;
 
@@ -148,3 +148,5 @@ int FtpGetFile(char * FileName)
 }
 
 #endif
+
+#endif // _CSR_FTP_H_

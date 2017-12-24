@@ -1,16 +1,15 @@
 #ifndef _CSR_FILE_UTILS_H_
 #define _CSR_FILE_UTILS_H_
 
+#include "comheader.h"
+
 #pragma comment(lib, "WS2_32.lib")
-#include <WinSock2.h>
-#include <iostream>
-//#include <stdio.h>
-#include <assert.h>
 
 #define MAX_PACKET_SIZE   10240			// 数据包的最大长度,单位是sizeof(char)
 #define MAXFILEDIRLENGTH 256		    // 存放文件路径的最大长度
 #define PORT     4096				    // 端口号
 #define SERVER_IP    "127.0.0.1"        // server端的IP地址
+
 // 各种消息的宏定义
 #define INVALID_MSG      -1				// 无效的消息标识
 #define MSG_FILENAME     1				// 文件的名称

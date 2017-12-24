@@ -1,6 +1,8 @@
 #ifndef _CSR_STRING_H_
 #define _CSR_STRING_H_
 
+#include "comheader.h"
+
 class csrstring {
 public:
 	csrstring(void);

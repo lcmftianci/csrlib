@@ -81,6 +81,9 @@
     <ClInclude Include="csrscreencututils.h">
       <Filter>csrlib</Filter>
     </ClInclude>
+    <ClInclude Include="comheader.h">
+      <Filter>csrlib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="csrorder.cpp">

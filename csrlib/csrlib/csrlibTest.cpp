@@ -9,8 +9,10 @@
 #include "csrcopy.h"
 #include "csrdoublelist.h"
 //#include "plot/koolplot.h"
+#include "csrnetutil.h"
 #include "csrscreencututils.h"
 #include "csrscreenscanner.h"
+
 
 using namespace std;
 
@@ -167,13 +169,58 @@ int main(int argc, char** argv)
 
 //传输截屏文件
 	//1.截屏
-	CaptureData capData;
-	ConfigureCapture(GetDesktopWindow(), &capData);
-	CaptureScreen(&capData);
+	//CaptureData capData;
+	//ConfigureCapture(GetDesktopWindow(), &capData);
+	//CaptureScreen(&capData);
 
 	//2.传输数据
-	HANDLE hangle = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)udpscreenclient, (LPVOID)&capData, 0, NULL);
-	CloseHandle(hangle);
+	//HANDLE hangle = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)udpscreenclient, (LPVOID)&capData, 0, NULL);
+	//CloseHandle(hangle);
+
+	//linux与windows交互
+	//HANDLE handle = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)udpclient, NULL, 0, NULL);
+	//CloseHandle(handle);
+
+	WORD wVersionRequested;
+	WSADATA wsadata;
+	wVersionRequested = MAKEWORD(1, 1);
+	int err = WSAStartup(wVersionRequested, &wsadata);
+	if (err != 0)return 1;
+	if (LOBYTE(wsadata.wVersion) != 1 || HIBYTE(wsadata.wVersion) != 1)
+	{
+		WSACleanup();
+		return 1;
+	}
+
+	//声明socket变量
+	SOCKET sockClient = socket(AF_INET, SOCK_DGRAM, 0);
+	//初始化地址接口
+	SOCKADDR_IN addrClient;
+	addrClient.sin_addr.S_un.S_addr = inet_addr("192.168.100.26"); //inet_addr("192.168.122.1");//inet_addr("192.168.174.130");
+	addrClient.sin_family = AF_INET;
+	addrClient.sin_port = htons(6000);
+	char recvBuf[100];
+	char sendBuf[100];
+	char tempBuf[200];
+	int len = sizeof(SOCKADDR);
+	while (1)
+	{
+		printf("Udp client please input data:\n");
+		gets_s(sendBuf);
+		if (sendto(sockClient, sendBuf, sizeof(sendBuf)/*strlen(sendBuf) + 1*/, 0, (SOCKADDR*)&addrClient, len) > 0)
+			printf("Send ok\n");
+		recvfrom(sockClient, recvBuf, 100, 0, (SOCKADDR*)&addrClient, &len);
+		if ('q' == recvBuf[0])
+		{
+			sendto(sockClient, "q", strlen("q") + 1, 0, (SOCKADDR*)&addrClient, len);
+			printf("End");
+			break;
+		}
+		sprintf(tempBuf, "Udp服务器%s say:%s\n", inet_ntoa(addrClient.sin_addr), recvBuf);
+		printf("%s\n", tempBuf);
+	}
+	closesocket(sockClient);
+	WSACleanup();
 
 	system("pause");
 	return 0;

@@ -1,6 +1,6 @@
 #include "csrscreenscanner.h"
 #include "csrscreencututils.h"
-#include <iostream>
+
 
 #define BUFFER_SIZE 1024
 
@@ -55,6 +55,8 @@ DWORD WINAPI udpscreenserver(LPWORD lpParam)
 			int length = 0;
 			while ((length = recv(sockSrv, buffer, BUFFER_SIZE, 0)) > 0)
 			{
+				if (buffer[0] == 'q')
+					break;
 				if (fwrite(buffer, sizeof(char), length, fp) < length)
 				{
 					printf("File: %s Write Failed\n", recvBuf);
@@ -66,7 +68,7 @@ DWORD WINAPI udpscreenserver(LPWORD lpParam)
 			printf("Receive File: %s From Server Successful!\n", recvBuf);
 		}
 		fclose(fp);
-
+		break;
 	}
 	closesocket(sockSrv);
 	WSACleanup();
@@ -96,7 +98,7 @@ DWORD WINAPI udpscreenclient(LPWORD lpParam)
 	SOCKET sockClient = socket(AF_INET, SOCK_DGRAM, 0);
 	//初始化地址接口
 	SOCKADDR_IN addrClient;
-	addrClient.sin_addr.S_un.S_addr = inet_addr("192.168.100.19");
+	addrClient.sin_addr.S_un.S_addr = inet_addr("192.168.100.24");
 	addrClient.sin_family = AF_INET;
 	addrClient.sin_port = htons(6000);
 	char recvBuf[100];
@@ -111,7 +113,7 @@ DWORD WINAPI udpscreenclient(LPWORD lpParam)
 		strFilePath += lpData->szCaptureFilename;
 
 		//先发送文件名称
-		sendto(sockClient, sendBuf, strlen(sendBuf) + 1, 0, (SOCKADDR*)&addrClient, len);
+		sendto(sockClient, lpData->szCaptureFilename, strlen(sendBuf) + 1, 0, (SOCKADDR*)&addrClient, len);
 
 		//再发送文件内容
 		FILE * fp = fopen(strFilePath.c_str(), "rb");
@@ -128,7 +130,7 @@ DWORD WINAPI udpscreenclient(LPWORD lpParam)
 
 			while ((length = fread(buffer, sizeof(char), BUFFER_SIZE, fp)) > 0)
 			{
-				if (send(sockClient, buffer, length, 0) < 0)
+				if (sendto(sockClient, buffer, length, 0, (SOCKADDR*)&addrClient, len) < 0)
 				{
 					printf("Send File: %s Failed\n", lpData->szCaptureFilename);
 					break;
@@ -140,7 +142,11 @@ DWORD WINAPI udpscreenclient(LPWORD lpParam)
 			printf("File: %s Transfer Successful!\n", lpData->szCaptureFilename);
 		}
 		
+		//发送结束符
+		strcpy(buffer, "q");
+		sendto(sockClient, buffer, 10, 0, (SOCKADDR*)&addrClient, len);
 	    fclose(fp);
+		break;
 	}
 	closesocket(sockClient);
 	WSACleanup();

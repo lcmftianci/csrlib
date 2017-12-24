@@ -39,4 +39,5 @@ protected:
 public:
 	csrudpnet m_csrnet;
 	afx_msg void OnBnClickedBtnSend();
+	afx_msg void OnBnClickedBtnSendfile();
 };

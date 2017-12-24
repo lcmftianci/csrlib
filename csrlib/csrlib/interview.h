@@ -1,6 +1,8 @@
 #pragma once
 
-#define _CRT_SECURE_NO_WARNINGS
+#include "comheader.h"
+
+//#define _CRT_SECURE_NO_WARNINGS
 
 //整数求和
 int AddNum(int a, int b)

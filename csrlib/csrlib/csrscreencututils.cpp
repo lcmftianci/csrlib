@@ -1,5 +1,4 @@
 #include "csrscreencututils.h"
-#include <atlimage.h>
 
 static CString GetTempName(CString strPath)
 {

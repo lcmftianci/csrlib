@@ -1,5 +1,7 @@
 #pragma once
 
+#include "comheader.h"
+
 typedef struct _Node {
 	struct _Node* next;
 	int data;

@@ -1,7 +1,7 @@
 #include "csrcopy.h"
 #include "csrlog.h"
 
-#include <corecrt_io.h>
+
 
 bool CopyFileToDest(std::string lpSrc, std::string lpDes, bool bIsExit, bool bmkDir)
 {

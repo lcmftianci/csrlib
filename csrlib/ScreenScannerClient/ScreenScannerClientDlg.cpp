@@ -292,7 +292,7 @@ LRESULT CScreenScannerClientDlg::OnReceived(WPARAM wParam, LPARAM lParam)
 			if (m_FrameIndex < m_Count)
 				SendData(m_FrameIndex, m_Mod, m_Bmpsize, m_JpegSize, m_Count, m_pSendBuf, m_Addr);
 			else
-				OnOK();
+				OnBnClickedBtnStart();
 		}
 	}
 	return S_OK;
@@ -306,7 +306,7 @@ void CScreenScannerClientDlg::OnTimer(UINT nIDEvent)
 		if (m_Counter > 5)
 		{
 			m_Counter = 0;
-			OnOK();  //超过5秒没有收到服务器的应答信息,重发数据
+			OnBnClickedBtnStart();  //超过5秒没有收到服务器的应答信息,重发数据
 		}
 	}
 	else

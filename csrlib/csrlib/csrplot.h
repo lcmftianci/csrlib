@@ -1,9 +1,7 @@
 #ifndef _CSR_PLOT_H_
 #define _CSR_PLOT_H_
 
-#include "gl/glut.h"
-#include <stdlib.h>
-#include <time.h>
+#include "comheader.h"
 
 //ªÊ÷∆’€œﬂÕº
 
