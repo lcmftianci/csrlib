@@ -47,7 +47,7 @@ protected:
 
 public://自定义函数
 	void ShowJPEG(void* pData, int DataSize);
-	void OnReceived();
+	afx_msg LRESULT OnReceived(WPARAM wParam, LPARAM lParam);
 
 private://通讯相关
 	SOCKET  m_Socket;					//定义套接字

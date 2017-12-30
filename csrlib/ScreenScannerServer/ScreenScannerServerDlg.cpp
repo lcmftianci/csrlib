@@ -295,7 +295,7 @@ void CScreenScannerServerDlg::ShowJPEG(void* pData, int DataSize)
 }
 
 //接受消息
-void CScreenScannerServerDlg::OnReceived()
+LRESULT CScreenScannerServerDlg::OnReceived(WPARAM wParam, LPARAM lParam)
 {
 	//接收数据
 	BYTE* buffer = new BYTE[MAX_BUFF];
@@ -309,7 +309,7 @@ void CScreenScannerServerDlg::OnReceived()
 		if (revIP != m_ClientIP)
 		{
 			delete[] buffer;
-			return;
+			return S_FALSE;
 		}
 		/*序号2位||结束标记2位||JPG数据||JPG数据大小4位||JPG数据总大小4位||数据报大小4位*/
 		m_ClientPort = ntohs(addr.sin_port);
