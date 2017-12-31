@@ -19,18 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{85649D8A-2C5F-4C27-BF83-E7C6FFF275B1}</ProjectGuid>
-    <RootNamespace>ScrScServer</RootNamespace>
+    <ProjectGuid>{68DF330E-7826-43FB-B498-A7D2DBFDD857}</ProjectGuid>
+    <RootNamespace>EvethingJurnal</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
     <Keyword>MFCProj</Keyword>
-    <ProjectName>ScrScServer</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -91,7 +90,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -190,15 +189,15 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EvethingJurnal.h" />
+    <ClInclude Include="EvethingJurnalDlg.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="ScrScServer.h" />
-    <ClInclude Include="ScrScServerDlg.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ScrScServer.cpp" />
-    <ClCompile Include="ScrScServerDlg.cpp" />
+    <ClCompile Include="EvethingJurnal.cpp" />
+    <ClCompile Include="EvethingJurnalDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -207,13 +206,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ScrScServer.rc" />
+    <ResourceCompile Include="EvethingJurnal.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\ScrScServer.rc2" />
+    <None Include="res\EvethingJurnal.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\ScrScServer.ico" />
+    <Image Include="res\EvethingJurnal.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

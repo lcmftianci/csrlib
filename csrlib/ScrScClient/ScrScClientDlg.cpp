@@ -385,7 +385,7 @@ int CScrScClientDlg::SendData(int totalsize, char* pSendBuf)
 	UDPPACKAGE pack;
 	m_addrClient.sin_family = AF_INET;
 	m_addrClient.sin_port = htons(6002);
-	m_addrClient.sin_addr.S_un.S_addr = inet_addr("192.168.100.19");
+	m_addrClient.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
 	memset(pack.buffer, '\0', PICPACKSIZE);
 	pack.bFinish = false;
 	pack.buffersize = 0;

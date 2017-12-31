@@ -52,6 +52,9 @@ END_MESSAGE_MAP()
 CScrScServerDlg::CScrScServerDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(IDD_SCRSCSERVER_DIALOG, pParent)
 {
+	m_pNewBmp = NULL;
+	m_IsScreen = FALSE;
+	m_RecvCount = 1;
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
@@ -63,11 +66,79 @@ void CScrScServerDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CScrScServerDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
+	ON_WM_LBUTTONDBLCLK()
 	ON_WM_QUERYDRAGICON()
+	ON_MESSAGE(CM_RECEIVED, OnReceived)
 END_MESSAGE_MAP()
 
 
 // CScrScServerDlg message handlers
+
+LRESULT CScrScServerDlg::OnReceived(WPARAM wParam, LPARAM lParam)
+{
+	BYTE* buffer = new BYTE[MAX_BUFFER];
+	int factsize = sizeof(sockaddr);
+	int ret = recvfrom(m_Socket, (char*)buffer, MAX_BUFFER, 0, (sockaddr*)&m_addrServ, &factsize);
+	if (ret == -1)
+		m_RecvCount = 1;
+
+	UDPPACKAGE *pack;
+	pack = (UDPPACKAGE*)buffer;
+	int iCount = pack->iIndex;
+	int iJpegSize = pack->JpegSize;
+	int iBufferSize = pack->buffersize;
+	bool bFinish = pack->bFinish;
+	if (m_RecvCount == iCount)
+	{
+		memcpy(m_tmp + PICPACKSIZE*(m_RecvCount - 1), pack->buffer, iBufferSize);
+		m_RecvCount += 1;
+		if (bFinish)
+		{
+			m_RecvCount = 1;
+			ShowScreen(iJpegSize, m_tmp);
+		}
+		else
+		{
+			m_RecvCount = 1;
+		}
+		delete buffer;
+	}
+	
+	//if (ret == -1)
+	//	MessageBox("接受错误");
+
+	////接受图片信息
+	//int nFile;
+	//nFile = _open("test.jpg", O_APPEND | O_CREAT | O_BINARY | O_RDWR);
+	//_write(nFile, buffer, ret);
+	//_commit(nFile);
+	//_close(nFile);
+	return S_OK;
+}
+
+void CScrScServerDlg::ShowScreen(int DataSize, void* pData)
+{
+	HGLOBAL	m_hMem1 = GlobalAlloc(GMEM_MOVEABLE, PICPACKSIZE * 10);
+	LPBYTE lpData1 = (LPBYTE)GlobalLock(m_hMem1);
+	memcpy(lpData1, pData, DataSize);
+	GlobalUnlock(m_hMem1);
+	::CreateStreamOnHGlobal(m_hMem1, TRUE, &m_pStm);
+	if (m_pNewBmp)
+	{
+		delete m_pNewBmp;
+		m_pNewBmp = NULL;
+	}
+	m_pNewBmp = Bitmap::FromStream(m_pStm);
+	CRect rc;
+	GetClientRect(rc);
+	HDC hDC = GetDC()->m_hDC;
+	Graphics *graphics = Graphics::FromHDC(hDC);
+	graphics->DrawImage(m_pNewBmp, 1, 1, rc.Width(), rc.Height());
+	m_pStm->Release();
+	m_pStm = NULL;
+	GlobalFree(m_hMem1);
+	::ReleaseDC(m_hWnd, hDC);
+}
 
 BOOL CScrScServerDlg::OnInitDialog()
 {
@@ -99,6 +170,34 @@ BOOL CScrScServerDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// TODO: Add extra initialization here
+	//启动socket
+	WSADATA data;
+	WSAStartup(2, &data);
+	GdiplusStartup(&m_pGdiToken, &m_gdiplusinput, NULL);
+
+	//多播结构
+	struct ip_mreq  ipmr;
+	int len = sizeof(ipmr);
+	sockaddr_in addr;
+	addr.sin_family = AF_INET;
+	addr.sin_addr.S_un.S_addr = htonl(INADDR_ANY);
+	addr.sin_port = htons(6002);
+	ipmr.imr_multiaddr.S_un.S_addr = inet_addr("127.0.0.1");
+	ipmr.imr_interface.S_un.S_addr = htonl(INADDR_ANY);
+
+	//创建套接字
+	m_Socket = socket(AF_INET, SOCK_DGRAM, 0);
+	if (m_Socket == INVALID_SOCKET)
+		MessageBox("无效的套接字");
+	if (bind(m_Socket, (sockaddr*)&addr, sizeof(addr)) == SOCKET_ERROR)
+		MessageBox("绑定失败");
+
+	//将套接字设置为多播组中，可以接受服务器发送过来的数据
+	setsockopt(m_Socket, IPPROTO_IP, IP_ADD_MEMBERSHIP, (char*)&ipmr, len);
+
+	//设置异步通信方式
+	WSAAsyncSelect(m_Socket, m_hWnd, CM_RECEIVED, FD_READ);
+	m_RecvCount = 1;	//接受包的顺序值，默认为第一个
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -143,6 +242,47 @@ void CScrScServerDlg::OnPaint()
 	{
 		CDialogEx::OnPaint();
 	}
+}
+
+void CScrScServerDlg::OnLButtonDblClk(UINT nFlags, CPoint point)
+{
+	m_IsScreen = !m_IsScreen;
+	if (m_IsScreen)
+	{
+		GetWindowPlacement(&m_OldPlacement);
+		CRect WndRect;
+		GetWindowRect(&WndRect);
+		int Width = GetSystemMetrics(SM_CXSCREEN);
+		int Height = GetSystemMetrics(SM_CYSCREEN);
+		CRect ClientRect;
+		RepositionBars(0, 0xffff, AFX_IDW_PANE_FIRST, reposQuery, &ClientRect);
+		ClientToScreen(&ClientRect);
+
+		m_FullScreenRect.left = WndRect.left - ClientRect.left;
+		m_FullScreenRect.top = WndRect.top - ClientRect.top;
+		m_FullScreenRect.right = WndRect.right - ClientRect.right + Width;
+		m_FullScreenRect.bottom = WndRect.bottom - ClientRect.bottom + Height;
+
+		WINDOWPLACEMENT wndpl;
+		wndpl.length = sizeof(WINDOWPLACEMENT);
+		wndpl.flags = 0;
+		wndpl.showCmd = SW_SHOWNORMAL;
+		wndpl.rcNormalPosition = m_FullScreenRect;
+		SetWindowPlacement(&wndpl);
+	}
+	else
+	{
+		SetWindowPlacement(&m_OldPlacement);
+	}
+
+	CDialog::OnLButtonDblClk(nFlags, point);
+}
+
+BOOL CScrScServerDlg::DestroyWindow()
+{
+	GdiplusShutdown(m_pGdiToken);
+	WSACleanup();
+	return CDialogEx::DestroyWindow();
 }
 
 // The system calls this function to obtain the cursor to display while the user drags
