@@ -65,3 +65,67 @@ DocManager.manifest
 有关上述话题的更多信息，请参见 MSDN 文档中有关重新分发 Visual C++ 应用程序的部分。
 
 /////////////////////////////////////////////////////////////////////////////
+
+
+
+CString str("china hebei shijiazhuang");
+
+=>str = "china hebei shijiazhuan"
+
+pDC->TextOut(50, 50, str);
+
+str.LoadString(IDS_STRCHINA);
+
+pDC->TextOut(0, 200, str)
+
+
+UINT nChar;
+CString str = (TCHAR)nChar
+
+Java
+int[] nNum = new Int[] {1, 2, 3}
+
+MFC如果一个ID绑定了一个函数，同事加入了message->优先级CView大于Frame
+
+ClientDC dc(this)
+
+//创建方形光标
+CreateSolidCaret(20, 100);
+showCaret()
+
+CClientDC dc(this)
+TEXTMETRIC tm
+dc.GetTextMetrics(&tm);
+CreateSolidCaret(tm.tmAveCharWidth, tm.tmHeight)
+
+m_bitmap.LoadBitmap(IDB_BITMAP)
+CreateCaret（m_bitmap);
+ShowCaret();
+
+CString  = string.c_str()
+
+回调
+add(,,,回调)；
+OnCliched()
+{
+	回调（参数）  回调 m_回调
+}
+
+CBitmap bitmap;
+bitmap.LoadBitmap(IDB_BITMAP)
+BITMAP bmp;
+bitmap.GetBitmap(&bmp);
+CDC dcCompatible;
+dcCompatible.CreateCompatibleDC(pDC);
+dcCompatible.SelectObject(&bitmap);
+CRect rect;
+GetClientRect(&rect);
+pDC->BitBlt(0, 0, rect.Width(), rect.Height(), &dcCompatible, 0, 0, SRCCOPY);
+pDC->StretchBlt(0, 0, rect.Width(), rect.Height(), &dcCompatible, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+AfxGetApp();
+AfxGetMainWnd();
+AfxGetInstanceHandle()
+
+
+
+

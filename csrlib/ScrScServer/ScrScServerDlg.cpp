@@ -97,12 +97,12 @@ LRESULT CScrScServerDlg::OnReceived(WPARAM wParam, LPARAM lParam)
 			m_RecvCount = 1;
 			ShowScreen(iJpegSize, m_tmp);
 		}
-		else
-		{
-			m_RecvCount = 1;
-		}
-		delete buffer;
 	}
+	else
+	{
+		m_RecvCount = 1;
+	}
+	delete buffer;
 	
 	//if (ret == -1)
 	//	MessageBox("接受错误");
@@ -182,7 +182,7 @@ BOOL CScrScServerDlg::OnInitDialog()
 	addr.sin_family = AF_INET;
 	addr.sin_addr.S_un.S_addr = htonl(INADDR_ANY);
 	addr.sin_port = htons(6002);
-	ipmr.imr_multiaddr.S_un.S_addr = inet_addr("127.0.0.1");
+	ipmr.imr_multiaddr.S_un.S_addr = inet_addr("192.168.100.24");
 	ipmr.imr_interface.S_un.S_addr = htonl(INADDR_ANY);
 
 	//创建套接字
