@@ -1,5 +1,5 @@
 <!DOCTYPE NoteCase-File>
-<!--LastNote:1-->
+<!--LastNote:28-->
 <HTML>
 <HEAD>
 <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
@@ -57,6 +57,1992 @@ git checkout HEAD file/to/restore
 </DD>
 </DL>
 
+</DD>
+<DT>AS用法</DT>
+<!--property:date_created=1514805013-->
+<!--property:date_modified=1514805013-->
+<DD>
+<DL>
+<DT>快捷键</DT>
+<!--property:date_created=1514805019-->
+<!--property:date_modified=1514805083-->
+<DD>
+调起try catch函数快捷键<BR>
+ctrl + alt + t
+</DD>
+</DL>
+
+</DD>
+<DT>杂乱的笔记</DT>
+<!--property:date_created=1515368300-->
+<!--property:date_modified=1515368300-->
+<DD>
+<DL>
+<DT>安卓篇</DT>
+<!--property:date_created=1515368326-->
+<!--property:date_modified=1515368355-->
+<DD>
+public void setPageTransformer(boolean reverseDrawingOrder, ViewPager.PageTransformer transformer) {  <BR>
+//        if (Build.VERSION.SDK_INT &gt;= 11)   <BR>
+        {  <BR>
+            final boolean hasTransformer = transformer != null;  <BR>
+            final boolean needsPopulate = hasTransformer != (mPageTransformer != null);  <BR>
+            mPageTransformer = transformer;  <BR>
+            setChildrenDrawingOrderEnabledCompat(hasTransformer);  <BR>
+            if (hasTransformer) {  <BR>
+                mDrawingOrder = reverseDrawingOrder ? DRAW_ORDER_REVERSE : DRAW_ORDER_FORWARD;  <BR>
+            } else {  <BR>
+                mDrawingOrder = DRAW_ORDER_DEFAULT;  <BR>
+            }  <BR>
+            if (needsPopulate) populate();  <BR>
+        }  <BR>
+    }  <BR>
+<BR>
+git clone https://github.com/blanks1314/newest_launcher.git<BR>
+
+</DD>
+<DT>黑客篇</DT>
+<!--property:date_created=1515368360-->
+<!--property:date_modified=1515368380-->
+<DD>
+756456243<BR>
+还有早期的双HTTP隧道，UDP打洞，KEEP-ALIVE隧道，过HTTP代理的版本，DNS隧道，ICMP，OOB隧道的那些代码基本上都找不到了，实在挺可惜的；<BR>
+&quot;<BR>
+这些代码我都有 可是要整合到一个马里面 太麻烦了 <BR>
+icmp和dns隧道还需要在服务器弄个独立的项目 否则就必须linux~<BR>
+作者真都和pcshare整合了？ 那真是耐得住寂寞的人啊！<BR>
+Zeus、krab、Gh0st等源代码发来贺电   <BR>
+<BR>
+文件: E:\迅雷下载\delphicbuilder10_2.iso<BR>
+大小: 6524956672 字节<BR>
+修改时间: 2017年8月22日, 22:31:45<BR>
+MD5: 8855DB8D40993C18672F226BF395BFCD<BR>
+SHA1: BC750EEAF47E88D8E8BF3F2F4B954D0B6B165FBF<BR>
+CRC32: 780885BE
+</DD>
+</DL>
+
+</DD>
+<DT>Dos</DT>
+<!--property:date_created=1515368396-->
+<!--property:date_modified=1515368396-->
+<DD>
+<DL>
+<DT>Dos入门</DT>
+<!--property:date_created=1515368402-->
+<!--property:date_modified=1515368433-->
+<DD>
+echo 当前盘符：%~d0<BR>
+echo 当前路径：%cd%<BR>
+echo 当前执行命令行：%0<BR>
+echo 当前bat文件路径：%~dp0<BR>
+echo 当前bat文件短路径：%~sdp0<BR>
+意义<BR>
+“rt”<BR>
+只读打开一个文本文件，只允许读数据<BR>
+“wt”<BR>
+只写打开或建立一个文本文件，只允许写数据<BR>
+“at”<BR>
+追加打开一个文本文件，并在文件末尾写数据<BR>
+“rb”<BR>
+只读打开一个二进制文件，只允许读数据<BR>
+“wb”<BR>
+只写打开或建立一个二进制文件，只允许写数据<BR>
+“ab”<BR>
+追加打开一个二进制文件，并在文件末尾写数据<BR>
+“rt+”<BR>
+读写打开一个文本文件，允许读和写<BR>
+“wt+”<BR>
+读写打开或建立一个文本文件，允许读写<BR>
+“at+”<BR>
+读写打开一个文本文件，允许读，或在文件末追加数据<BR>
+“rb+”<BR>
+读写打开一个二进制文件，允许读和写<BR>
+“wb+”<BR>
+读写打开或建立一个二进制文件，允许读和写<BR>
+“ab+”<BR>
+读写打开一个二进制文件，允许读，或在文件末追加数据<BR>
+对于文件使用方式有以下几点说明：<BR>
+1) 文件使用方式由r,w,a,t,b，+六个字符拼成，各字符的含义是：<BR>
+r(read): 读<BR>
+w(write): 写<BR>
+a(append): 追加<BR>
+t(text): 文本文件，可省略不写<BR>
+b(banary): 二进制文件<BR>
++: 读和写<BR>
+2) 凡用“r”打开一个文件时，该文件必须已经存在，且只能从该文件读出。<BR>
+3) 用“w”打开的文件只能向该文件写入。若打开的文件不存在，则以指定的文件名建立该文件，若打开的文件已经存在，则将该文件删去，重建一个新文件。<BR>
+4) 若要向一个已存在的文件追加新的信息，只能用“a”方式打开文件。但此时该文件必须是存在的，否则将会出错。<BR>
+5) 在打开一个文件时，如果出错，fopen将返回一个空指针值NULL。在程序中可以用这一信息来判别是否完成打开文件的工作，并作相应的处理。因此常用以下程序段打开文件：<BR>
+6) if((fp=fopen(&quot;c:\\hzk16&quot;,&quot;rb&quot;)==NULL)<BR>
+{<BR>
+printf(&quot;\nerror on open c:\\hzk16 file!&quot;);<BR>
+getch();<BR>
+exit(1);<BR>
+}<BR>
+这段程序的意义是，如果返回的指针为空，表示不能打开C盘根目录下的hzk16文件，则给出提示信息“error on open c:\ hzk16 file!”，下一行getch()的功能是从键盘输入一个字符，但不在屏幕上显示。在这里，该行的作用是等待，只有当用户从键盘敲任一键时，程序才继续执行，因此用户可利用这个等待时间阅读出错提示。敲键后执行exit(1)退出程序。<BR>
+7) 把一个文本文件读入内存时，要将ASCII码转换成二进制码，而把文件以文本方式写入磁盘时，也要把二进制码转换成ASCII码，因此文本文件的读写要花费较多的转换时间。对二进制文件的读写不存在这种转换。<BR>
+8) 标准输入文件(键盘)，标准输出文件(显示器)，标准出错输出(出错信息)是由系统打开的，可直接使用。
+</DD>
+</DL>
+
+</DD>
+<DT>pjsip</DT>
+<!--property:date_created=1515504187-->
+<!--property:date_modified=1515504187-->
+<DD>
+<DL>
+<DT>结构组成</DT>
+<!--property:date_created=1515504194-->
+<!--property:date_modified=1515504446-->
+<DD>
+源码地址<BR>
+官网：        https://trac.pjsip.org/repos/<BR>
+源码下载：    http://www.pjsip.org/download.htm<BR>
+文档：https://trac.pjsip.org/repos/wiki<BR>
+<BR>
+1).PJSIP - Open Source SIP Stack[开源的SIP协议栈]<BR>
+2).PJMEDIA - Open Source Media Stack[开源的媒体栈]<BR>
+3).PJNATH - Open Source NAT Traversal Helper Library[开源的NAT-T辅助库]<BR>
+4).PJLIB-UTIL - Auxiliary Library[辅助工具库]<BR>
+5).PJLIB - Ultra Portable Base Framework Library[基础框架库]<BR>
+而在最上层库的目录分为:(可以使用tree -d-L 1 查看)<BR>
+ <BR>
+  $TOP/build                 [包含Makefile]<BR>
+  $TOP/build.symbian         [针对symbian的Makefile]<BR>
+  $TOP/pjlib                  [参考上面]<BR>
+  $TOP/pjlib-util           [参考上面]<BR>
+  $TOP/pjnath              [参考上面]<BR>
+  $TOP/pjmedia           [参考上面]<BR>
+  $TOP/pjsip                 [参考上面]<BR>
+  $TOP/pjsip-apps<BR>
+  $TOP/third_party<BR>
+ <BR>
+而在每个子目录,可以看到分为:<BR>
+  bin                                         [编译后产生的二进制文件]<BR>
+  build                                               [Makefile]<BR>
+            build/output<BR>
+            build/wince-evc4<BR>
+  docs                                      [doxygen的文档,用doxygendocs/doxygen.cfg产生]<BR>
+  include                                           [头文件]<BR>
+  lib                                          [编译后产生的库]<BR>
+  src                                         [源代码]<BR>
+<BR>
+Pjsip特点<BR>
+<BR>
+1).非动态内存分配[No Dynamic Memory Allocations]<BR>
+  实现了内存池，获取内存是从与分配的内存池中获取，高性能程序多会自己构造内存池，后面我们会解释该内存池的使用以及基本的原理。根据作者的比较，是常规的 malloc()/free()函数的30倍。<BR>
+           <BR>
+2).OS抽象[Operating System Abstraction]<BR>
+实现OS抽象的根本原因在与可移植性，毋庸置疑:).涉及到：<BR>
+  a).线程[Threads.]<BR>
+  b).线程本地存储[ThreadLocal Storage.]<BR>
+  c).互斥[Mutexes.]<BR>
+  d).信号灯[Semaphores.]<BR>
+  e).原子变量[AtomicVariables.]<BR>
+  f).临届区[Criticalsections.]<BR>
+  g).锁对象[LockObjects.]<BR>
+  h).事件对象[EventObject.]<BR>
+  i).时间管理[TimeData Type and Manipulation.]<BR>
+  j).高解析的时间戳[HighResolution Timestamp.]<BR>
+等等，这些我们后面分析代码时一一看来:)<BR>
+           <BR>
+3).低层的网络相关IO[Low-Level Network I/O]<BR>
+ 这涉及到：<BR>
+    a).Socket抽象[SocketAbstraction.]<BR>
+    b).网络地址解析[NetworkAddress Resolution.]<BR>
+    c).实现针对Socket的selectAPI[Socket select() API.]<BR>
+     <BR>
+4).时间管理[Timer Management]<BR>
+  这主要涉及到两个部分，一个时定时器的管理，还有就是时间解析的精度(举例说来，就是能精确到哪个时间等级，比如 POSIX sleep(),就只能以秒为单位，而使用select()则可以实现毫秒级别的计时)<BR>
+ <BR>
+5).各种数据结构[Various Data Structures]<BR>
+  主要有:<BR>
+  a).针对字符串的操作[StringOperations]<BR>
+  b).数组辅助[Arrayhelper]<BR>
+  c).Hash表[Hash Tabl]<BR>
+  d).链表[LinkedList]<BR>
+  e).红黑平衡树[Red/BlackBalanced Tree]<BR>
+           <BR>
+6).异常处理[Exception Construct]<BR>
+  使用的是TRY/CATCH,知道C++/JAVA之类面向对象语言的人看过会宛而一笑:)<BR>
+             <BR>
+7).LOG机制[Logging Facility]<BR>
+  很显然，一个良好的程序，好的LOG机制不可少。这能很方便的让你去调试程序，对此我是深有体会，任何时候，不要忘记“好的程序，是架构出来的；而能跑的程序，是调试出来的:)”<BR>
+           <BR>
+8).随机数以及GUID的产生[Random and GUID Generation]<BR>
+  GUID指的是&quot;globallyunique identifier&quot;，只是一个标识而已，比如说你的省份证，算的上是一个GUID，当然，准确说来是“china unique identifier”:).<BR>
+ <BR>
+Pjsip编译<BR>
+<BR>
+在centOS上编译pjsip<BR>
+<BR>
+tar jxvf pjproject-2.5.5.tar.bz2<BR>
+ <BR>
+./configure--prefix=/home/mpc8306/pjsip/pjsip_linux --disable-libyuv --disable-sound<BR>
+ <BR>
+说明：不支持音视频<BR>
+ <BR>
+make dep<BR>
+ <BR>
+make clean<BR>
+ <BR>
+make<BR>
+ <BR>
+make install<BR>
+ <BR>
+遇到问题：<BR>
+<BR>
+问题1：centOS编译pjsip库时，make时错误（Add libyuv to third party component）<BR>
+../../yuv/source/row_common.cc: In function‘void libyuv::YuvPixel(uint8, uint8, uint8, uint8*, uint8*, uint8*, constlibyuv::YuvConstants*)’:<BR>
+../../yuv/source/row_common.cc:1256: error:invalid types ‘const signed char __vector__[int]’ for array subscript<BR>
+解决：use GCC 4.8 or newer, or if you don't need video feature, justdisable libyuv (i.e: using configure script param --disable-libyuv or--disable-video).<BR>
+ <BR>
+问题2：centOS编译pjsip库时，make时错误<BR>
+../src/pjmedia-audiodev/alsa_dev.c:988:error: ‘struct alsa_stream’ has no member named ‘ca_pcm’<BR>
+解决：yum install libasound2-dev<BR>
+powerpc-e300c3-linux-gnu-gcc交叉编译pjsip<BR>
+<BR>
+1、在/pjproject-2.5.5/pjlib/include/pj目录下打开config.h这个文件,并添加内容<BR>
+ <BR>
+#define PJ_IS_LITTLE_ENDIAN 1<BR>
+#define PJ_IS_BIG_ENDIAN 0<BR>
+ <BR>
+2、 tar jxvfpjproject-2.5.5.tar.bz2<BR>
+ <BR>
+3、./configure--prefix=/home/mpc8306/pjsip/pjsip_powerpc --host=powerpc-e300c3-linux--target=powerpc-e300c3-linux         CC=powerpc-e300c3-linux-gnu-gcc          CXX=powerpc-e300c3-linux-gnu-g++--disable-libyuv --disable-libyuv --disable-sound<BR>
+说明：不支持音视频<BR>
+ <BR>
+4、 make clean<BR>
+ <BR>
+5、 make dep<BR>
+ <BR>
+6、 make<BR>
+ <BR>
+7、 make install<BR>
+遇到问题<BR>
+<BR>
+问题1：<BR>
+output/pjsua2-test-powerpc-e300c3-linux-gnu/main.o:could not read symbols: File in wrong format<BR>
+collect2: ld returned 1 exit status<BR>
+make[2]: *** [../bin/pjsua2-test-powerpc-e300c3-linux-gnu]Error 1<BR>
+make[2]: Leaving directory`/home/mpc8306/pjsip/pjproject-2.5.5-powerpc/pjsip/build'<BR>
+make[1]: ***[pjsua2-test-powerpc-e300c3-linux-gnu] Error 2<BR>
+make[1]: Leaving directory`/home/mpc8306/pjsip/pjproject-2.5.5-powerpc/pjsip/build'<BR>
+解决：./configure时没有指定 CXX=powerpc-e300c3-linux-gnu-g++<BR>
+ <BR>
+问题2：<BR>
+/home/mpc8306/pjsip/pjsip_powerpc/include/pj/config.h:1195:4:error: #error &quot;PJ_IS_LITTLE_ENDIAN is not defined!&quot;<BR>
+/home/mpc8306/pjsip/pjsip_powerpc/include/pj/config.h:1199:4:error: #error &quot;PJ_IS_BIG_ENDIAN is not defined!&quot;<BR>
+/home/mpc8306/pjsip/pjsip_powerpc/include/pj/config.h:263:6:error: #error Endianness must be declared for this processor<BR>
+解决：在pj/下添加config.h，并添加<BR>
+#define PJ_IS_BIG_ENDIAN 1<BR>
+#define PJ_IS_LITTLE_ENDIAN 0<BR>
+注意：powerpc是大端模式<BR>
+ <BR>
+问题3：<BR>
+/opt/freescale/usr/local/gcc-4.1.78-eglibc-2.5.78-1/powerpc-e300c3-linux-gnu/lib/gcc/powerpc-e300c3-linux-gnu/4.1.2/../../../../powerpc-e300c3-linux-gnu/bin/ld:cannot find -luuid<BR>
+collect2: ld returned 1 exit status<BR>
+make: *** [pjsip_demo] Error 1<BR>
+ <BR>
+解决：<BR>
+在makefile中去掉-luuid<BR>
+Mingw编译pjsip<BR>
+<BR>
+1，  安装mingw<BR>
+下载: http://sourceforge.net/projects/mingw/files/<BR>
+2，  在mingw中安装：msys-base，mingw32-gcc，mingw32-gcc-g++和mingw32-libz<BR>
+把mingw的bin目录（如C:\MinGW\bin）添加到系统环境变量path<BR>
+3，  安装sdl2<BR>
+从sdl网站https://www.libsdl.org/download-2.0.php下载Development Libraries:SDL2-devel-2.0.3-mingw.tar.gz<BR>
+将子目录i686-w64-mingw32解压到D:\video\目录下，并将附件中的SDL_platform.h覆盖include/SDL2下的原文件<BR>
+将D:\video\i686-w64-mingw32\bin添加到系统环境变量path<BR>
+4，  安装ffmpeg1.2<BR>
+从zeranoe ffmpeg（https://ffmpeg.zeranoe.com/blog/?p=178）下载ffmpeg的windows版本：FFmpeg 1.2 Win32 Shared和FFmpeg 1.2 Win32 Dev解压到D:\video\目录下<BR>
+将附件中pkgconfig中的.pc文件复制到D:\video\ffmpeg-1.2-win32-dev\lib\pkgconfig，修改.pc文件<BR>
+prefix=/video/ffmpeg-1.2-win32-dev/<BR>
+将D:\video\ffmpeg-1.2-win32-shared\bin添加到系统环境变量path<BR>
+5，  安装pkg-config<BR>
+从GTK+ for Windows下载GLib DLL和pkg-config.exe，解压libglib-2.0-0.dll和pkg-config.exe到C:\MinGW\bin，将libintl-8.dll复制另命名intl.dll<BR>
+6，  创建msys目录下的fstab文件(如C:\MinGW\msys\1.0\etc)，添加内容：如d:/pjproject-2.3 /pjsip和d:/video /video<BR>
+7，  解压pjsip2.3.0，在pjsip目录下(如D:\pjproject-2.3\pjlib\include\pj)<BR>
+创建config_site.h，添加<BR>
+#define PJMEDIA_HAS_VIDEO 1<BR>
+8，启动msys.bat<BR>
+cd /pjsip<BR>
+exportPKG_CONFIG_PATH=/video/ffmpeg-1.2-win32-dev/lib/pkgconfig<BR>
+./configureCFLAGS=&quot;-I/video/i686-w64-mingw32/include/SDL2&quot;LDFLAGS=&quot;-L/video/i686-w64-mingw32/lib&quot;<BR>
+make dep<BR>
+make<BR>
+ <BR>
+注1：configure过程中出现错误，查看config.Log,原因是没有链接到pthread库，打开MinGW Installer<BR>
+注2：编译可执行程序时出错（没有链接到库）<BR>
+a.     WIN32下链接ole32, Linux下链接libuuid<BR>
+b.    -lws2_32<BR>
+c.     &#8211;lwinmm<BR>
+ <BR>
+ <BR>
+运行pjsua<BR>
+<BR>
+官网文档：<BR>
+         http://www.pjsip.org/pjsua.htm<BR>
+ <BR>
+1、  运行pjsua<BR>
+ <BR>
+cd pjsip-apps/bin<BR>
+./pjsua-i686-pc-linux-gnu--null-audio<BR>
+ <BR>
+注：(这里一定要加上null-audio 启动选项(Use NULL audio device)，否则放音时会提示由于找不到默认声卡而出错)<BR>
+ <BR>
+2、  pjsua注册到服务器：<BR>
+ <BR>
+&gt;&gt;&gt; +a  添加用户<BR>
+ <BR>
+Your SIP URL: (empty to cancel):sip:1000@192.168.1.90:5060<BR>
+ <BR>
+URL of the registrar: (empty to cancel):sip:192.168.1.89:5060<BR>
+ <BR>
+Auth Realm: (empty to cancel): 192.168.1.90<BR>
+ <BR>
+Auth Username: (empty to cancel): 1000<BR>
+ <BR>
+Auth Password: (empty to cancel): 1234<BR>
+ <BR>
+遇到问题<BR>
+<BR>
+问题1：没有插入麦克风设备<BR>
+pjsua_call.c  Making call with acc #1 to sip:192.168.1.88<BR>
+pjsua_aud.c .Set sound device: capture=-1, playback=-2<BR>
+pjsua_aud.c ..Error retrieving default audio device parameters: Unable to finddefault audio device (PJMEDIA_EAUD_NODEFDEV) [status=420006]<BR>
+解决：<BR>
+./pjsua-i686-pc-linux-gnu --null-audio<BR>
+Mpc8306开发板运行pjsua程序退出卡死（pjsua_destroy()）<BR>
+<BR>
+解决：移植问题，powerpc是大端模式 (同上)<BR>
+<BR>
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////<BR>
+如果你对SIP/VoIP技术感兴趣,哪希望你不要错过,如果你对写出堪称优美的Code感兴趣 <BR>
+,那么你也不可错过<BR>
+<BR>
+这期间我想分析一下一个实际的协议栈的设计到实现的相关技术,算是自己的一个学习经 <BR>
+历记录. <BR>
+最初选择这个库做分析的原因很简单,文档齐全,其它良好的特征则是慢慢发现的<BR>
+www.pjsip.org <BR>
+<BR>
+1. PJSIP简介 <BR>
+PJSIP的实现是为了能在嵌入式设备上高效实现SIP/VOIP.其主要特征包括: <BR>
+<BR>
+1).极具移植性.(Extremely portable) <BR>
+当前可支持平台包括: <BR>
+* Win32/x86 (Win95/98/ME, NT/2000/XP/2003, mingw). <BR>
+* arm, WinCE and Windows Mobile. <BR>
+* Linux/x86, (user mode and as kernel module(!)). <BR>
+* Linux/alpha <BR>
+* Solaris/ultra. <BR>
+* MacOS X/powerpc <BR>
+* RTEMS (x86 and powerpc). <BR>
+正移植到: <BR>
+* Symbian OS <BR>
+2).非常小的足印.(Very small footprint) <BR>
+官方宣称编译后的库&lt;150Kb,我在PC上编译后加上strip后大概173Kb,这对于嵌入 <BR>
+式设备,是个好消息<BR>
+3).高性能.(High performance) <BR>
+这点我们后面可以看看是否如作者宣称的<BR>
+4).支持众多的特征.(Many features) <BR>
+这点可以从http://www.pjsip.org/sip_media_features.htm#sip_features看出. <BR>
+<BR>
+5).充足的SIP文档.(Extensive SIP documentation) <BR>
+这是我最初选择该库的原因,当然不是最终的原因,最终的原因是它的code<BR>
+2. PJSIP的组成. <BR>
+其实说是PJSIP不是特别贴切,这个库实际上是几个部分组成的. <BR>
+1).PJSIP - Open Source SIP Stack[开源的SIP协议栈] <BR>
+2).PJMEDIA - Open Source Media Stack[开源的媒体栈] <BR>
+3).PJNATH - Open Source NAT Traversal Helper Library[开源的NAT-T辅助库] <BR>
+4).PJLIB-UTIL - Auxiliary Library[辅助工具库] <BR>
+5).PJLIB - Ultra Portable Base Framework Library[基础框架库] <BR>
+而在最上层库的目录分为(可以使用tree -d -L 1 查看) <BR>
+$TOP/build [包含Makefile] <BR>
+$TOP/build.symbian [针对symbian的Makefile] <BR>
+$TOP/pjlib [参考上面] <BR>
+$TOP/pjlib-util [参考上面] <BR>
+$TOP/pjnath [参考上面] <BR>
+$TOP/pjmedia [参考上面] <BR>
+$TOP/pjsip [参考上面] <BR>
+$TOP/pjsip-apps <BR>
+$TOP/third_party <BR>
+而在每个子目录,可以看到分为: <BR>
+bin [编译后产生的二进制文件] <BR>
+build [Makefile] <BR>
+build/output <BR>
+build/wince-evc4 <BR>
+docs [doxygen的文档,用doxygen docs/doxygen.cfg产生] <BR>
+include [头文件] <BR>
+lib [编译后产生的库] <BR>
+src [源代码] <BR>
+<BR>
+3. PJLIB简介 <BR>
+要理解好PJSIP，就不得不先说说PJLIB，PJLIB算的上是这个库中最基础的库，正是这个 <BR>
+库的优美实现，才让PJSIP变得如此优越。 <BR>
+PJLIB提供了一系列特征，这是我们下面分析的重点，涉及到： <BR>
+1).非动态内存分配[No Dynamic Memory Allocations] <BR>
+实现了内存池，获取内存是从与分配的内存池中获取，高性能程序多会自己构造内存池 <BR>
+，后面我们会解释该内存池的使用以及基本的原理。根据作者的比较，是常规的 malloc( <BR>
+)/free()函数的30倍。 <BR>
+2).OS抽象[Operating System Abstraction] <BR>
+实现OS抽象的根本原因在与可移植性，毋庸置疑. <BR>
+涉及到： <BR>
+a).线程[Threads.] <BR>
+b).线程本地存储[Thread Local Storage.] <BR>
+c).互斥[Mutexes.] <BR>
+d).信号灯[Semaphores.] <BR>
+e).原子变量[Atomic Variables.] <BR>
+f).临届区[Critical sections.] <BR>
+g).锁对象[Lock Objects.] <BR>
+h).事件对象[Event Object.] <BR>
+i).时间管理[Time Data Type and Manipulation.] <BR>
+j).高解析的时间戳[High Resolution Timestamp.] <BR>
+等等，这些我们后面分析代码时一一看来<BR>
+3).低层的网络相关IO[Low-Level Network I/O] <BR>
+这涉及到： <BR>
+a).Socket抽象[Socket Abstraction.] <BR>
+b).网络地址解析[Network Address Resolution.] <BR>
+c).实现针对Socket的select API[Socket select() API.] <BR>
+4).时间管理[Timer Management] <BR>
+这主要涉及到两个部分，一个时定时器的管理，还有就是时间解析的精度(举例说来，就 <BR>
+是能精确到哪个时间等级，比如 POSIX sleep(),就只能以秒为单位，而使用select()则可 <BR>
+以实现毫秒级别的计时) <BR>
+5).各种数据结构[Various Data Structures] <BR>
+主要有: <BR>
+a).针对字符串的操作[String Operations] <BR>
+b).数组辅助[Array helper] <BR>
+c).Hash表[Hash Tabl] <BR>
+d).链表[Linked List] <BR>
+e).红黑平衡树[Red/Black Balanced Tree] <BR>
+6).异常处理[Exception Construct] <BR>
+使用的是TRY/CATCH,知道C++/JAVA之类面向对象语言的人看过会宛而一笑<BR>
+7).LOG机制[Logging Facility] <BR>
+很显然，一个良好的程序，好的LOG机制不可少。这能很方便的让你去调试程序，对此我 <BR>
+是深有体会，任何时候，不要忘记“好的程序，是架构出来的；而能跑的程序，是调试出 <BR>
+来的:)” <BR>
+8).随机数以及GUID的产生[Random and GUID Generation] <BR>
+GUID指的是&quot;globally unique identifier&quot;，只是一个标识而已，比如说你的省份证， <BR>
+算的上是一个GUID，当然，准确说来是“china unique identifier”. <BR>
+看了这么多的特征列举，是不是很完备，的确。 <BR>
+总算是初步列举完了PJLIB的基本特征了，后面我们来说说它的使用与实现: <BR>
+4. PJLIB的使用 <BR>
+有了上述介绍，是不是很想知道这个库的使用，没关系，我们慢慢说来<BR>
+首先是头文件和编译出来的库的位置，这就不必多说了，除非你没有使用过手动编译的库 <BR>
+，如果不太了解步骤，google一下，啊<BR>
+1).为了使用这个库，需要使用： <BR>
+#include &lt;pjlib.h&gt; <BR>
+当然，也可以选择： <BR>
+#include &lt;pj/log.h&gt; <BR>
+#include &lt;pj/os.h&gt; <BR>
+这种分离的方式，不过，简介其间，还是使用第一种吧:),毕竟，你不需要确认到你所 <BR>
+需的函数或者数据结构具体到哪个具体的头文件<BR>
+2).确保在使用PJLIB之前调用 pj_init()来完成PJLIB库使用前说必须的一些初始化. <BR>
+这是一个必不可少的步骤. <BR>
+~~~~~~~~~~~~~~~~~~~~~~~ <BR>
+3).使用PJLIB的一些建议 <BR>
+作者对使用PJLIB的程序提出了一些建议，包括如下 ： <BR>
+a).不要使用ANSI C[Do NOT Use ANSI C] <BR>
+观点很明确，ANSI C并不会让程序具有最大的移植性，应该使用PJSIP库所提供的响 <BR>
+应机制来实现你所需要的功能. <BR>
+b).使用pj_str_t取代C风格的字符串[Use pj_str_t instead of C Strings] <BR>
+原因之一是移植性，之二则是PJLIB内置的pj_str_t相关操作会更快(性能). <BR>
+c).从内存池分配内存[Use Pool for Memory Allocations] <BR>
+这很明显，如果你知道为什么会使用内存池的话(提示一下，性能以及易用性:)) <BR>
+d).使用PJLIB的LOG机制做文字显示[Use Logging for Text Display] <BR>
+很明显<BR>
+还有些关于移植的一些问题，不在我们的讨论范围，如果你需要移植到其它平台或者 <BR>
+环境，请参考http://www.pjsip.org/pjlib/docs/html/porting_pjlib_pg.htm <BR>
+<BR>
+5. PJLIB的使用以及原理 <BR>
+终于开始提及实现原理以及具体的编码了:),前面的列举还真是个琐碎的事情,还是奔主题 <BR>
+来:). <BR>
+5.1快速内存池[Fast Memory Pool] <BR>
+前面说过,使用内存池的原因在于性能的考虑,原因是C风格的malloc()以及C++风格的new <BR>
+操作在高性能或实时条件下表现并不太好,原因在于性能的瓶颈在于内存碎片问题. <BR>
+下面列举其优点与需要主要的问题: <BR>
+优点： <BR>
+a).不像其它内存池,允许分配不同尺寸的chunks. <BR>
+b).快速. <BR>
+内存chunks拥有O(1)的复杂度,并且操作仅仅是指针的算术运算,其间不需要使用锁住任 <BR>
+何互斥量. <BR>
+c).有效使用内存. <BR>
+除了可能因为内存对齐的原因会浪费很少的内存外,内存的使用效率非常高. <BR>
+d).可预防内存泄漏. <BR>
+在C/C++程序中如果出现内存泄漏问题,其查找过程哪个艰辛,不足为外人道也:( <BR>
+[曾经有次用别人的Code,出现了内存泄漏,在开发板上查找N天,又没工具可在开发板上使 <BR>
+用,哪个痛苦,想自杀~~~ <BR>
+原因很简单,你的内存都是从内存池中获取的,就算你没有释放你获取的内存,只要你记得 <BR>
+把内存池destroy,那么内存还是会还给系统. <BR>
+还有设计带来的一些其它益处,比如可用性和灵活性: <BR>
+e).内存泄漏更容易被跟踪. <BR>
+这是因为你的内存是在指定的内存池中分配的,只要能很快定位到内存池,内存泄漏的侦 <BR>
+测就方便多了. <BR>
+f).设计上从内存池中获取内存这一操作是非线程安全的. <BR>
+原因是设计者认为内存池被上层对象所拥有,线程安全应该由上层对象去保证,这样的话 <BR>
+,没有锁的问题会让内存分配变得非常的快. <BR>
+g).内存池的行为像C++中的new的行为,当内存池获取内存chunks会抛出PJ_NO_MEMORY_EX <BR>
+CEPTION异常,当然,因为支持异常处理,也可以使用其它方式让上层程序灵活的定义异常的 <BR>
+处理. <BR>
+[这是异常处理的基本出发点,但是这有大量的争论,原因是这改变了程序的正常流程,谁能 <BR>
+去保证这种流程是用户所需要的呢,因此C++中的异常处理饱受争议,请酌情使用] <BR>
+h). 可以在后端使用任何的内存分配器.默认情况下是使用malloc/free管理内存池的块, <BR>
+但是应用程序也可以指定自己的策略(strategy),例如从一个全局存储空间分配内存. <BR>
+恩,要知道,任何事务都是两面的(颇为佩服创造出“双赢”这个词的语言天才, 不过，文 <BR>
+字游戏对于技术人员不能说是件好事情:(),好了,使用时,不要认为这个内存池是哪种&quot;per <BR>
+fect&quot;的技术,要记得&quot;任何设计,都是在各种限制条件中的一个折中,对于'戴着镣铐的舞蹈 <BR>
+',除了'舞蹈',也不要忘记'镣铐'哦&quot;,不要忘了告诫: <BR>
+告诫[Caveats]: <BR>
+a).使用合适的大小来初始化内存池. <BR>
+使用内存池时,需要指定一个初始内存池大小, 这个值是内存池的初始值,如果你想要高 <BR>
+性能,要谨慎选择这个值哦,太大的化会
+</DD>
+</DL>
+
+</DD>
+<DT>osip</DT>
+<!--property:date_created=1515677385-->
+<!--property:date_modified=1515715034-->
+<!--property:finished=1-->
+<DD>
+编译exsip2库<BR>
+1. 下载源码<BR>
+<BR>
+http://www.antisip.com/download/exosip2/ <BR>
+ 下载libexosip2-5.0.0.tar.gz， libosip2-5.0.0.tar.gz<BR>
+<BR>
+在https://c-ares.haxx.se/ 下载c-ares-1.12.0.tar.gz<BR>
+<BR>
+2. 解压<BR>
+<BR>
+三个文件解压在同一个文件夹下面，分别目录是exosip osip c-ares目录<BR>
+<BR>
+3. 编译<BR>
+<BR>
+进入exosip文件夹下的目录：.\platform\vsnet 。 打开eXosip.sln后会加载相关项目<BR>
+<BR>
+libcares.vcxproj下加入三个文件ares_platform.h,ares_platform.c,ares_create_query.c选项，否则在调用生成库时会出现<BR>
+<BR>
+error LNK2019:无法解析的外部符号_ares_getplatform，该符号在函数_get_DNS_Registry中被引用。 <BR>
+error LNK2019:无法解析的外部符号_ares_create_query,该符号在函数_ares_query中被引用。<BR>
+3. 去掉一些预定义(HAVE_OPENSSL_SSL_H，TSC_SUPPORT)，不然在编译的时候出现<BR>
+<BR>
+error C1083: 无法打开包括文件: “openssl/opensslv.h”: No such file or directory <BR>
+IntelliSense: 无法打开 源 文件 “tsc_socket_api.h” <BR>
+IntelliSense: 未定义标识符 “tsc_config”<BR>
+这里写图片描述<BR>
+<BR>
+在编译 libexosip2-5.0.0.tar.gz 这个版本时出现一个缺失文件的问题，后来发现时这个版本中就是缺失了“eXrefer_api.c”这个文件，而在其配置文件中添加了这个文件，导致找不到这个文件。后来在前面的版本中找到了这个文件加进去后就没问题了。<BR>
+<BR>
+4.对eXosip进行编译。成功编译！<BR>
+<BR>
+在项目中使用<BR>
+<BR>
+5.项目中添加哪些库文件<BR>
+<BR>
+Dnsapi.lib;Iphlpapi.lib;ws2_32.lib;eXosip.lib;osip2.lib;osipparser2.lib;Qwave.lib;libcares.lib;delayimp.lib;<BR>
+不然可能有各种连接错误！<BR>
+<BR>
+缺少delayimp.lib会出现<BR>
+<BR>
+error LNK2001: 无法解析的外部符号 ___HrLoadAllImportsForDll<BR>
+<BR>
+<BR>
+<BR>
+最好后报重定义<BR>
+<BR>
+忽略掉 libcmt.lib库烦人默认加载
+</DD>
+<DT>php</DT>
+<!--property:date_created=1515809103-->
+<!--property:date_modified=1515814170-->
+<DD>
+<DL>
+<DT>网站实例</DT>
+<!--property:date_created=1515817653-->
+<!--property:date_modified=1515817862-->
+<DD>
+1.需求<BR>
+2.功能分析<BR>
+3.目录结构细化<BR>
+3.数据库设计
+</DD>
+<DT>js编程</DT>
+<!--property:date_created=1515814153-->
+<!--property:date_modified=1515815098-->
+<DD>
+php学习笔记<BR>
+<BR>
+语言定位：<BR>
+JS语言是基于对象的语言<BR>
+PHP是面向对象的语言<BR>
+<BR>
+知识点一：<BR>
+var name = &quot;路璐&quot;		//建议，，函数外面加var，函数里边全局不加var,局部加var<BR>
+<BR>
+function show(){<BR>
+	name = &quot;你好&quot;;<BR>
+}<BR>
+<BR>
+show();<BR>
+alert(name);<BR>
+<BR>
+、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、<BR>
+<BR>
+    var obj = document.getElementById(&quot;did&quot;);<BR>
+    window.obj.style.background=&quot;#oof&quot;;<BR>
+    obj.onclick=function (ev) {<BR>
+        window.close();<BR>
+        window.open(&quot;http://ppcover.imwork.net:19053&quot;);<BR>
+    }<BR>
+<BR>
+    alert(document.documentElement.innerHTML);<BR>
+    alert(document.body.innerHTML);<BR>
+    document.title = &quot;你好&quot;;<BR>
+<BR>
+、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、<BR>
+    var name = &quot;路璐&quot;		//函数外面加var，函数里边全局不加var,局部加var<BR>
+    document.write(name);   //相当于打印日志<BR>
+<BR>
+、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、<BR>
+alert(document.documentElement.outerHTML);<BR>
+<BR>
+、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、<BR>
+字符串连接符<BR>
++<BR>
+<BR>
+var name = &quot;&quot;; <BR>
+      name + &quot;ba&quot;;<BR>
+<BR>
+、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、<BR>
+window.location.href=&quot;http://www.baidu.com&quot;;<BR>
+location=&quot;&quot;;<BR>
+<BR>
+<BR>
+    var obj = new Object();<BR>
+    obj.name = &quot;你好&quot;;<BR>
+    obj.say=function () {<BR>
+        alert(&quot;我的民资&quot; + this.name);<BR>
+    }<BR>
+    obj.say();<BR>
+<BR>
+数组的四种方法<BR>
+    var arr = new Array(1, 2, 4);<BR>
+    alert(arr[2]);<BR>
+<BR>
+html------------------------------------------------------------------<BR>
+&lt;img id=&quot;imgid&quot; src=&quot;yuzhu1.jpg&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;<BR>
+js----------------------------------------------------------------------<BR>
+    var imgobj = document.getElementById(&quot;imgid&quot;);<BR>
+    imgobj.onclick=function (ev) {<BR>
+        imgobj.src=&quot;lulu.jpg&quot;<BR>
+        imgobj.width=500;<BR>
+        imgobj.height=500;<BR>
+ 	imgobj.style.border=&quot;2px solid #f00&quot;<BR>
+	imgobj.style.display = null;<BR>
+    }<BR>
+<BR>
+////////////////////////////////////////////////////////////////////////<BR>
+json数据<BR>
+    var obj={<BR>
+        &quot;name&quot;:&quot;user1&quot;,<BR>
+        &quot;age&quot;:&quot;12&quot;,<BR>
+        &quot;sex&quot;:&quot;man&quot;<BR>
+    };<BR>
+    alert(obj.name + obj.age + obj.sex);<BR>
+<BR>
+///////////////////////////////////////////////////////////////////////<BR>
+数据转化<BR>
+var num = &quot;10&quot;;<BR>
+alert(Number(num));<BR>
+<BR>
+//类型判断<BR>
+typeef(num);<BR>
+<BR>
+//<BR>
+IsNaN(num);<BR>
+<BR>
+<BR>
+paerseFloat(num);<BR>
+<BR>
+//执行表达式字符串<BR>
+var str=&quot;var obj={&quot;name&quot;:&quot;user1&quot;}&quot;;<BR>
+eval(str);<BR>
+alert(obj.name);<BR>
+<BR>
+var str = '{&quot;name&quot;:&quot;user&quot;}';		错误<BR>
+eval(str);<BR>
+<BR>
+var str = '{&quot;name&quot;:&quot;user&quot;}';		正确<BR>
+var obj = eval(&quot;(&quot; + str + &quot;)&quot;);<BR>
+<BR>
+var str='({&quot;name&quot;:&quot;user1&quot;})';         正确<BR>
+var obj = eval(str);<BR>
+<BR>
+<BR>
+//////////////////////////////////////////////////////////////////////////<BR>
+强制类型转化<BR>
+String()<BR>
+Number()<BR>
+Array()<BR>
+Object()<BR>
+Boolean()<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+
+</DD>
+<DT>php编程</DT>
+<!--property:date_created=1515814177-->
+<!--property:date_modified=1515814597-->
+<DD>
+<BR>
+执行表达式字符串<BR>
+$str='$a=1+1;';<BR>
+eval($str);<BR>
+echo $a;
+</DD>
+<DT>sql</DT>
+<!--property:date_created=1515815274-->
+<!--property:date_modified=1515817594-->
+<DD>
+-- 创建user表<BR>
+create table if not exists user(<BR>
+	id int unsigned not null auto_increment,<BR>
+	username varchar(50) not null,<BR>
+	password varchar(50) not null,<BR>
+	regtime int not null,<BR>
+	admin tinyint not null,<BR>
+	primary key(id)<BR>
+);<BR>
+<BR>
+-- 创建shopclass表<BR>
+create table  if not exists shopclass(<BR>
+	id int unsigned not null auto_increment,<BR>
+	name varchar(50) not null,<BR>
+	primary key(id)<BR>
+);<BR>
+<BR>
+-- 创建商品品牌表<BR>
+create table  if not exists brand(<BR>
+	id int unsigned not null auto_increment,<BR>
+	name varchar(50) not null,<BR>
+	shopclass_id int not null,<BR>
+	primary key(id)<BR>
+);<BR>
+<BR>
+-- 创建商品表<BR>
+create table  if not exists shop(<BR>
+	id int unsigned not null auto_increment,<BR>
+	name varchar(50) not null,<BR>
+	price float not null,<BR>
+	stock int not null,<BR>
+	shelf tinyint not null,	<BR>
+	imgge varchar(100) not null,<BR>
+	brand_id int not null,<BR>
+	primary key(id)<BR>
+);<BR>
+<BR>
+-- 订单状态表<BR>
+create table  if not exists orderstat(<BR>
+	id int unsigned not null auto_increment,<BR>
+	name varchar(50) not null,<BR>
+	primary key(id)<BR>
+);<BR>
+<BR>
+<BR>
+-- 联系方式表<BR>
+create table  if not exists ralation(<BR>
+	id int unsigned not null auto_increment,<BR>
+	realname varchar(50) not null,<BR>
+	address varchar(200) not null,<BR>
+	telephone varchar(50) not null,<BR>
+	email varchar(50) not null,<BR>
+	user_id int not null,<BR>
+	primary key(id)<BR>
+ );<BR>
+<BR>
+-- 创建订单表<BR>
+create table  if not exists ordertable(<BR>
+	id int unsigned not null auto_increment,<BR>
+	code varchar(50) not null,<BR>
+	user_id int not null,<BR>
+	shop_id int not null,<BR>
+	num int not null,<BR>
+	price float not null,<BR>
+	time int not null,<BR>
+	orderstat_id int not null,<BR>
+	ralation_id int not null,<BR>
+	primary key(id)<BR>
+);<BR>
+<BR>
+-- 创建商品评论表<BR>
+create table  if not exists commit(<BR>
+	id int unsigned not null auto_increment,<BR>
+	context text,<BR>
+	user_id int not null,<BR>
+	shop_id int not null,<BR>
+	primary key(id)<BR>
+);<BR>
+<BR>
+<BR>
+<BR>
+
+</DD>
+</DL>
+
+</DD>
+<DT>java-rtp</DT>
+<!--property:date_created=1516459620-->
+<!--property:date_modified=1516459620-->
+<!--property:expanded-->
+<DD>
+<DL>
+<DT>编辑码</DT>
+<!--property:date_created=1516459631-->
+<!--property:date_modified=1516459693-->
+<DD>
+ private void sendData(byte[] r, int h264len)throws IOException {<BR>
+        memset(sendbuf, 0, 1500);<BR>
+        sendbuf[1] = (byte) (sendbuf[1] | 96); // 负载类型号96,其值为：01100000<BR>
+        sendbuf[0] = (byte) (sendbuf[0] | 0x80); // 版本号,此版本固定为2<BR>
+        sendbuf[1] = (byte) (sendbuf[1] &amp; 254); //标志位，由具体协议规定其值，其值为：01100000<BR>
+        sendbuf[11] = 10;//随机指定10，并在本RTP回话中全局唯一,java默认采用网络字节序号 不用转换（同源标识符的最后一个字节）<BR>
+        if (h264len &lt;= packageSize) {<BR>
+            sendbuf[1] = (byte) (sendbuf[1] | 0x80); // 设置rtp M位为1，其值为：11100000，分包的最后一片，M位（第一位）为0，后7位是十进制的96，表示负载类型<BR>
+            System.arraycopy(intToByte(seq_num++), 0, sendbuf, 2, 2);//send[2]和send[3]为序列号，共两位<BR>
+            {<BR>
+                // java默认的网络字节序是大端字节序（无论在什么平台上），因为windows为小字节序，所以必须倒序<BR>
+                /**参考：<BR>
+                 * http://blog.csdn.net/u011068702/article/details/51857557<BR>
+                 * http://cpjsjxy.iteye.com/blog/1591261<BR>
+                 */<BR>
+                byte temp = 0;<BR>
+                temp = sendbuf[3];<BR>
+                sendbuf[3] = sendbuf[2];<BR>
+                sendbuf[2] = temp;<BR>
+            }<BR>
+            // FU-A HEADER, 并将这个HEADER填入sendbuf[12]<BR>
+            sendbuf[12] = (byte) (sendbuf[12] | ((byte) (r[0] &amp; 0x80)) &lt;&lt; 7);<BR>
+            sendbuf[12] = (byte) (sendbuf[12] | ((byte) ((r[0] &amp; 0x60) &gt;&gt; 5)) &lt;&lt; 5);<BR>
+            sendbuf[12] = (byte) (sendbuf[12] | ((byte) (r[0] &amp; 0x1f)));<BR>
+            // 同理将sendbuf[13]赋给nalu_payload<BR>
+            //NALU头已经写到sendbuf[12]中，接下来则存放的是NAL的第一个字节之后的数据。所以从r的第二个字节开始复制<BR>
+            System.arraycopy(r, 1, sendbuf, 13, h264len - 1);<BR>
+            ts_current = ts_current + timestamp_increse;<BR>
+            System.arraycopy(intToByte(ts_current), 0, sendbuf, 4, 4);//序列号接下来是时间戳，4个字节，存储后也需要倒序<BR>
+            {<BR>
+                byte temp = 0;<BR>
+                temp = sendbuf[4];<BR>
+                sendbuf[4] = sendbuf[7];<BR>
+                sendbuf[7] = temp;<BR>
+                temp = sendbuf[5];<BR>
+                sendbuf[5] = sendbuf[6];<BR>
+                sendbuf[6] = temp;<BR>
+            }<BR>
+            bytes = h264len + 12;//获sendbuf的长度,为nalu的长度(包含nalu头但取出起始前缀,加上rtp_header固定长度12个字节)<BR>
+             client.send(new DatagramPacket(sendbuf, bytes, addr, port/*9200*/));<BR>
+            //send(sendbuf,bytes);<BR>
+<BR>
+        } else if (h264len &gt; packageSize) {<BR>
+            int k = 0, l = 0;<BR>
+            k = h264len / packageSize;<BR>
+            l = h264len % packageSize;<BR>
+            int t = 0;<BR>
+            ts_current = ts_current + timestamp_increse;<BR>
+            System.arraycopy(intToByte(ts_current), 0, sendbuf, 4, 4);//时间戳，并且倒序<BR>
+            {<BR>
+                byte temp = 0;<BR>
+                temp = sendbuf[4];<BR>
+                sendbuf[4] = sendbuf[7];<BR>
+                sendbuf[7] = temp;<BR>
+                temp = sendbuf[5];<BR>
+                sendbuf[5] = sendbuf[6];<BR>
+                sendbuf[6] = temp;<BR>
+            }<BR>
+            while (t &lt;= k) {<BR>
+                System.arraycopy(intToByte(seq_num++), 0, sendbuf, 2, 2);//序列号，并且倒序<BR>
+                {<BR>
+                    byte temp = 0;<BR>
+                    temp = sendbuf[3];<BR>
+                    sendbuf[3] = sendbuf[2];<BR>
+                    sendbuf[2] = temp;<BR>
+                }<BR>
+                if (t == 0) {//分包的第一片<BR>
+                    sendbuf[1] = (byte) (sendbuf[1] &amp; 0x7F);//其值为：01100000，不是最后一片，M位（第一位）设为0<BR>
+                    //FU indicator，一个字节，紧接在RTP header之后，包括F,NRI，header<BR>
+                    sendbuf[12] = (byte) (sendbuf[12] | ((byte) (r[0] &amp; 0x80)) &lt;&lt; 7);//禁止位，为0<BR>
+                    sendbuf[12] = (byte) (sendbuf[12] | ((byte) ((r[0] &amp; 0x60) &gt;&gt; 5)) &lt;&lt; 5);//NRI，表示包的重要性<BR>
+                    sendbuf[12] = (byte) (sendbuf[12] | (byte) (28));//TYPE，表示此FU-A包为什么类型，一般此处为28<BR>
+                    //FU header，一个字节，S,E，R，TYPE<BR>
+                    sendbuf[13] = (byte) (sendbuf[13] &amp; 0xBF);//E=0，表示是否为最后一个包，是则为1<BR>
+                    sendbuf[13] = (byte) (sendbuf[13] &amp; 0xDF);//R=0，保留位，必须设置为0<BR>
+                    sendbuf[13] = (byte) (sendbuf[13] | 0x80);//S=1，表示是否为第一个包，是则为1<BR>
+                    sendbuf[13] = (byte) (sendbuf[13] | ((byte) (r[0] &amp; 0x1f)));//TYPE，即NALU头对应的TYPE<BR>
+                    //将除去NALU头剩下的NALU数据写入sendbuf的第14个字节之后。前14个字节包括：12字节的RTP Header，FU indicator，FU header<BR>
+                    System.arraycopy(r, 1, sendbuf, 14, packageSize);<BR>
+                     client.send(new DatagramPacket(sendbuf, packageSize+14, addr, port/*9200*/));<BR>
+                    t++;<BR>
+                } else if (t == k) {//分片的最后一片<BR>
+                    sendbuf[1] = (byte) (sendbuf[1] | 0x80);<BR>
+<BR>
+                    sendbuf[12] = (byte) (sendbuf[12] | ((byte) (r[0] &amp; 0x80)) &lt;&lt; 7);<BR>
+                    sendbuf[12] = (byte) (sendbuf[12] | ((byte) ((r[0] &amp; 0x60) &gt;&gt; 5)) &lt;&lt; 5);<BR>
+                    sendbuf[12] = (byte) (sendbuf[12] | (byte) (28));<BR>
+<BR>
+                    sendbuf[13] = (byte) (sendbuf[13] &amp; 0xDF); //R=0，保留位必须设为0<BR>
+                    sendbuf[13] = (byte) (sendbuf[13] &amp; 0x7F); //S=0，不是第一个包<BR>
+                    sendbuf[13] = (byte) (sendbuf[13] | 0x40); //E=1，是最后一个包<BR>
+                    sendbuf[13] = (byte) (sendbuf[13] | ((byte) (r[0] &amp; 0x1f)));//NALU头对应的type<BR>
+<BR>
+                    if (0 != l) {//如果不能整除，则有剩下的包，执行此代码。如果包大小恰好是1400的倍数，不执行此代码。<BR>
+                        System.arraycopy(r, t * packageSize + 1, sendbuf, 14, l - 1);//l-1，不包含NALU头<BR>
+                        bytes = l - 1 + 14; //bytes=l-1+14;<BR>
+                        client.send(new DatagramPacket(sendbuf, bytes, addr, port/*9200*/));<BR>
+                        //send(sendbuf,bytes);<BR>
+                    }//pl<BR>
+                    t++;<BR>
+                } else if (t &lt; k &amp;&amp; 0 != t) {//既不是第一片，又不是最后一片的包<BR>
+                    sendbuf[1] = (byte) (sendbuf[1] &amp; 0x7F); //M=0，其值为：01100000，不是最后一片，M位（第一位）设为0.<BR>
+                    sendbuf[12] = (byte) (sendbuf[12] | ((byte) (r[0] &amp; 0x80)) &lt;&lt; 7);<BR>
+                    sendbuf[12] = (byte) (sendbuf[12] | ((byte) ((r[0] &amp; 0x60) &gt;&gt; 5)) &lt;&lt; 5);<BR>
+                    sendbuf[12] = (byte) (sendbuf[12] | (byte) (28));<BR>
+<BR>
+                    sendbuf[13] = (byte) (sendbuf[13] &amp; 0xDF); //R=0，保留位必须设为0<BR>
+                    sendbuf[13] = (byte) (sendbuf[13] &amp; 0x7F); //S=0，不是第一个包<BR>
+                    sendbuf[13] = (byte) (sendbuf[13] &amp; 0xBF); //E=0，不是最后一个包<BR>
+                    sendbuf[13] = (byte) (sendbuf[13] | ((byte) (r[0] &amp; 0x1f)));//NALU头对应的type<BR>
+                    System.arraycopy(r, t * packageSize + 1, sendbuf, 14, packageSize);//不包含NALU头<BR>
+                     client.send(new DatagramPacket(sendbuf, packageSize+14, addr, port/*9200*/));<BR>
+                    //send(sendbuf,1414);<BR>
+                    t++;<BR>
+                }<BR>
+            }<BR>
+        }<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+////////////////////<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+  private byte[] sendbuf=new byte[1500];<BR>
+  private int packageSize=1400;<BR>
+  private  int seq_num = 0;<BR>
+  private timestamp_increse=(int)(90000.0/framerate);//framerate是帧率<BR>
+  private int ts_current=0;<BR>
+  private  int  bytes=0;<BR>
+<BR>
+    // 清空buf的值<BR>
+    public void memset(byte[] buf, int value, int size) {<BR>
+        for (int i = 0; i &lt; size; i++) {<BR>
+            buf[i] = (byte) value;<BR>
+        }<BR>
+    }<BR>
+<BR>
+<BR>
+//返回的是4个字节的数组。<BR>
+public byte[] intToByte(int number) {<BR>
+    int temp = number;<BR>
+    byte[] b = new byte[4];<BR>
+    for (int i = 0; i &lt; b.length; i++) {<BR>
+        b[i] = new Integer(temp &amp; 0xff).byteValue();<BR>
+        temp = temp &gt;&gt; 8;<BR>
+    }<BR>
+    return b;<BR>
+}<BR>
+    }
+</DD>
+<DT>downloader</DT>
+<!--property:date_created=1516498381-->
+<!--property:date_modified=1516498381-->
+<!--property:expanded-->
+<DD>
+<DL>
+<DT>linux下载器</DT>
+<!--property:date_created=1516498397-->
+<!--property:date_modified=1516498475-->
+<DD>
+解析出下载地址中的域名和文件名<BR>
+通过域名获取服务器的IP地址<BR>
+与目标服务器建立连接<BR>
+构建http请求头并将其发送到服务器<BR>
+等待服务器响应然后接收响应头<BR>
+解析响应头, 判断返回码, 分离开响应头, 并且响应的正文内容以字节形式写入文件, 正文内容与头部用两个\n\r分开<BR>
+<BR>
+#include &lt;stdio.h&gt;<BR>
+#include &lt;string.h&gt;<BR>
+#include &lt;sys/socket.h&gt;<BR>
+#include &lt;arpa/inet.h&gt;<BR>
+#include &lt;fcntl.h&gt;<BR>
+#include &lt;unistd.h&gt;<BR>
+#include &lt;netdb.h&gt;<BR>
+#include &lt;stdlib.h&gt;<BR>
+#include &lt;sys/types.h&gt;<BR>
+#include &lt;sys/stat.h&gt;<BR>
+#include &lt;pthread.h&gt;<BR>
+#include &lt;sys/time.h&gt;<BR>
+<BR>
+struct resp_header//保持相应头信息<BR>
+{<BR>
+    int status_code;//HTTP/1.1 '200' OK<BR>
+    char content_type[128];//Content-Type: application/gzip<BR>
+    long content_length;//Content-Length: 11683079<BR>
+    char file_name[256];<BR>
+};<BR>
+<BR>
+struct resp_header resp;//全剧变量以便在多个进程中使用<BR>
+<BR>
+void parse_url(const char *url, char *domain, int *port, char *file_name)<BR>
+{<BR>
+    /*通过url解析出域名, 端口, 以及文件名*/<BR>
+    int j = 0;<BR>
+    int start = 0;<BR>
+    *port = 80;<BR>
+    char *patterns[] = {&quot;http://&quot;, &quot;https://&quot;, NULL};<BR>
+<BR>
+    for (int i = 0; patterns[i]; i++)<BR>
+        if (strncmp(url, patterns[i], strlen(patterns[i])) == 0)<BR>
+            start = strlen(patterns[i]);<BR>
+<BR>
+    //解析域名, 这里处理时域名后面的端口号会保留<BR>
+    for (int i = start; url[i] != '/' &amp;&amp; url[i] != '\0'; i++, j++)<BR>
+        domain[j] = url[i];<BR>
+    domain[j] = '\0';<BR>
+<BR>
+    //解析端口号, 如果没有, 那么设置端口为80<BR>
+    char *pos = strstr(domain, &quot;:&quot;);<BR>
+    if (pos)<BR>
+        sscanf(pos, &quot;:%d&quot;, port);<BR>
+<BR>
+    //删除域名端口号<BR>
+<BR>
+    for (int i = 0; i &lt; (int)strlen(domain); i++)<BR>
+    {<BR>
+        if (domain[i] == ':')<BR>
+        {<BR>
+            domain[i] = '\0';<BR>
+            break;<BR>
+        }<BR>
+    }<BR>
+<BR>
+    //获取下载文件名<BR>
+    j = 0;<BR>
+    for (int i = start; url[i] != '\0'; i++)<BR>
+    {<BR>
+        if (url[i] == '/')<BR>
+        {<BR>
+            if (i !=  strlen(url) - 1)<BR>
+                j = 0;<BR>
+            continue;<BR>
+        }<BR>
+        else<BR>
+            file_name[j++] = url[i];<BR>
+    }<BR>
+    file_name[j] = '\0';<BR>
+}<BR>
+<BR>
+struct resp_header get_resp_header(const char *response)<BR>
+{<BR>
+    /*获取响应头的信息*/<BR>
+    struct resp_header resp;<BR>
+<BR>
+    char *pos = strstr(response, &quot;HTTP/&quot;);<BR>
+    if (pos)<BR>
+        sscanf(pos, &quot;%*s %d&quot;, &amp;resp.status_code);//返回状态码<BR>
+<BR>
+    pos = strstr(response, &quot;Content-Type:&quot;);//返回内容类型<BR>
+    if (pos)<BR>
+        sscanf(pos, &quot;%*s %s&quot;, resp.content_type);<BR>
+<BR>
+    pos = strstr(response, &quot;Content-Length:&quot;);//内容的长度(字节)<BR>
+    if (pos)<BR>
+        sscanf(pos, &quot;%*s %ld&quot;, &amp;resp.content_length);<BR>
+<BR>
+    return resp;<BR>
+}<BR>
+<BR>
+void get_ip_addr(char *domain, char *ip_addr)<BR>
+{<BR>
+    /*通过域名得到相应的ip地址*/<BR>
+    struct hostent *host = gethostbyname(domain);<BR>
+    if (!host)<BR>
+    {<BR>
+        ip_addr = NULL;<BR>
+        return;<BR>
+    }<BR>
+<BR>
+    for (int i = 0; host-&gt;h_addr_list[i]; i++)<BR>
+    {<BR>
+        strcpy(ip_addr, inet_ntoa( * (struct in_addr*) host-&gt;h_addr_list[i]));<BR>
+        break;<BR>
+    }<BR>
+}<BR>
+<BR>
+<BR>
+void progressBar(long cur_size, long total_size)<BR>
+{<BR>
+    /*用于显示下载进度条*/<BR>
+    float percent = (float) cur_size / total_size;<BR>
+    const int numTotal = 50;<BR>
+    int numShow = (int)(numTotal * percent);<BR>
+<BR>
+    if (numShow == 0)<BR>
+        numShow = 1;<BR>
+<BR>
+    if (numShow &gt; numTotal)<BR>
+        numShow = numTotal;<BR>
+<BR>
+    char sign[51] = {0};<BR>
+    memset(sign, '=', numTotal);<BR>
+<BR>
+    printf(&quot;\r%.2f%%\t[%-*.*s] %.2f/%.2fMB&quot;, percent * 100, numTotal, numShow, sign, cur_size / 1024.0 / 1024.0, total_size / 1024.0 / 1024.0);<BR>
+    fflush(stdout);<BR>
+<BR>
+    if (numShow == numTotal)<BR>
+        printf(&quot;\n&quot;);<BR>
+}<BR>
+<BR>
+void * download(void * socket_d)<BR>
+{<BR>
+    /*下载文件函数, 放在线程中执行*/<BR>
+    int client_socket = *(int *) socket_d;<BR>
+    int length = 0;<BR>
+    int mem_size = 4096;//mem_size might be enlarge, so reset it<BR>
+    int buf_len = mem_size;//read 4k each time<BR>
+    int len;<BR>
+<BR>
+    //创建文件描述符<BR>
+    int fd = open(resp.file_name, O_CREAT | O_WRONLY, S_IRWXG | S_IRWXO | S_IRWXU);<BR>
+    if (fd &lt; 0)<BR>
+    {<BR>
+        printf(&quot;Create file failed\n&quot;);<BR>
+        exit(0);<BR>
+    }<BR>
+<BR>
+    char *buf = (char *) malloc(mem_size * sizeof(char));<BR>
+<BR>
+    //从套接字中读取文件流<BR>
+    while ((len = read(client_socket, buf, buf_len)) != 0 &amp;&amp; length &lt; resp.content_length)<BR>
+    {<BR>
+        write(fd, buf, len);<BR>
+        length += len;<BR>
+        progressBar(length, resp.content_length);<BR>
+    }<BR>
+<BR>
+    if (length == resp.content_length)<BR>
+        printf(&quot;Download successful ^_^\n\n&quot;);<BR>
+}<BR>
+<BR>
+int main(int argc, char const *argv[])<BR>
+{<BR>
+    /*<BR>
+        test url:<BR>
+        1. https://nodejs.org/dist/v4.2.3/node-v4.2.3-linux-x64.tar.gz<BR>
+        2. http://img.ivsky.com/img/tupian/pre/201312/04/nelumbo_nucifera-009.jpg<BR>
+    */<BR>
+    char url[2048] = &quot;127.0.0.1&quot;;<BR>
+    char domain[64] = {0};<BR>
+    char ip_addr[16] = {0};<BR>
+    int port = 80;<BR>
+    char file_name[256] = {0};<BR>
+<BR>
+    if (argc == 1)<BR>
+    {<BR>
+        printf(&quot;Input a valid URL please\n&quot;);<BR>
+        exit(0);<BR>
+    }<BR>
+    else<BR>
+        strcpy(url, argv[1]);<BR>
+<BR>
+    puts(&quot;1: Parsing url...&quot;);<BR>
+    parse_url(url, domain, &amp;port, file_name);<BR>
+<BR>
+    if (argc == 3)<BR>
+        strcpy(file_name, argv[2]);<BR>
+<BR>
+    puts(&quot;2: Get ip address...&quot;);<BR>
+    get_ip_addr(domain, ip_addr);<BR>
+    if (strlen(ip_addr) == 0)<BR>
+    {<BR>
+        printf(&quot;can not get ip address\n&quot;);<BR>
+        return 0;<BR>
+    }<BR>
+<BR>
+    puts(&quot;\n&gt;&gt;&gt;&gt;Detail&lt;&lt;&lt;&lt;&quot;);<BR>
+    printf(&quot;URL: %s\n&quot;, url);<BR>
+    printf(&quot;DOMAIN: %s\n&quot;, domain);<BR>
+    printf(&quot;IP: %s\n&quot;, ip_addr);<BR>
+    printf(&quot;PORT: %d\n&quot;, port);<BR>
+    printf(&quot;FILENAME: %s\n\n&quot;, file_name);<BR>
+<BR>
+    //设置http请求头信息<BR>
+    char header[2048] = {0};<BR>
+    sprintf(header, \<BR>
+            &quot;GET %s HTTP/1.1\r\n&quot;\<BR>
+            &quot;Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n&quot;\<BR>
+            &quot;User-Agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537(KHTML, like Gecko) Chrome/47.0.2526Safari/537.36\r\n&quot;\<BR>
+            &quot;Host:%s\r\n&quot;\<BR>
+            &quot;Connection:close\r\n&quot;\<BR>
+            &quot;\r\n&quot;\<BR>
+        ,url, domain);<BR>
+<BR>
+    //printf(&quot;%s\n%d&quot;, header, (int) strlen(header));<BR>
+<BR>
+    //创建套接字<BR>
+    int client_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);<BR>
+    if (client_socket &lt; 0)<BR>
+    {<BR>
+        printf(&quot;invalid socket descriptor: %d\n&quot;, client_socket);<BR>
+        exit(-1);<BR>
+    }<BR>
+<BR>
+    //创建地址结构体<BR>
+    struct sockaddr_in addr;<BR>
+    memset(&amp;addr, 0, sizeof(addr));<BR>
+    addr.sin_family = AF_INET;<BR>
+    addr.sin_addr.s_addr = inet_addr(ip_addr);<BR>
+    addr.sin_port = htons(port);<BR>
+<BR>
+    //连接服务器<BR>
+    puts(&quot;3: Connect server...&quot;);<BR>
+    int res = connect(client_socket, (struct sockaddr *) &amp;addr, sizeof(addr));<BR>
+    if (res == -1)<BR>
+    {<BR>
+        printf(&quot;connect failed, return: %d\n&quot;, res);<BR>
+        exit(-1);<BR>
+    }<BR>
+<BR>
+    puts(&quot;4: Send request...&quot;);//向服务器发送下载请求<BR>
+    write(client_socket, header, strlen(header));<BR>
+<BR>
+    int mem_size = 4096;<BR>
+    int length = 0;<BR>
+    int len;<BR>
+    char *buf = (char *) malloc(mem_size * sizeof(char));<BR>
+    char *response = (char *) malloc(mem_size * sizeof(char));<BR>
+<BR>
+    //每次单个字符读取响应头信息, 仅仅读取的是响应部分的头部, 后面单独开线程下载<BR>
+    while ((len = read(client_socket, buf, 1)) != 0)<BR>
+    {<BR>
+        if (length + len &gt; mem_size)<BR>
+        {<BR>
+            //动态内存申请, 因为无法确定响应头内容长度<BR>
+            mem_size *= 2;<BR>
+            char * temp = (char *) realloc(response, sizeof(char) * mem_size);<BR>
+            if (temp == NULL)<BR>
+            {<BR>
+                printf(&quot;realloc failed\n&quot;);<BR>
+                exit(-1);<BR>
+            }<BR>
+            response = temp;<BR>
+        }<BR>
+<BR>
+        buf[len] = '\0';<BR>
+        strcat(response, buf);<BR>
+<BR>
+        //找到响应头的头部信息, 两个&quot;\n\r&quot;为分割点<BR>
+        int flag = 0;<BR>
+        for (int i = strlen(response) - 1; response[i] == '\n' || response[i] == '\r'; i--, flag++);<BR>
+        if (flag == 4)<BR>
+            break;<BR>
+<BR>
+        length += len;<BR>
+    }<BR>
+<BR>
+    //printf(&quot;\n&gt;&gt;&gt;&gt;Response header:&lt;&lt;&lt;&lt;\n%s&quot;, response);<BR>
+<BR>
+    resp = get_resp_header(response);<BR>
+    strcpy(resp.file_name, file_name);<BR>
+<BR>
+    printf(&quot;5: Start thread to download...\n&quot;);<BR>
+    /*开新的线程下载文件*/<BR>
+    pthread_t download_thread;<BR>
+    pthread_create(&amp;download_thread, NULL, download, (void *) &amp;client_socket);<BR>
+    pthread_join(download_thread, NULL);<BR>
+    return 0;<BR>
+}
+</DD>
+</DL>
+
+</DD>
+</DL>
+
+</DD>
+<DT>VS</DT>
+<!--property:date_created=1516539327-->
+<!--property:date_modified=1516665203-->
+<DD>
+1.加载动态库<BR>
+加载动态库<BR>
+定义一个函数说明<BR>
+  typedef int (_stdcall sqrtproc)(形参); <BR>
+  HINSTANCE hInstance;<BR>
+  函数指针<BR>
+  sqrtproc *pFunction;            <BR>
+  加载dll<BR>
+  hInstance=::LoadLibrary(&quot;..//业务//dll//gFileTrans.dll&quot;);  <BR>
+  得到函数的地址<BR>
+  pFunction=(sqrtproc *)::GetProcAddress(hInstance,&quot;函数名&quot;);  <BR>
+  通过函数指针调用函数<BR>
+  (*pFunction)(&quot;127.0.0.1&quot;, 8600, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;); <BR>
+<BR>
+<BR>
+<BR>
+2。报这个错误<BR>
+fatal error C1189: #error : missing -D__STDC_CONSTANT_MACROS / #define __STDC_CONSTANT_MACROS<BR>
+参考文章：https://ffmpeg.zeranoe.com/forum/viewtopic.php?f=15&amp;t=158<BR>
+fatal error C1189: #error :  missing -D__STDC_CONSTANT_MACROS / #define __STDC_CONSTANT_MACROS<BR>
+fatal error C1189: #error :  missing -D__STDC_CONSTANT_MACROS / #define __STDC_CONSTANT_MACROS<BR>
+今天使用FFMPEG出现以上错误<BR>
+解决方法：<BR>
+在libavutil\common.h文件头部加上以下宏定义即可：<BR>
+#ifdef __cplusplus<BR>
+#define __STDC_CONSTANT_MACROS<BR>
+#ifdef _STDINT_H<BR>
+#undef _STDINT_H<BR>
+#endif<BR>
+# include &quot;stdint.h&quot;<BR>
+#endif<BR>
+<BR>
+<BR>
+#ifndef INT64_C<BR>
+#define INT64_C(c) (c ## LL)<BR>
+#define UINT64_C(c) (c ## ULL)<BR>
+#endif<BR>
+<BR>
+3.socket缓冲区丢包，将缓冲区设置大一点<BR>
+int nRecvBuf = 5 * 1024 * 1024;       //设置成5M  <BR>
+Setsockopt(s,SOL_SOCKET, SO_RCVBUF, (const char *)&amp;nRecvBuf,sizeof(nRecvBuf));  
+</DD>
+<DT>libcurl</DT>
+<!--property:date_created=1516924472-->
+<!--property:date_modified=1516925154-->
+<DD>
+ftp://sourceware.org/pub/pthreads-win32/sources/pthreads-w32-2-9-1-release/<BR>
+<BR>
+http://windows.php.net/downloads/php-sdk/deps/vc14/x64/<BR>
+<BR>
+测试从ftp目录下批量下载文件函数
+</DD>
+<DT>编译多大全</DT>
+<!--property:date_created=1516925071-->
+<!--property:date_modified=1516925071-->
+<!--property:expanded-->
+<DD>
+<DL>
+<DT>编译openssl</DT>
+<!--property:date_created=1516925090-->
+<!--property:date_modified=1516925099-->
+<DD>
+目标：编译vs环境下openssl库<BR>
+<BR>
+工具：<BR>
+<BR>
+1. 编译环境win10+vs2015专业版<BR>
+<BR>
+2. ActivePerl工具，官网下载链接：http://www.activestate.com/activeperl/downloads<BR>
+<BR>
+3. openssl源码，下载链接：https://www.openssl.org/source/，选择2016-May-03 13:57:13 openssl-1.0.1t.tar.gz这个版本，之所以没有选择1.1.0，发觉两个版本差异较大，ms文件夹下缺少很多文件，没办法按照此方法编译。<BR>
+<BR>
+步骤：<BR>
+<BR>
+1. 安装ActivePerl, 并添加环境变量（可以默认勾选，或者手动添加，如path=d:\perl\bin）。<BR>
+<BR>
+2. 解压openssl。<BR>
+<BR>
+3. 点击 windows 开始-&gt;所有应用-&gt;vs2015-&gt;开发者命令提示（Developer Command Prompt for 2015）。<BR>
+<BR>
+4. CD到解压后的openssl的根目录。<BR>
+<BR>
+5. 执行命令：perl Configure VC-WIN32（或者VC-WIN64A，取决于编译库类型，可以用&#8211;prefix=路径指定生成路径）.<BR>
+<BR>
+6. ms\do_ms.bat（创建makefile文件，64位需要使用ms\do_win64aA.bat）<BR>
+<BR>
+7. 执行nmake - f ms\ntdll.mak(编译动态库)。<BR>
+<BR>
+8. 执行nmake - f ms\ntdll.mak test查看库是否有问题。<BR>
+<BR>
+9. 执行nmake - f ms\ntdll.mak install 。<BR>
+<BR>
+TIPs:<BR>
+<BR>
+编译动态库： <BR>
+nmake -f ms\ntdll.mak <BR>
+编译静态库： <BR>
+nmake -f ms\nt.mak <BR>
+测试动态库： <BR>
+nmake -f ms\ntdll.mak test <BR>
+测试静态库： <BR>
+nmake -f ms\nt.mak test <BR>
+安装动态库： <BR>
+nmake -f ms\ntdll.mak install <BR>
+安装静态库： <BR>
+nmake -f ms\nt.mak install <BR>
+清除上次动态库的编译，以便重新编译： <BR>
+nmake -f ms\ntdll.mak clean <BR>
+清除上次静态库的编译，以便重新编译： <BR>
+nmake -f ms\nt.mak clean<BR>
+感谢各大神网上奉献的资料，后来者使用才更为简便<BR>
+<BR>
+以上内容仅为个人实作学习记录，如涉及权限问题请告知，谢谢！<BR>
+<BR>
+下载库链接：http://download.csdn.net/detail/alger_magic/9669847
+</DD>
+<DT>编译ffmpeg</DT>
+<!--property:date_created=1516925305-->
+<!--property:date_modified=1516925318-->
+<DD>
+　系统环境：Windows 10 64位<BR>
+　　需要安装的软件和工具：<BR>
+　　Visual Studio 2015 With Update 3<BR>
+　　MSYS2<BR>
+　　YASM<BR>
+　　一、VS2015<BR>
+　　安装VS2015时，选择Git。<BR>
+　　<BR>
+　　二、msys2<BR>
+　　1、到这里下载：<BR>
+　　http://msys2.github.io. 选择第二个:msys2-x86_64-20160921.exe<BR>
+　　下载后，安装默认安装到C:\ msys64<BR>
+　　2.安装后，到msys2窗口执行，安装编译程序： pacman -S make gcc diffutils<BR>
+　　3. 重命名C:\msys64\usr\bin\link.exe 为C: \msys64\usr\bin\link.bak, 避免和MSVC 的link.exe抵触。<BR>
+　　三、YASM<BR>
+　　1. YASM下载地址：http://yasm.tortall.net/Download.html，下载其64位版本Win64 .exe (64 位 Windows 通用)。<BR>
+　　2、下载后，将下载回来的yasm-1.3.0-win64.exe 改名为yaml.exe，并放置于 MSYS2 安装目录中。就是放置到c:\msys64\usr\bin\ 中。<BR>
+　　四，ffmpeg<BR>
+下载最新版本ffmpeg,本文是在2016.10.21下载，如果速度太慢，可以翻墙后再执行：<BR>
+　　进入windows命令行，在C:\FFMPEG目录下执行：<BR>
+　　git clone git://source.ffmpeg.org/ffmpeg.git<BR>
+　　四，编译ffmpeg<BR>
+　　1、使用VC2015编辑C:\msys64\msys2_shell.cmd,将其中的：<BR>
+　　rem set MSYS2_PATH_TYPE=inherit<BR>
+　　“rem”注释删除掉，成为：<BR>
+　　set MSYS2_PATH_TYPE=inherit<BR>
+　　2、到开始菜单，执行“Visual Studio 2015-&gt; VS2015 x64 本机工具命令提示符”,在命令窗口下，CD \msys64,执行：msys2_shell.cmd -mingw64<BR>
+　　3、在启动的 MSYS2 终端中分别运行一下命令观察各便于工具组件是否被正确找到：<BR>
+　　<BR>
+　　5、修改msys2窗口代码页为GBK，避免编译时显示乱码：<BR>
+　　<BR>
+　　4、编译ffmpeg<BR>
+　　在msys2窗口:<BR>
+　　cd /<BR>
+　　cd /ffmpeg<BR>
+　　cd /ffmgeg<BR>
+　　进入下载ffmpeg目录中<BR>
+　　./configure  --toolchain=msvc  --arch=x86  --enable-yasm  --enable-asm --enable-shared  --disable-static<BR>
+　　make<BR>
+　　make install<BR>
+　　这样以后，编译生产的执行文件ffmpeg.exe和DLL文件在目录C:\msys64\usr\local\bin中，开发头文件在C:\msys64\usr\local\include中。
+</DD>
+<DT>编译jrtplib</DT>
+<!--property:date_created=1516925324-->
+<!--property:date_modified=1516925388-->
+<DD>
+一、JRTPLIB简介<BR>
+　　老外用C++编写的开源RTP协议库，用来进行实时数据传输，可以运行在 Windows、Linux、 FreeBSD、Solaris、Unix和VxWorks 等多种操作系统上，主页为：http://research.edm.uhasselt.be/~jori/page/index.php?n=Main.HomePage<BR>
+<BR>
+ <BR>
+<BR>
+二、相关下载<BR>
+jrtplib：　　http://research.edm.uhasselt.be/~jori/page/index.php?n=CS.Jrtplib <BR>
+<BR>
+jthread：　  http://research.edm.uhasselt.be/~jori/page/index.php?n=CS.Jthread <BR>
+<BR>
+cmake：    http://www.cmake.org/cmake/resources/software.html<BR>
+<BR>
+三、 编译步骤<BR>
+1    下载jrtplib和jthread并解压缩。阅读README。<BR>
+2  编译jthread生成jthread.lib和jthread_d.lib。<BR>
+① 打开cmake，添加好输入(where..)和输出路径(where to…)，完成configure配置（选visual studio 10），配置结果如下图：<BR>
+<BR>
+2012040623572765<BR>
+<BR>
+  ② 点击generate，生成VS2010工程文件<BR>
+<BR>
+  ③ 打开工程文件并编译，在debug和release下分别生成jthread.lib和jthread_d.lib<BR>
+<BR>
+     编译的具体方法为：选择Solution Explorer里的 Solution jthread，点右键，运行”Rebuild Solution”；如编译无错误，再选择INSTALL项目，运行”Build”。<BR>
+<BR>
+  ④ 如果编译成功（如下图），会在C:\Program Files\jthread的include\jthread下生成头文件；在lib下生成lib和cmake文件<BR>
+<BR>
+ <BR>
+<BR>
+2012040623582613<BR>
+<BR>
+    温馨提示：在win7下，你必须拥有管理者权限，否则编译不会通过，因为无法在C:\Program Files创建jthread文件，当然你可以手动创建。<BR>
+<BR>
+  3  编译jrtplib生成jrtplib.lib和jrtplib_d.lib。<BR>
+  ① 同2-①，其中configure会稍微麻烦一些，详细配置结果如下：<BR>
+<BR>
+2012040700015052<BR>
+<BR>
+ <BR>
+<BR>
+  ② 点击generate，生成VS2010工程文件<BR>
+<BR>
+  ③ 打开工程文件并编译，在debug和release下分别生成jrtplib_d.lib和jrtplib.lib<BR>
+<BR>
+④ 编译成功（如下图），在C:\Program Files\jrtplib下include\jrtplib3下会生成一堆头文件；在lib下会生成jrtplib_d.lib和jrtplib.lib以及cmake文件<BR>
+<BR>
+2012040700012122<BR>
+<BR>
+说明：网上提到的一些用VS2008和VC6.0方法中提到了两个细节：  一是要把”jmutex.h”和”jthread.h”两个头文件放入jrtplib/src目录下，二是要把src文件夹下所有头文件中的&lt;jmutex.h&gt;和&lt;jthread.h&gt;语句修改为”jmutex.h”和”jthread.h”。<BR>
+<BR>
+我在编译时没有处理这两个细节成功了，后续调试出现相应问题相应修改一下即可。<BR>
+<BR>
+ <BR>
+<BR>
+四、 使用实例<BR>
+1  添加库<BR>
+①步骤一：<BR>
+<BR>
+方法1. 将编译生成的jrtplib.lib和jthread.lib库拷贝到“*:\Program Files\Microsoft Visual Studio 10.0\VC\lib”下面<BR>
+<BR>
+方法2. 将编译生成的四个lib库库拷贝到当前工程的cpp文件下<BR>
+<BR>
+②步骤二：<BR>
+<BR>
+方法1. [菜单]“项目-&gt;属性-&gt;配置属性-&gt;连接器-&gt;输入-&gt;附加依赖项”里填写“jrtplib.lib;jthread.lib;WS2_32.lib”<BR>
+<BR>
+方法2.  pragma 方式，在stdafx.h文件中 添加<BR>
+<BR>
+#ifdef DEBUG<BR>
+    #pragma comment(lib, &quot;jrtplib_d.lib&quot;) <BR>
+    #pragma comment(lib,&quot;jthread_d.lib&quot;)<BR>
+    #pragma comment(lib,&quot;WS2_32.lib&quot;)<BR>
+#else<BR>
+    #pragma comment(lib, &quot;jrtplib.lib&quot;) <BR>
+    #pragma comment(lib,&quot;jthread.lib&quot;)<BR>
+    #pragma comment(lib,&quot;WS2_32.lib&quot;)<BR>
+#endif<BR>
+2  添加头文件<BR>
+①步骤一：将所有的.h文件放到一起，如myJRTPLIBHeader里面，再添加include<BR>
+<BR>
+②步骤二：<BR>
+<BR>
+方法1.“项目-&gt;属性-&gt;配置属性-&gt;C/C++-&gt;常规-&gt;附加包含目录”<BR>
+<BR>
+方法2.“工具-&gt;选项-&gt;项目和解决方案-&gt;C++ 目录”，选择对应平台，然后添加所需“包括文件”目录（此法VS2010不通）<BR>
+<BR>
+ <BR>
+<BR>
+3  测试代码（sample1）<BR>
+cpp文件：<BR>
+<BR>
+// jrtplibTest.cpp : 定义控制台应用程序的入口点。<BR>
+//<BR>
+<BR>
+#include &quot;stdafx.h&quot;<BR>
+<BR>
+<BR>
+<BR>
+//  头文件<BR>
+#include &quot;rtpsession.h&quot;<BR>
+#include &quot;rtpudpv4transmitter.h&quot;<BR>
+#include &quot;rtpipv4address.h&quot;<BR>
+#include &quot;rtpsessionparams.h&quot;<BR>
+#include &quot;rtperrors.h&quot;<BR>
+#ifndef WIN32<BR>
+#include &lt;netinet/in.h&gt;<BR>
+#include &lt;arpa/inet.h&gt;<BR>
+#else<BR>
+#include &lt;winsock2.h&gt;<BR>
+#endif // WIN32<BR>
+#include &lt;stdlib.h&gt;<BR>
+#include &lt;stdio.h&gt;<BR>
+#include &lt;iostream&gt;<BR>
+#include &lt;string&gt;<BR>
+<BR>
+using namespace jrtplib;<BR>
+<BR>
+<BR>
+//<BR>
+// This function checks if there was a RTP error. If so, it displays an error<BR>
+// message and exists.<BR>
+//<BR>
+void checkerror(int rtperr)<BR>
+{<BR>
+    if (rtperr &lt; 0)<BR>
+    {<BR>
+        std::cout &lt;&lt; &quot;ERROR: &quot; &lt;&lt; RTPGetErrorString(rtperr) &lt;&lt; std::endl;<BR>
+        exit(-1);<BR>
+    }<BR>
+}<BR>
+<BR>
+//<BR>
+// The main routine<BR>
+//<BR>
+int main(void)<BR>
+{<BR>
+#ifdef WIN32<BR>
+    WSADATA dat;<BR>
+    WSAStartup(MAKEWORD(2,2),&amp;dat);<BR>
+#endif // WIN32<BR>
+<BR>
+    RTPSession sess;<BR>
+    uint16_t portbase,destport;<BR>
+    uint32_t destip;<BR>
+    std::string ipstr;<BR>
+    int status,i,num;<BR>
+<BR>
+    // First, we'll ask for the necessary information<BR>
+<BR>
+    std::cout &lt;&lt; &quot;Enter local portbase:&quot; &lt;&lt; std::endl;<BR>
+    std::cin &gt;&gt; portbase;<BR>
+    std::cout &lt;&lt; std::endl;<BR>
+<BR>
+    std::cout &lt;&lt; &quot;Enter the destination IP address&quot; &lt;&lt; std::endl;<BR>
+    std::cin &gt;&gt; ipstr;<BR>
+<BR>
+    // 获得接收端的IP地址和端口号<BR>
+    destip = inet_addr(ipstr.c_str());<BR>
+    if (destip == INADDR_NONE)<BR>
+    {<BR>
+        std::cerr &lt;&lt; &quot;Bad IP address specified&quot; &lt;&lt; std::endl;<BR>
+        return -1;<BR>
+    }<BR>
+<BR>
+    // The inet_addr function returns a value in network byte order, but<BR>
+    // we need the IP address in host byte order, so we use a call to<BR>
+    // ntohl<BR>
+    destip = ntohl(destip);<BR>
+<BR>
+    std::cout &lt;&lt; &quot;Enter the destination port&quot; &lt;&lt; std::endl;<BR>
+    std::cin &gt;&gt; destport;<BR>
+<BR>
+    std::cout &lt;&lt; std::endl;<BR>
+    std::cout &lt;&lt; &quot;Number of packets you wish to be sent:&quot; &lt;&lt; std::endl;<BR>
+    std::cin &gt;&gt; num;<BR>
+<BR>
+    // Now, we'll create a RTP session, set the destination, send some<BR>
+    // packets and poll for incoming data.<BR>
+<BR>
+    RTPUDPv4TransmissionParams transparams;<BR>
+    RTPSessionParams sessparams;<BR>
+<BR>
+    // IMPORTANT: The local timestamp unit MUST be set, otherwise<BR>
+    //            RTCP Sender Report info will be calculated wrong<BR>
+    // In this case, we'll be sending 10 samples each second, so we'll<BR>
+    // put the timestamp unit to (1.0/10.0)<BR>
+    sessparams.SetOwnTimestampUnit(1.0/10.0);        <BR>
+<BR>
+    sessparams.SetAcceptOwnPackets(true);<BR>
+    transparams.SetPortbase(portbase);<BR>
+    // 创建RTP会话<BR>
+    status = sess.Create(sessparams,&amp;transparams);    <BR>
+    checkerror(status);<BR>
+<BR>
+    RTPIPv4Address addr(destip,destport);<BR>
+    // 指定RTP数据接收端<BR>
+    status = sess.AddDestination(addr);<BR>
+    checkerror(status);<BR>
+<BR>
+    for (i = 1 ; i &lt;= num ; i++)<BR>
+    {<BR>
+        printf(&quot;\nSending packet %d/%d\n&quot;,i,num);<BR>
+<BR>
+        // send the packet<BR>
+        status = sess.SendPacket((void *)&quot;1234567890&quot;,10,0,false,10);<BR>
+        checkerror(status);<BR>
+<BR>
+        sess.BeginDataAccess();<BR>
+<BR>
+        // check incoming packets<BR>
+        if (sess.GotoFirstSourceWithData())<BR>
+        {<BR>
+            do<BR>
+            {<BR>
+                RTPPacket *pack;<BR>
+<BR>
+                while ((pack = sess.GetNextPacket()) != NULL)<BR>
+                {<BR>
+                    // You can examine the data here<BR>
+                    printf(&quot;Got packet !\n&quot;);<BR>
+<BR>
+                    // we don't longer need the packet, so<BR>
+                    // we'll delete it<BR>
+                    sess.DeletePacket(pack);<BR>
+                }<BR>
+            } while (sess.GotoNextSourceWithData());<BR>
+        }<BR>
+<BR>
+        sess.EndDataAccess();<BR>
+<BR>
+#ifndef RTP_SUPPORT_THREAD<BR>
+        status = sess.Poll();<BR>
+        checkerror(status);<BR>
+#endif // RTP_SUPPORT_THREAD<BR>
+<BR>
+        RTPTime::Wait(RTPTime(1,0));<BR>
+    }<BR>
+<BR>
+    sess.BYEDestroy(RTPTime(10,0),0,0);<BR>
+<BR>
+#ifdef WIN32<BR>
+    WSACleanup();<BR>
+#endif // WIN32<BR>
+    return 0;<BR>
+}<BR>
+4  下载<BR>
+　　在VS2010+Win7下编译好的JRTPLIB库及相关头文件下载：(刚传CSDN，现在打不开，等等，明天补上…)<BR>
+<BR>
+补充：下载（猛击）<BR>
+<BR>
+ <BR>
+<BR>
+Ref/Related<BR>
+1 http://research.edm.uhasselt.be/~jori/page/index.php?n=CS.Jrtplib<BR>
+<BR>
+2 http://research.edm.uhasselt.be/jori/jrtplib/documentation/index.html<BR>
+<BR>
+3 http://blog.csdn.net/nickche300/article/details/6408099<BR>
+<BR>
+4 http://blog.csdn.net/sunloverain2/article/details/5398694<BR>
+<BR>
+5 http://blog.csdn.net/aaronalan/article/details/5153604
+</DD>
+<DT>编译osip&amp;eXosip</DT>
+<!--property:date_created=1516925394-->
+<!--property:date_modified=1516925505-->
+<DD>
+1、代码下载<BR>
+   http://www.antisip.com/download/exosip2/<BR>
+       libeXosip2-4.1.0.tar.gz<BR>
+       libosip2-4.1.0.tar.gz<BR>
+   http://c-ares.haxx.se/<BR>
+       c-ares-1.11.0.tar.gz<BR>
+2、将压缩包解压缩后，代码放在同一个目录。<BR>
+   也就是libosip2-4.1.0、libeXosip2-4.1.0、c-ares-1.11.0是同级别的目录。<BR>
+   比如：<BR>
+       src<BR>
+          libosip2-4.1.0<BR>
+          libeXosip2-4.1.0<BR>
+          c-ares-1.11.0<BR>
+   将目录改名成下面的形式<BR>
+       libosip2-4.1.0-&gt;osip<BR>
+       libeXosip2-4.1.0-&gt;eXosip<BR>
+       c-ares-1.11.0-&gt;c-ares<BR>
+   新目录结构如下：<BR>
+       src<BR>
+          osip<BR>
+          eXosip<BR>
+          c-ares<BR>
+3、打开解决方案<BR>
+   libosip2-4.1.0等默认的几个工程是VS2012的工程。<BR>
+   使用VS2013打开eXosip\platform\vsnet\eXosip.sln解决方案后，<BR>
+   会弹出[升级VC++编译器和库]的窗口。点击确定后，工程会自动升级到VS2013。<BR>
+4、编译<BR>
+   由于eXosip依赖于libcares、osip2、osipparser2这3个库。所以直接编译eXosip即可。<BR>
+5、修改编译错误<BR>
+   Win7系统可能会出现如下编译警告：<BR>
+   osip\include\osipparser2/internal.h(71): warning C4067: 预处理器指令后有意外标记 - 应输入换行符<BR>
+   osip\include\osip2/internal.h(163): warning C4067: 预处理器指令后有意外标记 - 应输入换行符<BR>
+   修改如下：<BR>
+   osip/include/osip2/internal.h和osip/include/osipparser2/internal.h<BR>
+   add start和add end中间部分为添加代码<BR>
+   #if (_MSC_VER &gt;= 1700) &amp;&amp; !defined(_USING_V110_SDK71_)<BR>
+   #include &lt;winapifamily.h&gt;<BR>
+   // add start 增加WINAPI_FAMILY_ONE_PARTITION定义<BR>
+   /* Macro to determine if only one partition is enabled from a set */<BR>
+   #define WINAPI_FAMILY_ONE_PARTITION(PartitionSet, Partition) ((WINAPI_FAMILY &amp; PartitionSet) == Partition)<BR>
+   // add end<BR>
+   #endif<BR>
+   exosip\src\eXtransport.h(44): fatal error C1083: 无法打开包括文件: “openssl/opensslv.h”: No such file or directory<BR>
+   配置属性-&gt;C/C++-&gt;预处理器-&gt;预处理器定义，删除HAVE_OPENSSL_SSL_H。Debug配置和Release配置都要删除。<BR>
+   ..\..\..\exosip\src\eXtl_udp.c(55): fatal error C1083: 无法打开包括文件: “tsc_socket_api.h”: No such file or directory<BR>
+   配置属性-&gt;C/C++-&gt;预处理器-&gt;预处理器定义，删除TSC_SUPPORT。Debug配置和Release配置都要删除。<BR>
+6、修改编译警告、错误后继续编译<BR>
+   Debug版本编译会生成如下文件：<BR>
+   eXosip\platform\vsnet\v120\Win32\Debug\<BR>
+       eXosip.lib<BR>
+       libcares.lib<BR>
+       osip2.lib<BR>
+       osipparser2.lib<BR>
+   Release版本编译会生成如下文件：<BR>
+   eXosip\platform\vsnet\v120\Win32\Release<BR>
+       eXosip.lib<BR>
+       libcares.lib<BR>
+       osip2.lib<BR>
+       osipparser2.lib<BR>
+<BR>
+7、测试程序的编译和错误修改<BR>
+   测试程序代码可以参考下面博客：<BR>
+   http://www.cnblogs.com/qq1269122125/tag/eXosip2/<BR>
+   这个博客使用的是linux，如果在Windows下写代码，需要自己修改一下，把linux的头文件去掉，加入Windows的头文件。<BR>
+   比如<BR>
+   //#include &lt;arpa/inet.h&gt;<BR>
+   //#include &lt;sys/types.h&gt;<BR>
+   //#include &lt;sys/socket.h&gt;<BR>
+   #include &lt;WinSock2.h&gt;<BR>
+   测试工程建立，代码写好后，注意头文件的目录要在[附加包含目录]中设置，<BR>
+   链接器[附加依赖项]的设置:ws2_32.lib;Dnsapi.lib;osip2.lib;osipparser2.lib;libcares.lib;eXosip.lib;<BR>
+   [附加库目录]也需要根据实际情况设置。<BR>
+   以上内容设置完成后，开始编译，我在编译过程中遇到了如下错误：<BR>
+   错误类型1：<BR>
+   eXosip2-4.1版本中，eXosip_init、eXosip_listen_addr等函数<BR>
+   需要一个struct eXosip_t *excontext的参数，定义一个这个类型的变量，当作函数参数即可。<BR>
+   需要修改的函数较多，不一一列举，参照编译错误修改即可。<BR>
+   错误类型2：<BR>
+   LIBCMTD.lib(dbgheap.obj) : error LNK2005: __CrtSetCheckCount 已经在 MSVCRTD.lib(MSVCR120D.dll) 中定义<BR>
+   这样类似的错误有一大堆，解决方法如下:<BR>
+   配置属性-&gt;C/C++-&gt;代码生成-&gt;运行库-&gt;多线程调试 DLL (/MDd) 改为 多线程调试 (/MTd)<BR>
+   错误类型3:<BR>
+   error LNK2019:无法解析的外部符号_ares_getplatform，该符号在函数_get_DNS_Registry中被引用。<BR>
+   解决方法：<BR>
+   把ares_platform.h和ares_platform.c加入libcares工程，重新编译libcares。<BR>
+   错误类型4:<BR>
+   error LNK2019:无法解析的外部符号_ares_create_query,该符号在函数_ares_query中被引用。<BR>
+   把ares_create_query.c加入libcares工程，重新编译libcares。<BR>
+   错误类型5:<BR>
+   error LNK2019:无法解析的外部符号_DnsQueryConfig@24,该符号在函数_eXosip_dnsutils_naptr中被引用。<BR>
+   解决方法：<BR>
+   如果附加依赖项没有Dnsapi.lib，则会有该警告，添加Dnsapi.lib后即可消除。<BR>
+   DnsQueryConfig是WindowsAPI。可以查msdn。<BR>
+<BR>
+配置属性-&gt;C/C++-&gt;预处理器-&gt;预处理器定义，删除HAVE_CARES_H。Debug配置和Release配置都要删除。<BR>
+看了下代码，这个属性在Windows下应该不使用也可以。
+</DD>
+<DT>编译libcurl</DT>
+<!--property:date_created=1516926056-->
+<!--property:date_modified=1516926587-->
+<DD>
+Win10+VS2015编译libcurl<BR>
+<BR>
+目标：vc环境下 libcurl库<BR>
+<BR>
+材料：<BR>
+<BR>
+1. Curl源码，可从官网下载，https://curl.haxx.se/download.html,当前版本使用的是7.50.3<BR>
+<BR>
+2. openssl在window下编译的库文件+头文件，可参照编译openssl的方式自行编译，也可以直接下载编译好的。http://windows.php.net/downloads/php-sdk/deps/<BR>
+<BR>
+步骤：<BR>
+<BR>
+1. 解压curl及整理openssl材料,openssl和curl文件夹放在同一个文件目录下，openssl的文件目录如下<BR>
+<BR>
+openssl文件夹(如openssl-1.0.1t-vc14-x86)<BR>
+│<BR>
+├─bin(文件夹下放.dll动态库)<BR>
+├─include<BR>
+│  └─openssl(文件夹下放.h头文件)<BR>
+├─lib(文件夹下放静态库.lib文件)<BR>
+<BR>
+2.创建一个.bat文件（如build_lib_bat_vc14.bat），内容如下（vc版本，openssl文件夹名及动/静态库可视情况改动），并将该bat文件放到curl源码文件夹下的winbuild文件夹中。<BR>
+<BR>
+静态库<BR>
+<BR>
+@REM @echo off<BR>
+<BR>
+@IF [%1]==[debug] (<BR>
+<BR>
+@echo 正在使用debug模式编译libcurl~~~<BR>
+<BR>
+@nmake /f Makefile.vc WITH_DEVEL=../../openssl-1.0.1t-vc14-x86 mode=static VC=14 WITH_SSL=static ENABLE_IDN=no RTLIBCFG=dll DEBUG=yes MACHINE=x86<BR>
+<BR>
+) ELSE (<BR>
+<BR>
+@echo 正在使用release模式编译libcurl~~~<BR>
+<BR>
+@nmake /f Makefile.vc WITH_DEVEL=../../openssl-1.0.1t-vc14-x86 mode=static VC=14 WITH_SSL=static ENABLE_IDN=no RTLIBCFG=dll DEBUG=no MACHINE=x86<BR>
+<BR>
+)<BR>
+<BR>
+@REM @echo on<BR>
+<BR>
+动态库<BR>
+<BR>
+@REM @echo off<BR>
+<BR>
+@IF [%1]==[debug] (<BR>
+<BR>
+@echo 正在使用debug模式编译libcurl~~~<BR>
+<BR>
+@nmake /f Makefile.vc WITH_DEVEL=../../openssl-1.0.1t-vc14-x86 mode=dll VC=14 WITH_SSL=dll ENABLE_IDN=no RTLIBCFG=dll DEBUG=yes MACHINE=x86<BR>
+<BR>
+) ELSE (<BR>
+<BR>
+@echo 正在使用release模式编译libcurl~~~<BR>
+<BR>
+@nmake /f Makefile.vc WITH_DEVEL=../../openssl-1.0.1t-vc14-x86 mode=dll VC=14 WITH_SSL=dll ENABLE_IDN=no RTLIBCFG=dll DEBUG=no MACHINE=x86<BR>
+<BR>
+)<BR>
+<BR>
+@REM @echo on<BR>
+<BR>
+<BR>
+<BR>
+3. 点击 windows 开始-&gt;所有应用-&gt;vs2015-&gt;开发者命令提示（Developer Command Prompt for 2015）。<BR>
+<BR>
+4. CD到curl源码的winbuild目录。<BR>
+<BR>
+5. 执行build_lib_bat_vc14.bat release。<BR>
+<BR>
+6. 如build成功，会在源码目录下的builds文件下找到include和lib，如下图结构。<BR>
+<BR>
+├─libcurl-vc14-x86-release-static-ssl-static-ipv6-sspi<BR>
+│  ├─bin<BR>
+│  ├─include<BR>
+│  │  └─curl<BR>
+│  └─lib<BR>
+<BR>
+#PS:<BR>
+<BR>
+添加libcurl库和头文件后编译可能会提示错误，无法解析的外部符号。<BR>
+<BR>
+解决方法： <BR>
+1. 给工程添加依赖库：项目-&gt;属性-&gt;链接器-&gt;输入-&gt;附加依赖项，ws2_32.lib;winmm.lib;wldap32.lib添加进去。 <BR>
+2. 加入预编译选项，项目-&gt;属性-&gt;c/c++ -&gt;预处理器-&gt;预处理器定义，把；BUILDING_LIBCURL;HTTP_ONLY添加进去，注意分号。<BR>
+感谢各大神网上奉献的资料，后来者使用才更为简便<BR>
+<BR>
+以上内容仅为个人实作学习记录，如涉及权限问题请告知，谢谢！<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+本文使用vs2010<BR>
+下载：<BR>
+git clone https://github.com/curl/curl.git<BR>
+https://github.com/curl/curl<BR>
+<BR>
+vs的工具下的命令行:(一定)<BR>
+32位：vcvarsall.bat x86<BR>
+64位:vcvarsall.bat x64<BR>
+下一步：执行curl目录下的buildconf.bat，然后cd winbuild<BR>
+下一步：<BR>
+windows下编译(MT):<BR>
+32-debug:nmake /f Makefile.vc mode=static vc=10debug=yes rtlibcfg=static machine=x32<BR>
+32-release:nmake /f Makefile.vc mode=static vc=10debug=nortlibcfg=static machine=x32<BR>
+64-debug:nmake /f Makefile.vc mode=static vc=10debug=yes rtlibcfg=static machine=AMD64<BR>
+64-release:nmake /f Makefile.vc mode=static vc=10debug=nortlibcfg=static machine=AMD64<BR>
+windows下编译(MD):<BR>
+32-debug:nmake /f Makefile.vc mode=static vc=10debug=yes machine=x32<BR>
+32-release:nmake /f Makefile.vc mode=static vc=10debug=nomachine=x32<BR>
+64-debug:nmake /f Makefile.vc mode=static vc=10debug=yes machine=AMD64<BR>
+64-release:nmake /f Makefile.vc mode=static vc=10debug=nomachine=AMD64<BR>
+<BR>
+下载库链接：http://download.csdn.net/detail/alger_magic/9669849
+</DD>
+</DL>
+
+</DD>
+<DT>文本处理</DT>
+<!--property:date_created=1516234387-->
+<!--property:date_modified=1516234422-->
+<DD>
+WINHEX，EmEditor，UE ，PilotEdit Lite，glogg，PilotEdit
 </DD>
 </DL>
 </BODY>
