@@ -22,12 +22,18 @@
 #include <stdio.h>
 #include <math.h>
 #include <gl/glut.h>
+#include <windows.h>
+#include <iostream>
 
 #define PI 3.1415926
 GLsizei width = 600;
 GLsizei height = 600;
 int uStepNum = 50;
 int vStepNum = 50;
+GLuint pTexObj;
+GLsizei size;
+HANDLE pData;
+std::string fileName;
 
 //点结构
 class CsrPoint
@@ -115,6 +121,16 @@ void initgl()
 	glClearColor(0, 1, 1, 1);
 	glClearDepth(1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+#if 0
+	//加载纹理
+	glEnable(GL_TEXTURE_2D);
+	glGenTextures(size, (GLuint*)&pTexObj);
+	glBindTexture(GL_TEXTURE_2D, pTexObj); 
+	pData = LoadImage(fileName.c_str());	//加载图片
+	glTexImage2D(GL_TEXTURE_2D, 0, )
+#endif
+
 	GLfloat pos[] = { 1.0f, 1.0f, 1.0f, 0.0f };
 	GLfloat ambient[] = { 0.2f, 0.2f, 0.2f, 0.2f };
 	GLfloat diffuse[] = { 0.5f, 0.5f, 0.5f, 0.2f };
@@ -139,7 +155,14 @@ void displayFunc()
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glColor3f(1.0, 0.0, 0.0);
+
+#if 0
+	glEnable(GL_TEXTURE_2D);
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
+	glBindTexture(GL_TEXTURE_2D,
+#endif
+
+	glColor3f(1.0, 1.0, 0.0);
 	glPointSize(1.0);
 	glRotated(30, 1, 0, 0);
 	glRotated(60, 0, 1, 0);

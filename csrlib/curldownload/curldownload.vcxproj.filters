@@ -13,5 +13,60 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="threadpool">
+      <UniqueIdentifier>{8437e44d-ee09-4349-9cf4-611ce1d387c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{3ba4ff67-f5d6-446f-aa55-8341b81673ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdlshow">
+      <UniqueIdentifier>{40184760-9abc-4b00-9dcb-4aaa1017dcfa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="testdownload.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testlibcurl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="csrthreadpool.cpp">
+      <Filter>threadpool</Filter>
+    </ClCompile>
+    <ClCompile Include="csrthread.cpp">
+      <Filter>threadpool</Filter>
+    </ClCompile>
+    <ClCompile Include="csrcurldownload.cpp">
+      <Filter>threadpool</Filter>
+    </ClCompile>
+    <ClCompile Include="testthreadpool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="filenameio.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="csrthread.h">
+      <Filter>threadpool</Filter>
+    </ClInclude>
+    <ClInclude Include="csrthreadpool.h">
+      <Filter>threadpool</Filter>
+    </ClInclude>
+    <ClInclude Include="csrtask.h">
+      <Filter>threadpool</Filter>
+    </ClInclude>
+    <ClInclude Include="csrcurldownload.h">
+      <Filter>threadpool</Filter>
+    </ClInclude>
+    <ClInclude Include="csrtimestramp.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="csrdef.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="filenameio.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

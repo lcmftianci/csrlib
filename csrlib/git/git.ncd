@@ -1,5 +1,5 @@
 <!DOCTYPE NoteCase-File>
-<!--LastNote:28-->
+<!--LastNote:32-->
 <HTML>
 <HEAD>
 <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
@@ -2035,8 +2035,33 @@ windows下编译(MD):<BR>
 <BR>
 下载库链接：http://download.csdn.net/detail/alger_magic/9669849
 </DD>
+<DT>新节点</DT>
+<!--property:date_created=1518151448-->
+<!--property:date_modified=1518151448-->
 </DL>
 
+</DD>
+<DT>打造自己的搜索引擎</DT>
+<!--property:date_created=1518151453-->
+<!--property:date_modified=1518151453-->
+<!--property:expanded-->
+<DD>
+<DL>
+<DT>一些开源搜索引擎</DT>
+<!--property:date_created=1518151468-->
+<!--property:date_modified=1518151943-->
+<DD>
+http://nutch.apache.org/<BR>
+http://www.dataparksearch.org/
+</DD>
+</DL>
+
+</DD>
+<DT>capsule</DT>
+<!--property:date_created=1518223608-->
+<!--property:date_modified=1518223624-->
+<DD>
+https://www.cnblogs.com/hellcat/articles/7812144.html
 </DD>
 <DT>文本处理</DT>
 <!--property:date_created=1516234387-->

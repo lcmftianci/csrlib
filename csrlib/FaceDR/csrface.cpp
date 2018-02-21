@@ -12,7 +12,7 @@ using namespace cv;
 
 int main(void)
 {
-#if 1
+#if 0
 	Mat img = imread("E:\\AllPicture\\照片\\sonrun\\yuzhu1.jpg");
 
 	imshow("人脸识别", img);
@@ -29,18 +29,26 @@ int main(void)
 	}
 #endif
 
-#if 0
-	Mat img = imread("D:\\Databases\\picdata\\girls.jpeg");
+#if 1
+
+	VideoCapture cap(0);
+	Mat frame;
+	//Mat img = imread("D:\\Databases\\picdata\\girls.jpeg");
+	//Mat img = imread("E:\\AllPicture\\照片\\sonrun\\yuzhu1.jpg");
 	if (!face_cascade.load(face_cascade_filename))
 		return -1;
 	if (!eyes_cascade.load(eyes_cascade_filename))
 		return -1;
 
-	detectedFace(img);
+	while (1)
+	{
+		cap >> frame;
+		detectedFace(frame);
 
-	int c = waitKey(0);
-	if ((char)c == 27)
-		return 0;
+		int c = waitKey(10);
+		if ((char)c == 27)
+			return 0;
+	}
 
 #endif
 
@@ -164,7 +172,7 @@ void detectedFace(cv::Mat frame)
 	//加载xml文件后再检测
 
 	//检测人脸
-	face_cascade.detectMultiScale(frame_fray, faces, 1.1, 3, CV_HAAR_DO_ROUGH_SEARCH, Size(70, 70), Size(100, 100));
+	face_cascade.detectMultiScale(frame_fray, faces, 1.1, 3);
 	for (size_t inx = 0; inx < faces.size(); ++inx)
 	{
 		rectangle(frame, faces[inx], Scalar(255, 0, 0), 2, 8, 0);
@@ -172,13 +180,13 @@ void detectedFace(cv::Mat frame)
 
 		//检测人眼
 		std::vector<Rect> eyes;
-		eyes_cascade.detectMultiScale(faceROI, eyes, 1.1, 1, CV_HAAR_DO_ROUGH_SEARCH, Size(3, 3));
+		eyes_cascade.detectMultiScale(faceROI, eyes, 1.1, 3, 0 | CV_HAAR_SCALE_IMAGE, Size(30, 30));
 		for (size_t jnx = 0; jnx < eyes.size(); ++jnx)
 		{
 			rectangle(frame, eyes[jnx], Scalar(0, 255, 0), 2, 8, 0);
 		}
 	}
-	namedWindow(winName, 2);
+	namedWindow(winName, 1);
 	imshow(winName, frame);
 }
 

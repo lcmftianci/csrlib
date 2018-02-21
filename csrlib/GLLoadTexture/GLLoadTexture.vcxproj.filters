@@ -15,16 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GlobalDesk.cpp">
+    <ClCompile Include="GlLoadTexture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="GlobalDesk.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="csrtexture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
