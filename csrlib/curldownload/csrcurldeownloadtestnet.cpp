@@ -1,8 +1,7 @@
-#if 0
 #include <iostream>
-#include "csrtask.h"
-#include "filenameio.h"
 #include "csrthread.h"
+#include "filenameio.h"
+#include "csrtask.h"
 #include "csrthreadpool.h"
 #include "csrcurldownload.h"
 
@@ -53,7 +52,6 @@ int main(void)
 	cout << "测试程序开始" << endl;
 	CsrThreadPool *pool = new CsrThreadPool(5);
 	pool->Activate();
-
 #if 0
 	for (int o = 0; o < 10; ++o)
 	{
@@ -64,12 +62,13 @@ int main(void)
 #endif
 
 	//启动任务去下载东西
-	const char *capslib = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517971299610&di=ed9a6584f2790d40d1298b00609d6d5c&imgtype=0&src=http%3A%2F%2Fimgq.duitang.com%2Fuploads%2Fitem%2F201412%2F19%2F20141219181056_ihhFX.jpeg";
-	pool->AddAsynTask(&RunTaskFunc, (void*)capslib);
 	const char* capsuleTensor = "https://codeload.github.com/naturomics/CapsNet-Tensorflow/zip/master";
 	pool->AddAsynTask(&RunTaskFunc, (void*)capsuleTensor);
 	const char* capsuleKeras = "https://codeload.github.com/XifengGuo/CapsNet-Keras/zip/master";
 	pool->AddAsynTask(&RunTaskFunc, (void*)capsuleKeras);
+
+	//用sdl显示图片
+
 
 	getchar();
 
@@ -80,5 +79,3 @@ int main(void)
 	system("pause");
 	return 0;
 }
-
-#endif

@@ -45,6 +45,9 @@
     <ClCompile Include="filenameio.cpp">
       <Filter>common</Filter>
     </ClCompile>
+    <ClCompile Include="csrcurldeownloadtestnet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="csrthread.h">
