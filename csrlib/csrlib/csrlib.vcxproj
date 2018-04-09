@@ -133,10 +133,10 @@
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="comheader.h" />
     <ClInclude Include="csrcopy.h" />
+    <ClInclude Include="csrcorescreen.h" />
     <ClInclude Include="csrdoublelist.h" />
     <ClInclude Include="csrdoulist.h" />
     <ClInclude Include="csrfilesystem.h" />
@@ -165,13 +166,16 @@
     <ClInclude Include="csrshape.h" />
     <ClInclude Include="csrstack.h" />
     <ClInclude Include="csrstring.h" />
+    <ClInclude Include="csrstrutils.h" />
     <ClInclude Include="csrthread.h" />
     <ClInclude Include="csrtree.h" />
     <ClInclude Include="csrtw.h" />
     <ClInclude Include="interview.h" />
+    <ClInclude Include="RadMirror.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="csrcopy.cpp" />
+    <ClCompile Include="csrcorescreen.cpp" />
     <ClCompile Include="csrdoublelist.cpp" />
     <ClCompile Include="csrdoulist.cpp" />
     <ClCompile Include="csrfilesystem.cpp" />
@@ -189,9 +193,11 @@
     <ClCompile Include="csrshape.cpp" />
     <ClCompile Include="csrstack.cpp" />
     <ClCompile Include="csrstring.cpp" />
+    <ClCompile Include="csrstrsplit.cpp" />
     <ClCompile Include="csrthread.cpp" />
     <ClCompile Include="csrtree.cpp" />
     <ClCompile Include="csrtw.cpp" />
+    <ClCompile Include="RadMirror.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

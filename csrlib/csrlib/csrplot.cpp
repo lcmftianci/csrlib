@@ -85,7 +85,7 @@ void displayPlot(void)
 			glEvalCoord1f((GLfloat)i / 100.0);
 		glEnd();
 
-		glutSwapBuffers();
+		//glutSwapBuffers();
 }
 
 void drawLine(void)

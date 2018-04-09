@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <stdio.h>
 #include <stdlib.h>
 #include "csrorder.h"
@@ -12,11 +13,13 @@
 #include "csrnetutil.h"
 #include "csrscreencututils.h"
 #include "csrscreenscanner.h"
-
+#include "csrcorescreen.h"
+#include "csrfilesystem.h"
+#include "RadMirror.h"
 
 using namespace std;
 
-
+#if 0
 int main(int argc, char** argv)
 {
 #if 0
@@ -181,6 +184,7 @@ int main(int argc, char** argv)
 	//HANDLE handle = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)udpclient, NULL, 0, NULL);
 	//CloseHandle(handle);
 
+#if 0
 	WORD wVersionRequested;
 	WSADATA wsadata;
 	wVersionRequested = MAKEWORD(1, 1);
@@ -221,7 +225,35 @@ int main(int argc, char** argv)
 	}
 	closesocket(sockClient);
 	WSACleanup();
+#endif
+
+	//遍历文件夹
+	//TraverseDir(_T("E:"));
+
+	//CString strDir = L"E:";
+
+	//FindFiles(strDir);
+
+	printf("hello csr\n");
+
+	//开始截图
+	screencut("a.bmp");
+
+	RDPCapture* rdp_capture = NULL;
+	std::vector<DISPLAY_DEVICE> devices;
+	std::map<int, DEVMODE> settings;
+	int res;// = Detect_MirrorDriver(devices, settings);
+	if (res == 0)
+	{
+		rdp_capture = new RDPCapture(devices[0], settings[0]);
+	}
+	rdp_capture->Init(0, 0, 1440, 900);
+
+	//unsigned char *vbuf;
+	//rdp_capture->GetData(vbuf);
 
 	system("pause");
 	return 0;
 }
+
+#endif

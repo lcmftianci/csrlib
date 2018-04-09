@@ -16,138 +16,183 @@
     <Filter Include="csrlib">
       <UniqueIdentifier>{8dcebdb4-f013-4180-b343-6292e98476a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="csrlib\screenutils">
+      <UniqueIdentifier>{b596cbac-573a-4c68-b8d1-f3e40a67e803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="csrlib\strutils">
+      <UniqueIdentifier>{7e7988f5-1abf-4c75-aa19-8ac14dfdfb57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="csrlib\netutils">
+      <UniqueIdentifier>{4d30c7c5-74a8-48d5-8261-f03517c1e16f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="csrlib\fileutils">
+      <UniqueIdentifier>{f8fdce67-7523-4da9-ae2b-1f3c09db02cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="csrlib\memutils">
+      <UniqueIdentifier>{3809fd27-dc9c-4ab0-91ab-b6a8b6c4901c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="csrlib\glutils">
+      <UniqueIdentifier>{055a01e4-2cbf-43a2-82ab-ccf5e553a56c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="csrlib\logutils">
+      <UniqueIdentifier>{4ca3f259-62e2-4788-a632-a605efb3c64f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="csrlib\mathutils">
+      <UniqueIdentifier>{5b4ffc2e-5d0b-4eaa-9c8c-fb1fc39befba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="csrlib\threadutils">
+      <UniqueIdentifier>{2d1c3541-8b46-4851-9697-36a0eb98c5fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="csrorder.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
     <ClInclude Include="interview.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrshape.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrlist.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrtree.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrstack.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrdoublelist.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrstring.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrlog.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrhashcode.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrthread.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrnetutil.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrplot.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrcopy.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrfilesystem.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrtw.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrftp.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrdoulist.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrfileutils.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrscreenscanner.h">
-      <Filter>csrlib</Filter>
-    </ClInclude>
-    <ClInclude Include="csrscreencututils.h">
       <Filter>csrlib</Filter>
     </ClInclude>
     <ClInclude Include="comheader.h">
       <Filter>csrlib</Filter>
     </ClInclude>
+    <ClInclude Include="csrplot.h">
+      <Filter>csrlib\glutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrftp.h">
+      <Filter>csrlib\netutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrnetutil.h">
+      <Filter>csrlib\netutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrscreenscanner.h">
+      <Filter>csrlib\screenutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrscreencututils.h">
+      <Filter>csrlib\screenutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrdoulist.h">
+      <Filter>csrlib\memutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrdoublelist.h">
+      <Filter>csrlib\memutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrfilesystem.h">
+      <Filter>csrlib\fileutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrfileutils.h">
+      <Filter>csrlib\logutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrlog.h">
+      <Filter>csrlib\logutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrthread.h">
+      <Filter>csrlib\threadutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrstrutils.h">
+      <Filter>csrlib\memutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrstack.h">
+      <Filter>csrlib\memutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrcopy.h">
+      <Filter>csrlib\fileutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrlist.h">
+      <Filter>csrlib\memutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrorder.h">
+      <Filter>csrlib\memutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrstring.h">
+      <Filter>csrlib\strutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrtw.h">
+      <Filter>csrlib\strutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrshape.h">
+      <Filter>csrlib\glutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrhashcode.h">
+      <Filter>csrlib\memutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrtree.h">
+      <Filter>csrlib\memutils</Filter>
+    </ClInclude>
+    <ClInclude Include="csrcorescreen.h">
+      <Filter>csrlib\screenutils</Filter>
+    </ClInclude>
+    <ClInclude Include="RadMirror.h">
+      <Filter>csrlib\screenutils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="csrorder.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
     <ClCompile Include="csrlibTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="csrshape.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrlist.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrtree.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrstack.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrdoublelist.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrstring.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrlog.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrhashcode.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrthread.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrnetutil.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
     <ClCompile Include="csrplot.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrcopy.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrfilesystem.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrtw.cpp">
-      <Filter>csrlib</Filter>
+      <Filter>csrlib\glutils</Filter>
     </ClCompile>
     <ClCompile Include="csrftp.cpp">
-      <Filter>csrlib</Filter>
+      <Filter>csrlib\netutils</Filter>
     </ClCompile>
-    <ClCompile Include="csrdoulist.cpp">
-      <Filter>csrlib</Filter>
-    </ClCompile>
-    <ClCompile Include="csrfileutils.cpp">
-      <Filter>csrlib</Filter>
+    <ClCompile Include="csrnetutil.cpp">
+      <Filter>csrlib\netutils</Filter>
     </ClCompile>
     <ClCompile Include="csrscreenscanner.cpp">
-      <Filter>csrlib</Filter>
+      <Filter>csrlib\screenutils</Filter>
     </ClCompile>
     <ClCompile Include="csrscreencututils.cpp">
-      <Filter>csrlib</Filter>
+      <Filter>csrlib\screenutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrdoulist.cpp">
+      <Filter>csrlib\memutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrdoublelist.cpp">
+      <Filter>csrlib\memutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrfilesystem.cpp">
+      <Filter>csrlib\fileutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrfileutils.cpp">
+      <Filter>csrlib\fileutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrlog.cpp">
+      <Filter>csrlib\logutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrthread.cpp">
+      <Filter>csrlib\threadutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrstack.cpp">
+      <Filter>csrlib\memutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrcopy.cpp">
+      <Filter>csrlib\memutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrlist.cpp">
+      <Filter>csrlib\memutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrorder.cpp">
+      <Filter>csrlib\strutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrstring.cpp">
+      <Filter>csrlib\strutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrtw.cpp">
+      <Filter>csrlib\strutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrshape.cpp">
+      <Filter>csrlib\glutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrhashcode.cpp">
+      <Filter>csrlib\memutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrtree.cpp">
+      <Filter>csrlib\memutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrcorescreen.cpp">
+      <Filter>csrlib\screenutils</Filter>
+    </ClCompile>
+    <ClCompile Include="RadMirror.cpp">
+      <Filter>csrlib\screenutils</Filter>
+    </ClCompile>
+    <ClCompile Include="csrstrsplit.cpp">
+      <Filter>csrlib\strutils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

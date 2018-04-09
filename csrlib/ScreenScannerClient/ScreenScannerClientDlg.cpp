@@ -298,7 +298,7 @@ LRESULT CScreenScannerClientDlg::OnReceived(WPARAM wParam, LPARAM lParam)
 	return S_OK;
 }
 
-void CScreenScannerClientDlg::OnTimer(UINT nIDEvent)
+void CScreenScannerClientDlg::OnTimer(UINT_PTR nIDEvent)
 {
 	if (!m_Received)
 	{

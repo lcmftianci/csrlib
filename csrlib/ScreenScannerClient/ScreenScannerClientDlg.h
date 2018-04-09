@@ -47,7 +47,7 @@ public:
 	int  SendData(UINT index, int mod, int bmpsize, int totalsize, int frames, char *pSendBuf, sockaddr_in &addr);
 	afx_msg LRESULT OnReceived(WPARAM wParam, LPARAM lParam);
 
-	afx_msg void OnTimer(UINT nIDEvent);
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	
 private:
 	GdiplusStartupInput m_gdiplusStartupInput;

@@ -10,6 +10,8 @@
 #include <zmq_utils.h>
 #endif
 
+#if 0
+
 int main(int argc, char** argv)
 {
 	//printf("mnmsg %s-%s-%s", __FUNCTION__, __LINE__, __FILE__);
@@ -76,3 +78,5 @@ int main(int argc, char** argv)
 	}
 	return 0;
 }
+
+#endif

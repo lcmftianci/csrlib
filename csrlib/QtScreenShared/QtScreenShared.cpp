@@ -1,15 +1,26 @@
 #include "QtScreenShared.h"
 #include <windows.h>
-#include <atlstr.h>
+#include <QString>
+#include <QGridLayout>
+#include <QDir>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QLabel>
 
-QtScreenShared::QtScreenShared(QWidget *parent)
-	: QMainWindow(parent)
+//#include <atlstr.h>
+
+QtScreenShared::QtScreenShared(QWidget *parent) : QMainWindow(parent)
 {
-	ui.setupUi(this);
+	//ui.setupUi(this);
+
+	//布置界面
+	QLabel *pLabel = new QLabel("hello Qt");
+	QVBoxLayout *pLayout = new QVBoxLayout;
+	pLayout->addWidget(pLabel);
+	setLayout(pLayout);
 }
 
 //获取执行时间
-
 void GetThunderTime()
 {
 	LARGE_INTEGER litmp;
@@ -27,9 +38,10 @@ void GetThunderTime()
 	dfMinus = (double)(QPart2 - QPart1);
 	dfTim = dfMinus / dfFreq * 1000;
 	//显示时间
-	CString msg4 = "时间：", msg3, msg5 = "毫秒";
-	msg3.Format("%10.9f", dfTim);
-	CString st = msg4 + msg3 + msg5;
+	QString msg4 = "时间：", msg3, msg5 = "毫秒";
+	//msg3.Format("%10.9f", dfTim);
+	msg3.asprintf("%10.9f", dfTim);
+	QString st = msg4 + msg3 + msg5;
 }
 
 

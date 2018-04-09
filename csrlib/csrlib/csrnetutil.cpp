@@ -3,10 +3,10 @@
 #include <Iphlpapi.h>  
 #pragma comment(lib,"Iphlpapi.lib") //需要添加Iphlpapi.lib库  
   
-bool CSocketComm::GetLocalAddress()  
+bool GetLocalAddress()  
 {  
-std::string strAddress;  
-int nCardNo = 1;  
+	std::string strAddress;  
+	int nCardNo = 1;  
     //PIP_ADAPTER_INFO结构体指针存储本机网卡信息  
     PIP_ADAPTER_INFO pIpAdapterInfo = new IP_ADAPTER_INFO();  
     //得到结构体大小,用于GetAdaptersInfo参数  
@@ -51,8 +51,9 @@ int nCardNo = 1;
                // 需要注意的是有时可能获取的IP地址是0.0.0.0，这时需要过滤掉  
                     if(std::string("0.0.0.0")==strAddress)  
                         break;  
-           std::cout<<_T("第")<< nCardNo<<_T("张网卡的IP地址是")<< strAddress<<std::endl;  
-                     nCardNo++;  
+					 //std::cout << "第" << nCardNo << "张网卡的IP地址是" << strAddress.c_str() << std::endl;  
+					 std::cout << "No" << nCardNo << "NetCard IP" << strAddress.c_str() << std::endl;  	 
+					 nCardNo++;  
                      break;  
                 }  
             default:  
@@ -132,7 +133,8 @@ unsigned _stdcall tcpclient(void* lpParam)
 		char recvBuf[100];
 		char sendBuf[100];
 		recv(sockClient, recvBuf, 100, 0);
-		printf("%s:说：%s\n", "TCP服务器", recvBuf);
+		//printf("%s:说：%s\n", "TCP服务器", recvBuf);
+		printf("%s:说：%s\n", "TCP Server", recvBuf);
 		printf("TCP Client please Input data:\n");
 		gets_s(sendBuf);
 		send(sockClient, sendBuf, strlen(sendBuf) + 1, 0);
