@@ -272,8 +272,7 @@ int audio_decode_frame(AVCodecContext *pcodec_ctx,
 		//frame:输出，存数据到frame
 		//got_frame:输出。0代表有frame取了，不意味发生了错误。
 		//packet:输入，取数据解码。
-		decode_len = avcodec_decode_audio4(pcodec_ctx,
-			frame, &got_frame, &packet);
+		decode_len = avcodec_decode_audio4(pcodec_ctx, frame, &got_frame, &packet);
 		if (decode_len < 0) //解码出错
 		{
 			//重解, 这里如果一直<0呢？
@@ -289,22 +288,19 @@ int audio_decode_frame(AVCodecContext *pcodec_ctx,
 
 		if (got_frame)
 		{
-
-			/*              //用定的音频参数获取样本缓冲区大小
-			data_size = av_samples_get_buffer_size(NULL,
-			pcodec_ctx->channels, frame->nb_samples,
-			pcodec_ctx->sample_fmt, 1);
-
-			assert(data_size <= buf_size);
-			//               memcpy(audio_buf + audio_buf_index, frame->data[0], data_size);
+			/*
+				//用定的音频参数获取样本缓冲区大小
+				data_size = av_samples_get_buffer_size(NULL,
+				pcodec_ctx->channels, frame->nb_samples,
+				pcodec_ctx->sample_fmt, 1);
+				assert(data_size <= buf_size);
+				//memcpy(audio_buf + audio_buf_index, frame->data[0], data_size);
 			*/
 			//chnanels: 通道数量, 仅用于音频
 			//channel_layout: 通道布局。
 			//多音频通道的流，一个通道布局可以具体描述其配置情况.通道布局这个概念不懂。
 			//大概指的是单声道(mono)，立体声道（stereo), 四声道之类的吧？
 			//详见源码及：https://xdsnet.gitbooks.io/other-doc-cn-ffmpeg/content/ffmpeg-doc-cn-07.html#%E9%80%9A%E9%81%93%E5%B8%83%E5%B1%80
-
-
 			if (frame->channels > 0 && frame->channel_layout == 0)
 			{
 				//获取默认布局，默认应该了stereo吧？
@@ -324,10 +320,8 @@ int audio_decode_frame(AVCodecContext *pcodec_ctx,
 
 			//设置common parameters
 			//2,3,4是output参数，4,5,6是input参数。
-			swr_ctx = swr_alloc_set_opts(NULL, wanted_frame.channel_layout,
-				(AVSampleFormat)wanted_frame.format,
-				wanted_frame.sample_rate, frame->channel_layout,
-				(AVSampleFormat)frame->format, frame->sample_rate, 0, NULL);
+			swr_ctx = swr_alloc_set_opts(NULL, wanted_frame.channel_layout,	(AVSampleFormat)wanted_frame.format, wanted_frame.sample_rate, 
+										frame->channel_layout, (AVSampleFormat)frame->format, frame->sample_rate, 0, NULL);
 			//初始化
 			if (swr_ctx == NULL || swr_init(swr_ctx) < 0)
 			{
@@ -349,19 +343,14 @@ int audio_decode_frame(AVCodecContext *pcodec_ctx,
 			//第2，3参数为output， 第4，5为input。
 			//可以使用#define AVCODE_MAX_AUDIO_FRAME_SIZE 192000 
 			//把dst_nb_samples替换掉, 最大的采样频率是192kHz.
-			convert_len = swr_convert(swr_ctx,
-				&audio_buf + audio_buf_index,
-				AVCODE_MAX_AUDIO_FRAME_SIZE,
-				(const uint8_t **)frame->data,
-				frame->nb_samples);
-
+			convert_len = swr_convert(swr_ctx,	&audio_buf + audio_buf_index, AVCODE_MAX_AUDIO_FRAME_SIZE,	(const uint8_t **)frame->data, frame->nb_samples);
 			printf("decode len = %d, convert_len = %d\n", decode_len, convert_len);
 			//解码了多少，解码到了哪里
-			//          pkt_data += decode_len;
+			//pkt_data += decode_len;
 			pkt_size -= decode_len;
 			//转换后的有效数据存到了哪里，又audio_buf_index标记
 			audio_buf_index += convert_len;//data_size;
-										   //返回所有转换后的有效数据的长度
+			//返回所有转换后的有效数据的长度
 			convert_all += convert_len;
 		}
 	}

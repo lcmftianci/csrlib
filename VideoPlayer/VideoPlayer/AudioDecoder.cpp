@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
 	AVCodecContext	*pCodecCtx;
 	AVCodec			*pCodec;
 
-	char url[] = "E:\\AllVideo\\sexvideo\\aac20s.aac";
+	char url[] = "E:\\AllVideo\\sexvideo\\bjjsx.mp3";
 	//char url[]="WavinFlag.mp3";
 	//char url[]="72bian.wma";
 
@@ -114,7 +114,7 @@ int main(int argc, char* argv[])
 	//AAC:1024  MP3:1152
 	int out_nb_samples = pCodecCtx->frame_size;
 	AVSampleFormat out_sample_fmt = AV_SAMPLE_FMT_S16;
-	int out_sample_rate = 44100;
+	int out_sample_rate = 48000;//44100;
 	int out_channels = av_get_channel_layout_nb_channels(out_channel_layout);
 	//Out Buffer Size
 	int out_buffer_size = av_samples_get_buffer_size(NULL, out_channels, out_nb_samples, out_sample_fmt, 1);
@@ -165,24 +165,25 @@ int main(int argc, char* argv[])
 	//Play
 	SDL_PauseAudio(0);
 
-	while (av_read_frame(pFormatCtx, packet) >= 0) {
-		if (packet->stream_index == audioStream) {
-
+	while (av_read_frame(pFormatCtx, packet) >= 0)
+	{
+		if (packet->stream_index == audioStream)
+		{
 			ret = avcodec_decode_audio4(pCodecCtx, pFrame, &got_picture, packet);
-			if (ret < 0) {
+			if (ret < 0) 
+			{
 				printf("Error in decoding audio frame.\n");
 				return -1;
 			}
-			if (got_picture > 0) {
+			if (got_picture > 0) 
+			{
 				swr_convert(au_convert_ctx, &out_buffer, MAX_AUDIO_FRAME_SIZE, (const uint8_t **)pFrame->data, pFrame->nb_samples);
-
 				printf("index:%5d\t pts:%lld\t packet size:%d\n", index, packet->pts, packet->size);
 
 #if OUTPUT_PCM
 				//Write PCM
 				fwrite(out_buffer, 1, out_buffer_size, pFile);
 #endif
-
 				index++;
 			}
 			//SDL------------------
@@ -191,10 +192,8 @@ int main(int argc, char* argv[])
 			audio_chunk = (Uint8 *)out_buffer;
 			//Audio buffer length
 			audio_len = out_buffer_size;
-
 			audio_pos = audio_chunk;
-
-			while (audio_len>0)//Wait until finish
+			while (audio_len > 0)//Wait until finish
 				SDL_Delay(1);
 #endif
 		}
@@ -214,7 +213,6 @@ int main(int argc, char* argv[])
 	av_free(out_buffer);
 	avcodec_close(pCodecCtx);
 	avformat_close_input(&pFormatCtx);
-
 	return 0;
 }
 
