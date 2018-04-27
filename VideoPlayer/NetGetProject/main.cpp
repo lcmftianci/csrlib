@@ -26,8 +26,9 @@ int main(int argv, char* argc[])
 
 	SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER);
 
-	char* filename = "E:\\AllVideo\\opencv\\opencv\\IplImage.wmv";
+	char* filename = "G:\\software\\giant\\³úºÌ\\720P_1500K_58013311.mp4";
 	//char* filename = "F:\\test.rmvb";
+	
 	MediaState media(filename);
 
 	if (media.openInput())

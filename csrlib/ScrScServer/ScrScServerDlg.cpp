@@ -7,8 +7,44 @@
 #include "ScrScServerDlg.h"
 #include "afxdialogex.h"
 
+#include <Ws2tcpip.h>
+#pragma comment(lib,"Ws2_32.lib")
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
+#endif
+
+FILE *g_fpLog;
+
+#if 1
+// 获取fd对应的ip和port
+static void get_peer_ip_port(int fd, char **ip, int *port)
+{
+	int client_fd = fd;
+
+	// discovery client information  
+	struct sockaddr_in addr;
+	socklen_t addrlen = sizeof(addr);
+	if (getpeername(client_fd, (struct sockaddr*)&addr, &addrlen) == -1) {
+		//fprintf(stderr, "discovery client information failed, fd=%d, errno=%d(%#x).\n", client_fd, errno, errno);
+		fprintf(g_fpLog, "discovery client information failed, fd=%d, errno=%d(%#x).\n", client_fd, errno, errno);
+		return;
+	}
+
+	// ip v4 or v6  
+	char *buf = (char*)malloc(INET6_ADDRSTRLEN);
+	memset(buf, 0, INET6_ADDRSTRLEN);
+
+	if ((inet_ntop(addr.sin_family, &addr.sin_addr, buf, INET6_ADDRSTRLEN)) == NULL) {
+		//fprintf(stderr, "convert client information failed, fd=%d, errno=%d(%#x).\n", client_fd, errno, errno);
+		return;
+	}
+	*port = ntohs(addr.sin_port);
+	//fprintf(stdout, "get peer ip of client ip=%s, port=%d, fd=%d\n", buf, *port, client_fd);
+	*ip = buf;
+
+	return;
+}
 #endif
 
 
@@ -46,9 +82,6 @@ END_MESSAGE_MAP()
 
 
 // CScrScServerDlg dialog
-
-
-
 CScrScServerDlg::CScrScServerDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(IDD_SCRSCSERVER_DIALOG, pParent)
 {
@@ -81,6 +114,11 @@ LRESULT CScrScServerDlg::OnReceived(WPARAM wParam, LPARAM lParam)
 	int ret = recvfrom(m_Socket, (char*)buffer, MAX_BUFFER, 0, (sockaddr*)&m_addrServ, &factsize);
 	if (ret == -1)
 		m_RecvCount = 1;
+
+	char *ip = "";
+	int port = 0;
+	get_peer_ip_port(m_Socket, &ip, &port);
+	fprintf(g_fpLog, "%s -- %d\n", ip, port);
 
 	UDPPACKAGE *pack;
 	pack = (UDPPACKAGE*)buffer;
@@ -142,6 +180,7 @@ void CScrScServerDlg::ShowScreen(int DataSize, void* pData)
 
 BOOL CScrScServerDlg::OnInitDialog()
 {
+	g_fpLog = fopen("server.log", "wt");
 	CDialogEx::OnInitDialog();
 
 	// Add "About..." menu item to system menu.
@@ -181,8 +220,8 @@ BOOL CScrScServerDlg::OnInitDialog()
 	sockaddr_in addr;
 	addr.sin_family = AF_INET;
 	addr.sin_addr.S_un.S_addr = htonl(INADDR_ANY);
-	addr.sin_port = htons(6002);
-	ipmr.imr_multiaddr.S_un.S_addr = inet_addr("192.168.100.24");
+	addr.sin_port = htons(6001);
+	ipmr.imr_multiaddr.S_un.S_addr = inet_addr("192.168.100.19");
 	ipmr.imr_interface.S_un.S_addr = htonl(INADDR_ANY);
 
 	//创建套接字

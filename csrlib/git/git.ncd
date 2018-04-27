@@ -1,5 +1,5 @@
 <!DOCTYPE NoteCase-File>
-<!--LastNote:30-->
+<!--LastNote:24-->
 <HTML>
 <HEAD>
 <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
@@ -1443,7 +1443,7 @@ http://windows.php.net/downloads/php-sdk/deps/vc14/x64/<BR>
 <DL>
 <DT>编译openssl</DT>
 <!--property:date_created=1516925090-->
-<!--property:date_modified=1516925099-->
+<!--property:date_modified=1524056252-->
 <DD>
 目标：编译vs环境下openssl库<BR>
 <BR>
@@ -1497,7 +1497,58 @@ nmake -f ms\nt.mak clean<BR>
 <BR>
 以上内容仅为个人实作学习记录，如涉及权限问题请告知，谢谢！<BR>
 <BR>
-下载库链接：http://download.csdn.net/detail/alger_magic/9669847
+下载库链接：http://download.csdn.net/detail/alger_magic/9669847<BR>
+<BR>
+/编译安装<BR>
+    ./config  --prefix=/usr/local --openssldir=/usr/local/ssl  <BR>
+    make  <BR>
+    make install  <BR>
+      <BR>
+    // 建议只生成动态链接库  <BR>
+    ./config shared --prefix=/usr/local --openssldir=/usr/local/ssl  <BR>
+    make clean  <BR>
+    make   <BR>
+    make install  <BR>
+<BR>
+1、解压OpenSSL<BR>
+[cpp] view plain copy<BR>
+<BR>
+    tar -zxf zlib-1.2.5.tar.gz  <BR>
+    cd zlib-1.2.5/  <BR>
+<BR>
+2、OpenSSL默认安装路径是：/usr/local/ssl，Module type : dynamically and staticly loaded modules, *.so *.a。<BR>
+3、prefix 是安装目录，openssldir 是配置文件目录，另外建议安装两次，shared 作用是生成动态连接库。<BR>
+[cpp] view plain copy<BR>
+<BR>
+    ./config  --prefix=/usr/local --openssldir=/usr/local/ssl  <BR>
+    make  <BR>
+    make install  <BR>
+      <BR>
+    // 建议只生成动态链接库  <BR>
+    ./config shared --prefix=/usr/local --openssldir=/usr/local/ssl  <BR>
+    make clean  <BR>
+    make   <BR>
+    make install  <BR>
+<BR>
+<BR>
+4、更新系统<BR>
+[cpp] view plain copy<BR>
+<BR>
+    vim /etc/ld.so.conf  <BR>
+<BR>
+添加/usr/local/ssl，然后运行ldconfig。<BR>
+<BR>
+三、使用<BR>
+1、头文件目录<BR>
+[cpp] view plain copy<BR>
+<BR>
+    /usr/local/ssl/include  <BR>
+<BR>
+2、gcc编译的时候加-lssl，同时指定libssl.so。<BR>
+<BR>
+<BR>
+<BR>
+
 </DD>
 <DT>编译ffmpeg</DT>
 <!--property:date_created=1516925305-->
