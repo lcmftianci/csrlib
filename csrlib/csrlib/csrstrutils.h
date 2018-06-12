@@ -17,7 +17,7 @@ char *mystrncpy(char *str, int n)
 			int i = 0;
 			while (*p != '\0')
 			{
-				//Ñ­»·Ö±µ½´ïn¸ö×Ö·û´®ÖÕÖ¹
+				//å¾ªç¯ç›´åˆ°è¾¾nä¸ªå­—ç¬¦ä¸²ç»ˆæ­¢
 				if (i == n)
 				{
 					break;
@@ -26,7 +26,7 @@ char *mystrncpy(char *str, int n)
 				p++;
 			}
 			*(p++) = '\0';
-			//¸³Öµ½áÊø×Ö·û´®
+			//èµ‹å€¼ç»“æŸå­—ç¬¦ä¸²
 		}
 		return str;
 }
@@ -62,6 +62,42 @@ int splitwords(char* strSrc, std::vector<std::string> & arrStr, char chStr)
 				arrStr.push_back(str);
 				index = 0;
 			}
+	}
+	return arrStr.size();
+}
+
+int splitwords(char* strSrc, std::vector<std::string> & arrStr, char chStr)
+{
+	unsigned int index = 0, len = 0, subIndex = 0, strlength = 0;
+	char* dstr = strSrc;
+	char* useStr = strSrc;
+	while (!(*strSrc++ == '\n' || *strSrc == '\0'))
+	{
+		strlength++;
+	}
+	while (strlength--)
+	{
+		index++;
+		subIndex++;
+		if (*dstr++ == chStr)
+		{
+			char* sr = (char*)malloc(index);
+			if (index == subIndex)
+				sr = substr(useStr, 0, index - 1);
+			else
+				sr = substr(useStr, subIndex - index, subIndex - 1);
+			std::string str = sr;
+			arrStr.push_back(str);
+			//free(sr);
+			index = 0;
+		}
+		if (strlength == 0)
+		{
+			char* sr = (char*)malloc(index);
+			sr = substr(useStr, subIndex - index, subIndex + 1);
+			arrStr.push_back(sr);
+			//free(sr);
+		}
 	}
 	return arrStr.size();
 }
